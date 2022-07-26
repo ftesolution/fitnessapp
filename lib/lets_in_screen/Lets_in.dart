@@ -284,7 +284,46 @@ class _Lets_InState extends State<Lets_In> {
 
                   ],
                 ),
-              )
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 10,
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Fahad Iqbal",
+                      textAlign: TextAlign.start,
+                      style: GoogleFonts.lexendDeca(
+                        textStyle: TextStyle(
+                          color: Colors.black.withOpacity(0.4),
+                        ),
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 60,
+                    ),
+                    Text(
+                      "Sign up",
+                      textAlign: TextAlign.start,
+                      style: GoogleFonts.lexendDeca(
+                        textStyle: TextStyle(
+                          color: Colors.deepPurpleAccent,
+                        ),
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+
             ],
           ),
         ),

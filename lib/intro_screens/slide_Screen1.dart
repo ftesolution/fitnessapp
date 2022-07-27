@@ -12,15 +12,23 @@ class slide_screen1 extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 500,
+            height: MediaQuery.of(context).size.height / 1.57,
             decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage("images/slide1.jpg",),fit: BoxFit.cover),
+              image: DecorationImage(
+                  image: AssetImage(
+                    "images/slide1.jpg",
+                  ),
+                  fit: BoxFit.cover),
             ),
           ),
           Container(
-            padding: EdgeInsets.only(top: 20,left: 25,right: 25,),
-            alignment: Alignment.center,
-            child: Text(
+              padding: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height/50,
+                left: MediaQuery.of(context).size.width/20,
+                right: MediaQuery.of(context).size.width/20,
+              ),
+              alignment: Alignment.center,
+              child: Text(
                 "Find the right workout for what you need",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.lexendDeca(

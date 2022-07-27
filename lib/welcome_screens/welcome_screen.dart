@@ -33,6 +33,7 @@ class _welcome_screenState extends State<welcome_screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        height: MediaQuery.of(context).size.height,
         color: Colors.black,
         child: Stack(
           children: [
@@ -51,13 +52,13 @@ class _welcome_screenState extends State<welcome_screen> {
                 children: [
                   Container(
                     padding: EdgeInsets.only(
-                      top: 500,
+                      top: MediaQuery.of(context).size.height / 1.7,
                     ),
                     alignment: Alignment.center,
                     child: Row(
                       children: [
                         SizedBox(
-                          width: 20,
+                          width: MediaQuery.of(context).size.width / 15,
                         ),
                         Text("Welcome to",
                             style: GoogleFonts.lexendDeca(
@@ -68,7 +69,7 @@ class _welcome_screenState extends State<welcome_screen> {
                               fontSize: 45,
                             )),
                         SizedBox(
-                          width: 10,
+                          width: MediaQuery.of(context).size.width / 15,
                         ),
                         Icon(
                           FontAwesomeIcons.hand,
@@ -80,9 +81,9 @@ class _welcome_screenState extends State<welcome_screen> {
                   ),
                   Container(
                       padding: EdgeInsets.only(
-                        top: 0,
-                        left: 20,
-                        right: 20,
+                        top: MediaQuery.of(context).size.height / 60,
+                        left: MediaQuery.of(context).size.width / 15,
+                        right: MediaQuery.of(context).size.width /15,
                       ),
                       child: Text(
                         "Gofit",
@@ -96,9 +97,9 @@ class _welcome_screenState extends State<welcome_screen> {
                       )),
                   Container(
                       padding: EdgeInsets.only(
-                        top: 10,
-                        left: 20,
-                        right: 20,
+                        top: MediaQuery.of(context).size.height / 60,
+                        left: MediaQuery.of(context).size.width / 15,
+                        right: MediaQuery.of(context).size.width /15,
                       ),
                       child: Text(
                         "The best fitness app in this century to accompany your sports.",

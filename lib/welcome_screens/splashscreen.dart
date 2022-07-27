@@ -18,19 +18,24 @@ class _splashscreenState extends State<splashscreen> {
     // TODO: implement initState
     super.initState();
     Timer(
-      Duration(seconds: 2), ((){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => welcome_screen(),));
-    }
-    ),
+      Duration(seconds: 2),
+      (() {
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => welcome_screen(),
+            ),);
+      }),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: MediaQuery.of(context).size.height*1,
+        height: MediaQuery.of(context).size.height,
           alignment: Alignment.center,
-          padding: EdgeInsets.only(top: 320,),
+          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 2.5,),
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.center,
@@ -46,7 +51,7 @@ class _splashscreenState extends State<splashscreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Icon(Icons.integration_instructions_rounded,size: 150,color: Colors.white,),
-              SizedBox(height: 220,),
+              SizedBox(height: MediaQuery.of(context).size.height / 3.8,),
               SpinKitCircle(color: Colors.white,duration: Duration(seconds: 2,)),
             ],
           )

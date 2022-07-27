@@ -65,7 +65,7 @@ class _Profile_screenState extends State<Profile_screen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                height: 80,
+                height: MediaQuery.of(context).size.height / 10,
               ),
               Container(
                   alignment: Alignment.center,
@@ -73,12 +73,12 @@ class _Profile_screenState extends State<Profile_screen> {
                     title: "Fill Your Profile?",
                   )),
               SizedBox(
-                height: 15,
+                height: MediaQuery.of(context).size.height / 60,
               ),
               Container(
                 padding: EdgeInsets.only(
-                  left: 20,
-                  right: 20,
+                  left: MediaQuery.of(context).size.width / 45,
+                  right: MediaQuery.of(context).size.width / 45,
                 ),
                 alignment: Alignment.center,
                 child: CustomSubTitle(
@@ -86,7 +86,7 @@ class _Profile_screenState extends State<Profile_screen> {
                         "Don't worry, you can always change it later. or you can skip it for now"),
               ),
               SizedBox(
-                height: 60,
+                height: MediaQuery.of(context).size.height / 15,
               ),
               PopupMenuButton(
                 position: PopupMenuPosition.under,
@@ -149,8 +149,8 @@ class _Profile_screenState extends State<Profile_screen> {
                     Column(
                       children: [
                         Container(
-                          height: 80,
-                          width: 80,
+                          height: MediaQuery.of(context).size.height / 8.5,
+                          width: MediaQuery.of(context).size.height / 8.5,
                           decoration: BoxDecoration(
                             color: Colors.black12,
                             shape: BoxShape.circle,
@@ -198,7 +198,7 @@ class _Profile_screenState extends State<Profile_screen> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: MediaQuery.of(context).size.height / 50,
               ),
               Container(
                 decoration: BoxDecoration(),
@@ -230,7 +230,6 @@ class _Profile_screenState extends State<Profile_screen> {
                       Icons.email,
                       color: Colors.black.withOpacity(0.4),
                     ),
-
                     contentPadding: EdgeInsets.only(
                         left: 30, right: 50, top: 15, bottom: 15),
                     isDense: true,
@@ -274,7 +273,7 @@ class _Profile_screenState extends State<Profile_screen> {
                 height: 180,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   CustomButton2(
                       gradient: LinearGradient(colors: [
@@ -290,23 +289,23 @@ class _Profile_screenState extends State<Profile_screen> {
                               builder: (context) => Lets_In(),
                             ));
                       }),
-                  SizedBox(
-                    width: 25,
-                  ),
+
                   CustomButton2(
-                      gradient: LinearGradient(colors: [
-                        Color(0xff8567ff),
-                        Color(0xff6c47ff),
-                      ]),
-                      title: "Start",
-                      txtcolor: Colors.white,
-                      onTap: () {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Lets_In(),
-                            ));
-                      }),
+                    gradient: LinearGradient(colors: [
+                      Color(0xff8567ff),
+                      Color(0xff6c47ff),
+                    ]),
+                    title: "Start",
+                    txtcolor: Colors.white,
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Lets_In(),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ],
@@ -316,4 +315,3 @@ class _Profile_screenState extends State<Profile_screen> {
     );
   }
 }
-

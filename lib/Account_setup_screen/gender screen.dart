@@ -53,11 +53,11 @@ class _gender_screenState extends State<gender_screen> {
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 7,
+                height: MediaQuery.of(context).size.height / 8,
               ),
               CustomRadio(
-                height: MediaQuery.of(context).size.height/6,
-                width: MediaQuery.of(context).size.height/6,
+                height: MediaQuery.of(context).size.height/5,
+                width: MediaQuery.of(context).size.height/5,
                 value: "Male",
                 groupValue: _groupValue,
                 label: "A",
@@ -106,8 +106,8 @@ class _gender_screenState extends State<gender_screen> {
                 height: MediaQuery.of(context).size.height / 15,
               ),
               CustomRadio(
-                height: MediaQuery.of(context).size.height/6,
-                width: MediaQuery.of(context).size.height/6,
+                height: MediaQuery.of(context).size.height/5,
+                width: MediaQuery.of(context).size.height/5,
                 value: "Female",
                 groupValue: _groupValue,
                 label: "B",
@@ -120,7 +120,7 @@ class _gender_screenState extends State<gender_screen> {
               ),
 
               SizedBox(
-                height: MediaQuery.of(context).size.height / 7,
+                height: MediaQuery.of(context).size.height / 10,
               ),
               CustomButton1(
                 title: "Continue",

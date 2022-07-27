@@ -3,6 +3,7 @@ import 'package:fitnessapp/Account_setup_screen/age.dart';
 import 'package:fitnessapp/intro_screens/onboarding_screen.dart';
 import 'package:fitnessapp/Account_setup_screen/weight.dart';
 import 'package:fitnessapp/welcome_screens/splashscreen.dart';
+import 'package:fitnessapp/welcome_screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'custom.dart';

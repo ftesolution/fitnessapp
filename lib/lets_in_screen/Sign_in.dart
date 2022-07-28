@@ -2,6 +2,8 @@ import 'package:fitnessapp/lets_in_screen/Sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../forgot _reset_password/select _contact _detail.dart';
+
 
 class Sign_In extends StatefulWidget {
   const Sign_In({Key? key}) : super(key: key);
@@ -293,7 +295,7 @@ class _Sign_InState extends State<Sign_In> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Sign_Up()),);
+                          builder: (context) => Select_Contact()),);
                   },
                   child: Text(
                     "Forgot the password?",

@@ -21,6 +21,7 @@ class Profile_screen extends StatefulWidget {
 class _Profile_screenState extends State<Profile_screen> {
   File? _image;
 
+
   TextEditingController name = TextEditingController();
   TextEditingController nickname = TextEditingController();
   TextEditingController email = TextEditingController();
@@ -212,9 +213,14 @@ class _Profile_screenState extends State<Profile_screen> {
                   //     ? "enter a valid eamil"
                   //     : null,
                   validator: (String? value) {
-                    return (value == null || !value.contains('@'))
-                        ? 'Enter a valid email'
-                        : null;
+                     if(value == null || !value.contains('@') || !value.contains("."))
+                     {
+                       return "Enter a valid email";
+                     }
+                     else
+                       {
+                         return null;
+                       }
                   },
                   style: GoogleFonts.lexendDeca(
                     textStyle: TextStyle(

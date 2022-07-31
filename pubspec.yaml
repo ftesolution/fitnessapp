@@ -73,6 +73,13 @@ flutter:
   assets:
     - images/
     - images/img.svg
+    - images/newpass.svg
+    - Assets/bookmark/
+    - Assets/discoveradvance/
+    - Assets/discoverinter/
+    - Assets/home/
+    - Assets/welcome/
+    - Assets/yoga body streching/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

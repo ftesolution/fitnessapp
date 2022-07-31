@@ -1,3 +1,4 @@
+import 'package:fitnessapp/forgot%20_reset_password/create_New_Password.dart';
 import 'package:fitnessapp/forgot%20_reset_password/select%20_contact%20_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,12 +15,24 @@ class Pin_Page extends StatefulWidget {
 class _Pin_PageState extends State<Pin_Page> {
 
   final defaultPinTheme = PinTheme(
-    width: 80,
-    height: 60,
+    width: 70,
+    height: 55,
     textStyle: TextStyle(fontSize: 20, color: Color.fromRGBO(30, 60, 87, 1), fontWeight: FontWeight.w600),
     decoration: BoxDecoration(
-      border: Border.all(color: Color.fromRGBO(234, 239, 243, 1)),
-      borderRadius: BorderRadius.circular(20),
+      color: Colors.grey.withOpacity(0.1),
+      border: Border.all(color: Colors.white,),
+      borderRadius: BorderRadius.circular(10),
+    ),
+  );
+
+  final focusedPinTheme = PinTheme(
+    width: 70,
+    height: 55,
+    textStyle: TextStyle(fontSize: 20, color: Color.fromRGBO(30, 60, 87, 1), fontWeight: FontWeight.w600),
+    decoration: BoxDecoration(
+      color: Colors.deepPurpleAccent.withOpacity(0.1),
+      border: Border.all(color: Colors.deepPurpleAccent,),
+      borderRadius: BorderRadius.circular(10),
     ),
   );
 
@@ -35,68 +48,107 @@ class _Pin_PageState extends State<Pin_Page> {
           right: MediaQuery.of(context).size.width / 20,
           top: MediaQuery.of(context).size.height / 50,
         ),
-        child: Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 25,
-            ),
-            Row(
-              children: [
-                Container(
-                  alignment: Alignment.centerLeft,
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Select_Contact(),
-                        ),
-                      );
-                    },
-                    child: Icon(
-                      Icons.arrow_back_rounded,
-                      color: Colors.black,
-                      size: 30,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 25,
+              ),
+              Row(
+                children: [
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Select_Contact(),
+                          ),
+                        );
+                      },
+                      child: Icon(
+                        Icons.arrow_back_rounded,
+                        color: Colors.black,
+                        size: 30,
+                      ),
                     ),
                   ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 20,
+                  ),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Forgot Password",
+                      textAlign: TextAlign.start,
+                      style: GoogleFonts.lexendDeca(
+                        textStyle: TextStyle(
+                          color: Colors.black,
+                        ),
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 4,
+              ),
+              Text(
+                "Code has been send to +1 111 ******99",
+                textAlign: TextAlign.center,
+                style: GoogleFonts.lexendDeca(
+                  textStyle: TextStyle(
+                    color: Colors.black,
+                  ),
+                  fontSize: 15,
+                  fontWeight: FontWeight.w300,
                 ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 20,
-                ),
-                Container(
-                  alignment: Alignment.centerLeft,
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 15,
+              ),
+              Pinput(
+                defaultPinTheme: defaultPinTheme,
+                focusedPinTheme: focusedPinTheme,
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 4,
+              ),
+              GestureDetector(
+                onTap: (){
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => creat_new_password()),);
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  height: MediaQuery.of(context).size.height / 15,
+                  width: MediaQuery.of(context).size.width / 1.2,
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurpleAccent,
+                    borderRadius: BorderRadius.circular(
+                      35,
+                    ),
+                  ),
                   child: Text(
-                    "Forgot Password",
+                    "Verify",
                     textAlign: TextAlign.start,
                     style: GoogleFonts.lexendDeca(
                       textStyle: TextStyle(
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
-                      fontSize: 22,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
-              ],
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 4,
-            ),
-            Text(
-              "Code has been send to +1 111 ******99",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.lexendDeca(
-                textStyle: TextStyle(
-                  color: Colors.black,
-                ),
-                fontSize: 15,
-                fontWeight: FontWeight.w300,
               ),
-            ),
-            Pinput(
-              defaultPinTheme: defaultPinTheme,
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );

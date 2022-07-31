@@ -1,5 +1,6 @@
 import 'package:fitnessapp/Model/CustomTitle.dart';
 import 'package:fitnessapp/Model/custom_reset_detail.dart';
+import 'package:fitnessapp/forgot%20_reset_password/create_New_Password.dart';
 import 'package:fitnessapp/lets_in_screen/Sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

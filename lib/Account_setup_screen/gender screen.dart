@@ -122,19 +122,33 @@ class _gender_screenState extends State<gender_screen> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 10,
               ),
-              CustomButton1(
-                title: "Continue",
-                onTap: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => age_Screen(),
-                    ),
-                  );
-                },
-              ),
+              // CustomButton1(
+              //   title: "Continue",
+              //   onTap: () {
+              //     Navigator.pushReplacement(
+              //       context,
+              //       MaterialPageRoute(
+              //         builder: (context) => age_Screen(),
+              //       ),
+              //     );
+              //   },
+              // ),
             ],
           ),
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(top: 10,left: 10,right: 10,bottom: 10,),
+        child: CustomButton1(
+          title: "Continue",
+          onTap: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => age_Screen(),
+              ),
+            );
+          },
         ),
       ),
 

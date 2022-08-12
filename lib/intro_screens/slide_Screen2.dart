@@ -11,9 +11,9 @@ class slide_screen2 extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height / 1.57,
+            height: MediaQuery.of(context).size.height / 1.7,
             decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage("images/slide2.jpg",),fit: BoxFit.cover),
+              image: DecorationImage(image: AssetImage("Assets/welcome/slide_screen2.jpg",),fit: BoxFit.cover),
             ),
           ),
           Container(

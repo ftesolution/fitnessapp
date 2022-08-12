@@ -13,12 +13,14 @@ class Sign_Up extends StatefulWidget {
 class _Sign_UpState extends State<Sign_Up> {
   bool checkBox = false;
   bool obsText = true;
-  TextEditingController signUpEmail = new TextEditingController();
+  String? SignupEmail;
   TextEditingController signUpPassword = new TextEditingController();
   List<FocusNode> _focusNodes = [
     FocusNode(),
     FocusNode(),
   ];
+
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -84,140 +86,202 @@ class _Sign_UpState extends State<Sign_Up> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
               ),
-              TextFormField(
-                controller: signUpEmail,
-                cursorColor: Colors.black,
-                cursorHeight: 20,
-                focusNode: _focusNodes[0],
-                style: GoogleFonts.lexendDeca(
-                  textStyle: TextStyle(
-                    color: Colors.black,
-                  ),
-                  fontSize: 17,
-                  fontWeight: FontWeight.w500,
-                ),
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height / 40,
-                    bottom: MediaQuery.of(context).size.height / 40,
-                    left: MediaQuery.of(context).size.width / 10,
-                    right: MediaQuery.of(context).size.width / 10,
-                  ),
-                  prefixIcon: Icon(Icons.email_rounded,
-                      size: 20,
-                      color: _focusNodes[0].hasFocus
-                          ? Colors.deepPurpleAccent
-                          : Colors.grey),
-                  hintText: "Email",
-                  hintStyle: GoogleFonts.lexendDeca(
-                    textStyle: TextStyle(
-                      color: Colors.black.withOpacity(0.4),
+              Form(
+                key: _formkey,
+                child: Container(
+                child: Column(
+                  children: [
+                    TextFormField(
+                      onSaved: (String? email) {
+                        SignupEmail = email;
+                      },
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return "Enter the email";
+                        }
+                        if( !RegExp(r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$').hasMatch(value))
+                        {
+                          return "Enter the valid Email";
+                        }
+                        else
+                        {
+                          return null;
+                        }
+                      },
+                      cursorColor: Colors.black,
+                      cursorHeight: 20,
+                      focusNode: _focusNodes[0],
+                      style: GoogleFonts.lexendDeca(
+                        textStyle: TextStyle(
+                          color: Colors.black,
+                        ),
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height / 40,
+                          bottom: MediaQuery.of(context).size.height / 40,
+                          left: MediaQuery.of(context).size.width / 10,
+                          right: MediaQuery.of(context).size.width / 10,
+                        ),
+                        prefixIcon: Icon(Icons.email_rounded,
+                            size: 20,
+                            color: _focusNodes[0].hasFocus
+                                ? Colors.deepPurpleAccent
+                                : Colors.grey),
+                        hintText: "Email",
+                        hintStyle: GoogleFonts.lexendDeca(
+                          textStyle: TextStyle(
+                            color: Colors.black.withOpacity(0.4),
+                          ),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w300,
+                        ),
+                        isDense: true,
+                        isCollapsed: true,
+                        filled: true,
+                        fillColor: _focusNodes[0].hasFocus
+                            ? Colors.deepPurpleAccent.withOpacity(0.1)
+                            : Colors.black.withOpacity(0.05),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(
+                            color: Colors.white,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(
+                            color: Colors.deepPurpleAccent,
+                            width: 2,
+                          ),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(
+                            color: Colors.red,
+                            width: 2,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
                     ),
-                    fontSize: 17,
-                    fontWeight: FontWeight.w300,
-                  ),
-                  isDense: true,
-                  isCollapsed: true,
-                  filled: true,
-                  fillColor: _focusNodes[0].hasFocus
-                      ? Colors.deepPurpleAccent.withOpacity(0.1)
-                      : Colors.black.withOpacity(0.05),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(
-                      color: Colors.white,
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height / 30,
                     ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(
-                      color: Colors.deepPurpleAccent,
-                      width: 2,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 30,
-              ),
-              TextFormField(
-                controller: signUpPassword,
-                obscureText: obsText,
-                cursorColor: Colors.black,
-                cursorHeight: 20,
-                focusNode: _focusNodes[1],
-                style: GoogleFonts.lexendDeca(
-                  textStyle: TextStyle(
-                    color: Colors.black,
-                  ),
-                  fontSize: 17,
-                  fontWeight: FontWeight.w500,
-                ),
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height / 40,
-                    bottom: MediaQuery.of(context).size.height / 40,
-                    left: MediaQuery.of(context).size.width / 10,
-                    right: MediaQuery.of(context).size.width / 10,
-                  ),
-                  prefixIcon: Icon(
-                    Icons.lock_rounded,
-                    size: 20,
-                    color: _focusNodes[1].hasFocus
-                        ? Colors.deepPurpleAccent
-                        : Colors.grey,
-                  ),
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        obsText = !obsText;
-                      });
-                    },
-                    icon: obsText
-                        ? Icon(
+                    TextFormField(
+                      controller: signUpPassword,
+                      obscureText: obsText,
+                      cursorColor: Colors.black,
+                      cursorHeight: 20,
+                      focusNode: _focusNodes[1],
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return "Enter the Password";
+                        }
+                        if(value.length<8)
+                        {
+                          return "atleast 8 digit)";
+                        }
+                        if(!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$').hasMatch(value))
+                        {
+                          return "Enter valid Password\ncontain(1 upercase,1 lowercase, 1 special,1 numeric";
+                        }
+                      },
+                      style: GoogleFonts.lexendDeca(
+                        textStyle: TextStyle(
+                          color: Colors.black,
+                        ),
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height / 40,
+                          bottom: MediaQuery.of(context).size.height / 40,
+                          left: MediaQuery.of(context).size.width / 10,
+                          right: MediaQuery.of(context).size.width / 10,
+                        ),
+                        prefixIcon: Icon(
+                          Icons.lock_rounded,
+                          size: 20,
+                          color: _focusNodes[1].hasFocus
+                              ? Colors.deepPurpleAccent
+                              : Colors.grey,
+                        ),
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              obsText = !obsText;
+                            });
+                          },
+                          icon: obsText
+                              ? Icon(
                             Icons.visibility_off_sharp,
                             color: _focusNodes[1].hasFocus
                                 ? Colors.deepPurpleAccent
                                 : Colors.grey,
                             size: 20,
                           )
-                        : Icon(
+                              : Icon(
                             Icons.visibility,
                             color: _focusNodes[1].hasFocus
                                 ? Colors.deepPurpleAccent
                                 : Colors.grey,
                             size: 20,
                           ),
-                  ),
-                  hintText: "password",
-                  hintStyle: GoogleFonts.lexendDeca(
-                    textStyle: TextStyle(
-                      color: Colors.black.withOpacity(0.4),
+                        ),
+                        hintText: "password",
+                        hintStyle: GoogleFonts.lexendDeca(
+                          textStyle: TextStyle(
+                            color: Colors.black.withOpacity(0.4),
+                          ),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w300,
+                        ),
+                        isDense: true,
+                        isCollapsed: true,
+                        filled: true,
+                        fillColor: _focusNodes[1].hasFocus
+                            ? Colors.deepPurpleAccent.withOpacity(0.1)
+                            : Colors.black.withOpacity(0.05),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(
+                            color: Colors.white,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(
+                            color: Colors.deepPurpleAccent,
+                            width: 2,
+                          ),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(
+                            color: Colors.red,
+                            width: 2,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
                     ),
-                    fontSize: 17,
-                    fontWeight: FontWeight.w300,
-                  ),
-                  isDense: true,
-                  isCollapsed: true,
-                  filled: true,
-                  fillColor: _focusNodes[1].hasFocus
-                      ? Colors.deepPurpleAccent.withOpacity(0.1)
-                      : Colors.black.withOpacity(0.05),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(
-                      color: Colors.white,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(
-                      color: Colors.deepPurpleAccent,
-                      width: 2,
-                    ),
-                  ),
+                  ],
                 ),
-              ),
+              ),),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 90,
               ),
@@ -262,25 +326,42 @@ class _Sign_UpState extends State<Sign_Up> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 90,
               ),
-              Container(
-                alignment: Alignment.center,
-                height: MediaQuery.of(context).size.height / 15,
-                width: MediaQuery.of(context).size.width / 1.2,
-                decoration: BoxDecoration(
-                  color: Colors.deepPurpleAccent,
-                  borderRadius: BorderRadius.circular(
-                    35,
-                  ),
-                ),
-                child: Text(
-                  "Sign up",
-                  textAlign: TextAlign.start,
-                  style: GoogleFonts.lexendDeca(
-                    textStyle: TextStyle(
-                      color: Colors.white,
+              GestureDetector(
+                onTap: () {
+                  if(_formkey.currentState!.validate())
+                  {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Sign_In(),
+                      ),
+                    );
+                  }
+                  else
+                  {
+                    print("unsuccessful");
+                  }
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  height: MediaQuery.of(context).size.height / 15,
+                  width: MediaQuery.of(context).size.width / 1.2,
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurpleAccent,
+                    borderRadius: BorderRadius.circular(
+                      35,
                     ),
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
+                  ),
+                  child: Text(
+                    "Sign up",
+                    textAlign: TextAlign.start,
+                    style: GoogleFonts.lexendDeca(
+                      textStyle: TextStyle(
+                        color: Colors.white,
+                      ),
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
               ),

@@ -94,7 +94,7 @@ class _Pin_PageState extends State<Pin_Page> {
                 ],
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 4,
+                height: 280,
               ),
               Text(
                 "Code has been send to +1 111 ******99",
@@ -108,46 +108,48 @@ class _Pin_PageState extends State<Pin_Page> {
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 15,
+                height: 30,
               ),
               Pinput(
                 defaultPinTheme: defaultPinTheme,
                 focusedPinTheme: focusedPinTheme,
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 4,
-              ),
-              GestureDetector(
-                onTap: (){
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => creat_new_password()),);
-                },
-                child: Container(
-                  alignment: Alignment.center,
-                  height: MediaQuery.of(context).size.height / 15,
-                  width: MediaQuery.of(context).size.width / 1.2,
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurpleAccent,
-                    borderRadius: BorderRadius.circular(
-                      35,
-                    ),
-                  ),
-                  child: Text(
-                    "Verify",
-                    textAlign: TextAlign.start,
-                    style: GoogleFonts.lexendDeca(
-                      textStyle: TextStyle(
-                        color: Colors.white,
-                      ),
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ),
+
+
             ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(top: 10,left: 30,right: 30,bottom: 10,),
+        child: GestureDetector(
+          onTap: (){
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => creat_new_password()),);
+          },
+          child: Container(
+            alignment: Alignment.center,
+            height: MediaQuery.of(context).size.height / 15,
+            width: MediaQuery.of(context).size.width / 1.2,
+            decoration: BoxDecoration(
+              color: Colors.deepPurpleAccent,
+              borderRadius: BorderRadius.circular(
+                35,
+              ),
+            ),
+            child: Text(
+              "Verify",
+              textAlign: TextAlign.start,
+              style: GoogleFonts.lexendDeca(
+                textStyle: TextStyle(
+                  color: Colors.white,
+                ),
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           ),
         ),
       ),

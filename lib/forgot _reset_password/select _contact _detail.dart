@@ -78,14 +78,16 @@ class _Select_ContactState extends State<Select_Contact> {
                 ],
               ),
                Container(
-                 height: MediaQuery.of(context).size.height/2.5,
+                 height: 280,
                  width: MediaQuery.of(context).size.height/2.5,
                  child: SvgPicture.asset("images/img.svg"),
                  decoration: BoxDecoration(
                    color: Colors.white,
                  ),
                ),
-
+              SizedBox(
+                height: 20,
+              ),
               Text(
                 "Select which contact detail should we use to reset your password",
                 textAlign: TextAlign.start,
@@ -98,10 +100,10 @@ class _Select_ContactState extends State<Select_Contact> {
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 40,
+                height: 20,
               ),
               CustomReset(
-                height: MediaQuery.of(context).size.height/5.8,
+                height: 120,
                 width: MediaQuery.of(context).size.width/1,
                 value: "via SMS",
                 subvalue: "+1 111******99",
@@ -115,10 +117,10 @@ class _Select_ContactState extends State<Select_Contact> {
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 60,
+                height: 10,
               ),
               CustomReset(
-                height: MediaQuery.of(context).size.height/5.8,
+                height: 120,
                 width: MediaQuery.of(context).size.width/1,
                 value: "via Email",
                 subvalue: "fahadkhan@gmail.com",
@@ -131,40 +133,40 @@ class _Select_ContactState extends State<Select_Contact> {
                   color: Colors.deepPurpleAccent,
                 ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 20,
-              ),
-              GestureDetector(
-                onTap: (){
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Pin_Page()),);
-                },
-                child: Container(
-                  alignment: Alignment.center,
-                  height: MediaQuery.of(context).size.height / 15,
-                  width: MediaQuery.of(context).size.width / 1.2,
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurpleAccent,
-                    borderRadius: BorderRadius.circular(
-                      35,
-                    ),
-                  ),
-                  child: Text(
-                    "Continue",
-                    textAlign: TextAlign.start,
-                    style: GoogleFonts.lexendDeca(
-                      textStyle: TextStyle(
-                        color: Colors.white,
-                      ),
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ),
             ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(top: 10,left: 30,right: 30,bottom: 10,),
+        child: GestureDetector(
+          onTap: (){
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Pin_Page()),);
+          },
+          child: Container(
+            alignment: Alignment.center,
+            height: MediaQuery.of(context).size.height / 15,
+            width: MediaQuery.of(context).size.width / 1.2,
+            decoration: BoxDecoration(
+              color: Colors.deepPurpleAccent,
+              borderRadius: BorderRadius.circular(
+                35,
+              ),
+            ),
+            child: Text(
+              "Continue",
+              textAlign: TextAlign.start,
+              style: GoogleFonts.lexendDeca(
+                textStyle: TextStyle(
+                  color: Colors.white,
+                ),
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           ),
         ),
       ),

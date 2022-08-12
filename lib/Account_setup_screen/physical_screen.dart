@@ -50,7 +50,7 @@ class _Physical_ScreenState extends State<Physical_Screen> {
                       "Choose your regular activity level. This will help us to personalize plans for you."),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height/5.55,
+              height: MediaQuery.of(context).size.height/5.0,
             ),
             CustomPhysical(
               value: "Beginner",
@@ -72,42 +72,76 @@ class _Physical_ScreenState extends State<Physical_Screen> {
               label: "C",
               onChanged: _valueChangedHandler(),
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height/5.55,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                CustomButton2(
-                    gradient: LinearGradient(colors: [
-                      Color(0xfff0ecff),
-                      Color(0xfff0ecff),
-                    ]),
-                    title: "Back",
-                    txtcolor: Color(0xff6c47ff),
-                    onTap: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Goal_Screen(),
-                          ));
-                    }),
-                CustomButton2(
-                    gradient: LinearGradient(colors: [
-                      Color(0xff8567ff),
-                      Color(0xff6c47ff),
-                    ]),
-                    title: "Continue",
-                    txtcolor: Colors.white,
-                    onTap: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Profile_screen(),
-                          ));
-                    }),
-              ],
-            ),
+
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //   children: [
+            //     CustomButton2(
+            //         gradient: LinearGradient(colors: [
+            //           Color(0xfff0ecff),
+            //           Color(0xfff0ecff),
+            //         ]),
+            //         title: "Back",
+            //         txtcolor: Color(0xff6c47ff),
+            //         onTap: () {
+            //           Navigator.pushReplacement(
+            //               context,
+            //               MaterialPageRoute(
+            //                 builder: (context) => Goal_Screen(),
+            //               ));
+            //         }),
+            //     CustomButton2(
+            //         gradient: LinearGradient(colors: [
+            //           Color(0xff8567ff),
+            //           Color(0xff6c47ff),
+            //         ]),
+            //         title: "Continue",
+            //         txtcolor: Colors.white,
+            //         onTap: () {
+            //           Navigator.pushReplacement(
+            //               context,
+            //               MaterialPageRoute(
+            //                 builder: (context) => Profile_screen(),
+            //               ));
+            //         }),
+            //   ],
+            // ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(top: 10,left: 10,right: 10,bottom: 10,),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            CustomButton2(
+                gradient: LinearGradient(colors: [
+                  Color(0xfff0ecff),
+                  Color(0xfff0ecff),
+                ]),
+                title: "Back",
+                txtcolor: Color(0xff6c47ff),
+                onTap: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Goal_Screen(),
+                      ));
+                }),
+            CustomButton2(
+                gradient: LinearGradient(colors: [
+                  Color(0xff8567ff),
+                  Color(0xff6c47ff),
+                ]),
+                title: "Continue",
+                txtcolor: Colors.white,
+                onTap: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Profile_screen(),
+                      ));
+                }),
           ],
         ),
       ),

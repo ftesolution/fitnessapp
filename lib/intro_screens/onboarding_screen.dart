@@ -35,103 +35,183 @@ class _onboarding_screenState extends State<onboarding_screen> {
             ],
           ),
           Container(
-              alignment: Alignment(0,6),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height / 1.2,
-                  ),
-                  SmoothPageIndicator(
-                      effect: ExpandingDotsEffect(
-                        spacing: 8,
-                        dotHeight: 8,
-                        dotWidth: 8,
-                        dotColor: Colors.grey,
-                        activeDotColor: Color(0xff8567ff),
-                      ),
-                      controller: _controller,
-                      count: 3),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height / 20,
-                  ),
-                  onlastpage
-                      ? GestureDetector(
-                          onTap: () {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (Context) => gender_screen(),
-                                ));
-                          },
-                          child: Container(
-                              margin: EdgeInsets.only(left: 30, right: 30),
-                              alignment: Alignment.center,
-                              height: MediaQuery.of(context).size.height / 15,
-                              width: MediaQuery.of(context).size.width / 1,
-                              decoration: BoxDecoration(
-                                  gradient: LinearGradient(colors: [
-                                    Color(0xff8567ff),
-                                    Color(0xff6c47ff),
-                                  ]),
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(30),
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.blueGrey.withOpacity(0.9),
-                                      spreadRadius: 3,
-                                      offset: Offset(0, 3),
-                                      blurRadius: 15,
-                                    )
-                                  ]),
-                              child: Text(
-                                "Done",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 17),
-                              )),
-                        )
-                      : GestureDetector(
-                          onTap: () {
-                            _controller.nextPage(
-                              duration: Duration(microseconds: 500),
-                              curve: Curves.easeIn,
-                            );
-                          },
-                          child: Container(
-                              margin: EdgeInsets.only(left: 30, right: 30),
-                              alignment: Alignment.center,
-                              height: MediaQuery.of(context).size.height / 15,
-                              width: MediaQuery.of(context).size.width / 1,
-                              decoration: BoxDecoration(
-                                  gradient: LinearGradient(colors: [
-                                    Color(0xff8567ff),
-                                    Color(0xff6c47ff),
-                                  ]),
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(30),
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.blueGrey.withOpacity(0.9),
-                                      spreadRadius: 3,
-                                      offset: Offset(0, 3),
-                                      blurRadius: 15,
-                                    )
-                                  ]),
-                              child: Text(
-                                "Next",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 17),
-                              )),
+              alignment: Alignment(0, 0.1),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 670,
+                    ),
+                    SmoothPageIndicator(
+                        effect: ExpandingDotsEffect(
+                          spacing: 8,
+                          dotHeight: 8,
+                          dotWidth: 8,
+                          dotColor: Colors.grey,
+                          activeDotColor: Color(0xff8567ff),
                         ),
-                ],
+                        controller: _controller,
+                        count: 3),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height / 20,
+                    ),
+                    // onlastpage
+                    //     ? GestureDetector(
+                    //         onTap: () {
+                    //           Navigator.pushReplacement(
+                    //               context,
+                    //               MaterialPageRoute(
+                    //                 builder: (Context) => gender_screen(),
+                    //               ));
+                    //         },
+                    //         child: Container(
+                    //             margin: EdgeInsets.only(left: 30, right: 30),
+                    //             alignment: Alignment.center,
+                    //             height: MediaQuery.of(context).size.height / 15,
+                    //             width: MediaQuery.of(context).size.width / 1,
+                    //             decoration: BoxDecoration(
+                    //                 gradient: LinearGradient(colors: [
+                    //                   Color(0xff8567ff),
+                    //                   Color(0xff6c47ff),
+                    //                 ]),
+                    //                 borderRadius: BorderRadius.all(
+                    //                   Radius.circular(30),
+                    //                 ),
+                    //                 boxShadow: [
+                    //                   BoxShadow(
+                    //                     color: Colors.blueGrey.withOpacity(0.9),
+                    //                     spreadRadius: 3,
+                    //                     offset: Offset(0, 3),
+                    //                     blurRadius: 15,
+                    //                   )
+                    //                 ]),
+                    //             child: Text(
+                    //               "Done",
+                    //               style: TextStyle(
+                    //                   color: Colors.white,
+                    //                   fontWeight: FontWeight.bold,
+                    //                   fontSize: 17),
+                    //             )),
+                    //       )
+                    //     : GestureDetector(
+                    //         onTap: () {
+                    //           _controller.nextPage(
+                    //             duration: Duration(microseconds: 500),
+                    //             curve: Curves.easeIn,
+                    //           );
+                    //         },
+                    //         child: Container(
+                    //             margin: EdgeInsets.only(left: 30, right: 30),
+                    //             alignment: Alignment.center,
+                    //             height: MediaQuery.of(context).size.height / 15,
+                    //             width: MediaQuery.of(context).size.width / 1,
+                    //             decoration: BoxDecoration(
+                    //                 gradient: LinearGradient(colors: [
+                    //                   Color(0xff8567ff),
+                    //                   Color(0xff6c47ff),
+                    //                 ]),
+                    //                 borderRadius: BorderRadius.all(
+                    //                   Radius.circular(30),
+                    //                 ),
+                    //                 boxShadow: [
+                    //                   BoxShadow(
+                    //                     color: Colors.blueGrey.withOpacity(0.9),
+                    //                     spreadRadius: 3,
+                    //                     offset: Offset(0, 3),
+                    //                     blurRadius: 15,
+                    //                   )
+                    //                 ]),
+                    //             child: Text(
+                    //               "Next",
+                    //               style: TextStyle(
+                    //                   color: Colors.white,
+                    //                   fontWeight: FontWeight.bold,
+                    //                   fontSize: 17),
+                    //             )),
+                    //       ),
+                  ],
+                ),
               ))
         ],
+      ),
+      bottomNavigationBar: Padding(
+        padding:
+            const EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 10),
+        child: onlastpage
+            ? GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (Context) => gender_screen(),
+                      ));
+                },
+                child: Container(
+                    margin: EdgeInsets.only(left: 30, right: 30),
+                    alignment: Alignment.center,
+                    height: MediaQuery.of(context).size.height / 15,
+                    width: MediaQuery.of(context).size.width / 1,
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [
+                          Color(0xff8567ff),
+                          Color(0xff6c47ff),
+                        ]),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(30),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.blueGrey.withOpacity(0.9),
+                            spreadRadius: 3,
+                            offset: Offset(0, 3),
+                            blurRadius: 15,
+                          )
+                        ]),
+                    child: Text(
+                      "Done",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17),
+                    )),
+              )
+            : GestureDetector(
+                onTap: () {
+                  _controller.nextPage(
+                    duration: Duration(microseconds: 500),
+                    curve: Curves.easeIn,
+                  );
+                },
+                child: Container(
+                    margin: EdgeInsets.only(left: 30, right: 30),
+                    alignment: Alignment.center,
+                    height: MediaQuery.of(context).size.height / 15,
+                    width: MediaQuery.of(context).size.width / 1,
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [
+                          Color(0xff8567ff),
+                          Color(0xff6c47ff),
+                        ]),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(30),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.blueGrey.withOpacity(0.9),
+                            spreadRadius: 3,
+                            offset: Offset(0, 3),
+                            blurRadius: 15,
+                          )
+                        ]),
+                    child: Text(
+                      "Next",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17),
+                    )),
+              ),
       ),
     );
   }

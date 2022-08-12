@@ -49,7 +49,7 @@ class _weight_screenState extends State<weight_screen> {
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.width / 2.22,
+              height: MediaQuery.of(context).size.width / 1.8,
             ),
             NumberPicker(
               axis: Axis.horizontal,
@@ -78,40 +78,75 @@ class _weight_screenState extends State<weight_screen> {
               size: 100,
               color: Colors.deepPurpleAccent,
             ),
-            SizedBox(height: MediaQuery.of(context).size.width / 2.9,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                CustomButton2(
-                    gradient: LinearGradient(colors: [
-                      Color(0xfff0ecff),
-                      Color(0xfff0ecff),
-                    ]),
-                    title: "Back",
-                    txtcolor: Color(0xff6c47ff),
-                    onTap: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => age_Screen(),
-                          ));
-                    }),
-                CustomButton2(
-                    gradient: LinearGradient(colors: [
-                      Color(0xff8567ff),
-                      Color(0xff6c47ff),
-                    ]),
-                    title: "Continue",
-                    txtcolor: Colors.white,
-                    onTap: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Height_Screen(),
-                          ));
-                    }),
-              ],
-            ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //   children: [
+            //     CustomButton2(
+            //         gradient: LinearGradient(colors: [
+            //           Color(0xfff0ecff),
+            //           Color(0xfff0ecff),
+            //         ]),
+            //         title: "Back",
+            //         txtcolor: Color(0xff6c47ff),
+            //         onTap: () {
+            //           Navigator.pushReplacement(
+            //               context,
+            //               MaterialPageRoute(
+            //                 builder: (context) => age_Screen(),
+            //               ));
+            //         }),
+            //     CustomButton2(
+            //         gradient: LinearGradient(colors: [
+            //           Color(0xff8567ff),
+            //           Color(0xff6c47ff),
+            //         ]),
+            //         title: "Continue",
+            //         txtcolor: Colors.white,
+            //         onTap: () {
+            //           Navigator.pushReplacement(
+            //               context,
+            //               MaterialPageRoute(
+            //                 builder: (context) => Height_Screen(),
+            //               ));
+            //         }),
+            //   ],
+            // ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(top: 10,left: 10,right: 10,bottom: 10,),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            CustomButton2(
+                gradient: LinearGradient(colors: [
+                  Color(0xfff0ecff),
+                  Color(0xfff0ecff),
+                ]),
+                title: "Back",
+                txtcolor: Color(0xff6c47ff),
+                onTap: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => age_Screen(),
+                      ));
+                }),
+            CustomButton2(
+                gradient: LinearGradient(colors: [
+                  Color(0xff8567ff),
+                  Color(0xff6c47ff),
+                ]),
+                title: "Continue",
+                txtcolor: Colors.white,
+                onTap: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Height_Screen(),
+                      ));
+                }),
           ],
         ),
       ),

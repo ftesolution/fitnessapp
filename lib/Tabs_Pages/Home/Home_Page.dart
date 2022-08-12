@@ -1,6 +1,12 @@
+import 'package:fitnessapp/Tabs_Pages/Home/Advance.dart';
+import 'package:fitnessapp/Tabs_Pages/Home/Beginner.dart';
+import 'package:fitnessapp/Tabs_Pages/Home/Home_Notification.dart';
+import 'package:fitnessapp/Tabs_Pages/Home/Home_SeeAll.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'intermediate.dart';
 
 class Home_Page extends StatefulWidget {
   const Home_Page({Key? key}) : super(key: key);
@@ -16,6 +22,11 @@ class _Home_PageState extends State<Home_Page> {
     "Advance",
   ];
 
+  List<Widget> page = [
+    Beginner_Class(),
+    Intermediate_Class(),
+    Advance_class(),
+  ];
   int current = 0;
 
   @override
@@ -45,11 +56,8 @@ class _Home_PageState extends State<Home_Page> {
                         color: Colors.deepPurpleAccent,
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Icon(
-                        Icons.sports_gymnastics,
-                        size: 14,
-                        color: Colors.white,
-                      ),
+                      // child:
+                      child:  Image.asset("Assets/welcome/Gymicon.png")
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 30,
@@ -71,21 +79,31 @@ class _Home_PageState extends State<Home_Page> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 2.1,
                     ),
-                    Container(
-                      child: Icon(
-                        Icons.notifications_none_rounded,
-                        size: 30,
-                        color: Colors.black,
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_Notification(),));
+                      },
+                      child: Container(
+                        child: Icon(
+                          Icons.notifications_none_rounded,
+                          size: 30,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 30,
                     ),
-                    Container(
-                      child: Icon(
-                        Icons.bookmark_border_rounded,
-                        size: 30,
-                        color: Colors.black,
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_(),));
+                      },
+                      child: Container(
+                        child: Icon(
+                          Icons.bookmark_border_rounded,
+                          size: 30,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                   ],
@@ -139,7 +157,7 @@ class _Home_PageState extends State<Home_Page> {
                     Container(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        "see all",
+                        "see All",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
@@ -153,110 +171,242 @@ class _Home_PageState extends State<Home_Page> {
                   ],
                 ),
               ),
-              Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(
-                      bottom: 20,
-                    ),
-                    height: MediaQuery.of(context).size.height / 3,
-                    width: MediaQuery.of(context).size.width / 1.7,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Container(
+                      height: 270,
+                      width: MediaQuery.of(context).size.width / 1.5,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage(
                             "Assets/home/fullbodystrech.jpg",
-                          )),
-                      borderRadius: BorderRadius.circular(
-                        30,
+                          ),
+                        ),
+                        borderRadius: BorderRadius.circular(
+                          30,
+                        ),
+                      ),
+                      child: Container(
+                        padding: EdgeInsets.only(top: 170,),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                            // stops: [0.35,1.0],
+                            colors: [
+                              Colors.black.withOpacity(0.8),
+                              Colors.white.withOpacity(0.0),
+                            ]
+                          ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(
+                                left: 20,
+                                bottom: 5,
+                              ),
+                              child: Text(
+                                "Full Body Streching",
+                                style: GoogleFonts.lexendDeca(
+                                  textStyle: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                            SizedBox(height: 5,),
+                            Container(
+                              padding: EdgeInsets.only(
+                                left: 10,
+                                right: 10,
+                              ),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Container(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      "10 minutes",
+                                      textAlign: TextAlign.center,
+                                      style: GoogleFonts.lexendDeca(
+                                        textStyle: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 20,
+                                    width: 2,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Container(
+                                    alignment: Alignment.centerRight,
+                                    child: Text(
+                                      "Intermediate",
+                                      textAlign: TextAlign.center,
+                                      style: GoogleFonts.lexendDeca(
+                                        textStyle: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 2,
+                                  ),
+                                  Container(
+                                    child: Icon(
+                                      Icons.bookmark_border_rounded,
+                                      size: 24,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(
-                            left: 20,
-                            bottom: 5,
+                    SizedBox(width: 20,),
+                    Container(
+                      height: 270,
+                      width: MediaQuery.of(context).size.width / 1.5,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(
+                            "Assets/home/body.jpg",
                           ),
-                          child: Text(
-                            "Full Body Streching",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.lexendDeca(
-                              textStyle: TextStyle(
-                                color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.circular(
+                          30,
+                        ),
+                      ),
+                      child: Container(
+                        padding: EdgeInsets.only(top: 170,),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                              // stops: [0.35,1.0],
+                              colors: [
+                                Colors.black.withOpacity(0.8),
+                                Colors.white.withOpacity(0.0),
+                              ]
+                          ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(
+                                left: 20,
+                                bottom: 5,
                               ),
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
+                              child: Text(
+                                "Body Streching",
+                                style: GoogleFonts.lexendDeca(
+                                  textStyle: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
                             ),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(
-                            left: 10,
-                          ),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Container(
-                                alignment: Alignment.centerLeft,
-                                child: Text(
-                                  "10 minutes",
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.lexendDeca(
-                                    textStyle: TextStyle(
+                            SizedBox(height: 5,),
+                            Container(
+                              padding: EdgeInsets.only(
+                                left: 10,
+                                right: 10,
+                              ),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Container(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      "8 minutes",
+                                      textAlign: TextAlign.center,
+                                      style: GoogleFonts.lexendDeca(
+                                        textStyle: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 20,
+                                    width: 2,
+                                    decoration: BoxDecoration(
                                       color: Colors.white,
                                     ),
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
                                   ),
-                                ),
-                              ),
-                              Container(
-                                height: 10,
-                                width: 2,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                ),
-                              ),
-                              Container(
-                                alignment: Alignment.centerRight,
-                                child: Text(
-                                  "Intermediate",
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.lexendDeca(
-                                    textStyle: TextStyle(
+                                  Container(
+                                    alignment: Alignment.centerRight,
+                                    child: Text(
+                                      "Intermediate",
+                                      textAlign: TextAlign.center,
+                                      style: GoogleFonts.lexendDeca(
+                                        textStyle: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 2,
+                                  ),
+                                  Container(
+                                    child: Icon(
+                                      Icons.bookmark_border_rounded,
+                                      size: 24,
                                       color: Colors.white,
                                     ),
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
                                   ),
-                                ),
+                                ],
                               ),
-                              SizedBox(
-                                width: 2,
-                              ),
-                              Container(
-                                child: Icon(
-                                  Icons.bookmark_border_rounded,
-                                  size: 20,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ), //Picture Row
               Container(
                 padding: EdgeInsets.only(
                   top: 20,
-                  bottom: 5,
+                  bottom: 10,
                 ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -276,17 +426,22 @@ class _Home_PageState extends State<Home_Page> {
                         ),
                       ),
                     ),
-                    Container(
-                      alignment: Alignment.centerRight,
-                      child: Text(
-                        "see all",
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.lexendDeca(
-                          textStyle: TextStyle(
-                            color: Colors.deepPurpleAccent,
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_SeeAll(),),);
+                      },
+                      child: Container(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          "see All",
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.lexendDeca(
+                            textStyle: TextStyle(
+                              color: Colors.deepPurpleAccent,
+                            ),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
                           ),
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
@@ -314,7 +469,8 @@ class _Home_PageState extends State<Home_Page> {
                                   },
                                   child: Container(
                                     margin: const EdgeInsets.all(5),
-                                    width: 115,
+                                    width:
+                                        MediaQuery.of(context).size.width / 3.6,
                                     height: 30,
                                     decoration: BoxDecoration(
                                       color: current == index
@@ -338,7 +494,7 @@ class _Home_PageState extends State<Home_Page> {
                                         catagory[index],
                                         style: GoogleFonts.lexendDeca(
                                           fontWeight: FontWeight.w500,
-                                          fontSize: 12,
+                                          fontSize: 14,
                                           color: current == index
                                               ? Colors.white
                                               : Colors.deepPurpleAccent,
@@ -363,199 +519,200 @@ class _Home_PageState extends State<Home_Page> {
                   ],
                 ),
               ),
-              current == 1?
-              Container(
-                padding: EdgeInsets.only(
-                  bottom: 15,
-                ),
-                height: MediaQuery.of(context).size.height / 5.5,
-                width: MediaQuery.of(context).size.width / 1,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(
-                        "Assets/home/squatmovement.jpg",
-                      )),
-                  borderRadius: BorderRadius.circular(
-                    20,
-                  ),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.only(
-                        left: 20,
-                        bottom: 5,
-                      ),
-                      child: Text(
-                        "Squat Movement Exercise",
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.lexendDeca(
-                          textStyle: TextStyle(
-                            color: Colors.white,
-                          ),
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(
-                        left: 0,
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              "12 minutes",
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.lexendDeca(
-                                textStyle: TextStyle(
-                                  color: Colors.white,
-                                ),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: 14,
-                            width: 3,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                            ),
-                          ),
-                          Container(
-                            alignment: Alignment.centerRight,
-                            child: Text(
-                              "Intermediate",
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.lexendDeca(
-                                textStyle: TextStyle(
-                                  color: Colors.white,
-                                ),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 60,
-                          ),
-                          Container(
-                            child: Icon(
-                              Icons.bookmark_border_rounded,
-                              size: 22,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ):
-              Container(
-                padding: EdgeInsets.only(
-                  bottom: 15,
-                ),
-                height: MediaQuery.of(context).size.height / 5.5,
-                width: MediaQuery.of(context).size.width / 1,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(
-                        "Assets/home/yogamovement.jpg",
-                      )),
-                  borderRadius: BorderRadius.circular(
-                    20,
-                  ),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.only(
-                        left: 20,
-                        bottom: 5,
-                      ),
-                      child: Text(
-                        "Squat Movement Exercise",
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.lexendDeca(
-                          textStyle: TextStyle(
-                            color: Colors.white,
-                          ),
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(
-                        left: 0,
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              "12 minutes",
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.lexendDeca(
-                                textStyle: TextStyle(
-                                  color: Colors.white,
-                                ),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: 14,
-                            width: 3,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                            ),
-                          ),
-                          Container(
-                            alignment: Alignment.centerRight,
-                            child: Text(
-                              "Intermediate",
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.lexendDeca(
-                                textStyle: TextStyle(
-                                  color: Colors.white,
-                                ),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 60,
-                          ),
-                          Container(
-                            child: Icon(
-                              Icons.bookmark_border_rounded,
-                              size: 22,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              page[current],
+              // current == 1?
+              // Container(
+              //   padding: EdgeInsets.only(
+              //     bottom: 15,
+              //   ),
+              //   height: MediaQuery.of(context).size.height / 5.5,
+              //   width: MediaQuery.of(context).size.width / 1,
+              //   decoration: BoxDecoration(
+              //     image: DecorationImage(
+              //         fit: BoxFit.cover,
+              //         image: AssetImage(
+              //           "Assets/home/squatmovement.jpg",
+              //         )),
+              //     borderRadius: BorderRadius.circular(
+              //       20,
+              //     ),
+              //   ),
+              //   child: Column(
+              //     mainAxisAlignment: MainAxisAlignment.end,
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       Container(
+              //         padding: EdgeInsets.only(
+              //           left: 20,
+              //           bottom: 5,
+              //         ),
+              //         child: Text(
+              //           "Squat Movement Exercise",
+              //           textAlign: TextAlign.center,
+              //           style: GoogleFonts.lexendDeca(
+              //             textStyle: TextStyle(
+              //               color: Colors.white,
+              //             ),
+              //             fontSize: 20,
+              //             fontWeight: FontWeight.w500,
+              //           ),
+              //         ),
+              //       ),
+              //       Container(
+              //         padding: EdgeInsets.only(
+              //           left: 0,
+              //         ),
+              //         child: Row(
+              //           crossAxisAlignment: CrossAxisAlignment.start,
+              //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //           children: [
+              //             Container(
+              //               alignment: Alignment.centerLeft,
+              //               child: Text(
+              //                 "12 minutes",
+              //                 textAlign: TextAlign.center,
+              //                 style: GoogleFonts.lexendDeca(
+              //                   textStyle: TextStyle(
+              //                     color: Colors.white,
+              //                   ),
+              //                   fontSize: 14,
+              //                   fontWeight: FontWeight.w500,
+              //                 ),
+              //               ),
+              //             ),
+              //             Container(
+              //               height: 14,
+              //               width: 3,
+              //               decoration: BoxDecoration(
+              //                 color: Colors.white,
+              //               ),
+              //             ),
+              //             Container(
+              //               alignment: Alignment.centerRight,
+              //               child: Text(
+              //                 "Intermediate",
+              //                 textAlign: TextAlign.center,
+              //                 style: GoogleFonts.lexendDeca(
+              //                   textStyle: TextStyle(
+              //                     color: Colors.white,
+              //                   ),
+              //                   fontSize: 14,
+              //                   fontWeight: FontWeight.w500,
+              //                 ),
+              //               ),
+              //             ),
+              //             SizedBox(
+              //               width: 60,
+              //             ),
+              //             Container(
+              //               child: Icon(
+              //                 Icons.bookmark_border_rounded,
+              //                 size: 22,
+              //                 color: Colors.white,
+              //               ),
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ):
+              // Container(
+              //   padding: EdgeInsets.only(
+              //     bottom: 15,
+              //   ),
+              //   height: MediaQuery.of(context).size.height / 5.5,
+              //   width: MediaQuery.of(context).size.width / 1,
+              //   decoration: BoxDecoration(
+              //     image: DecorationImage(
+              //         fit: BoxFit.cover,
+              //         image: AssetImage(
+              //           "Assets/home/yogamovement.jpg",
+              //         )),
+              //     borderRadius: BorderRadius.circular(
+              //       20,
+              //     ),
+              //   ),
+              //   child: Column(
+              //     mainAxisAlignment: MainAxisAlignment.end,
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       Container(
+              //         padding: EdgeInsets.only(
+              //           left: 20,
+              //           bottom: 5,
+              //         ),
+              //         child: Text(
+              //           "Squat Movement Exercise",
+              //           textAlign: TextAlign.center,
+              //           style: GoogleFonts.lexendDeca(
+              //             textStyle: TextStyle(
+              //               color: Colors.white,
+              //             ),
+              //             fontSize: 20,
+              //             fontWeight: FontWeight.w500,
+              //           ),
+              //         ),
+              //       ),
+              //       Container(
+              //         padding: EdgeInsets.only(
+              //           left: 0,
+              //         ),
+              //         child: Row(
+              //           crossAxisAlignment: CrossAxisAlignment.start,
+              //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //           children: [
+              //             Container(
+              //               alignment: Alignment.centerLeft,
+              //               child: Text(
+              //                 "12 minutes",
+              //                 textAlign: TextAlign.center,
+              //                 style: GoogleFonts.lexendDeca(
+              //                   textStyle: TextStyle(
+              //                     color: Colors.white,
+              //                   ),
+              //                   fontSize: 14,
+              //                   fontWeight: FontWeight.w500,
+              //                 ),
+              //               ),
+              //             ),
+              //             Container(
+              //               height: 14,
+              //               width: 3,
+              //               decoration: BoxDecoration(
+              //                 color: Colors.white,
+              //               ),
+              //             ),
+              //             Container(
+              //               alignment: Alignment.centerRight,
+              //               child: Text(
+              //                 "Intermediate",
+              //                 textAlign: TextAlign.center,
+              //                 style: GoogleFonts.lexendDeca(
+              //                   textStyle: TextStyle(
+              //                     color: Colors.white,
+              //                   ),
+              //                   fontSize: 14,
+              //                   fontWeight: FontWeight.w500,
+              //                 ),
+              //               ),
+              //             ),
+              //             SizedBox(
+              //               width: 60,
+              //             ),
+              //             Container(
+              //               child: Icon(
+              //                 Icons.bookmark_border_rounded,
+              //                 size: 22,
+              //                 color: Colors.white,
+              //               ),
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
             ],
           ),
         ),

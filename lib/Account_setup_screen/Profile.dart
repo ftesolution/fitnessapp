@@ -3,10 +3,11 @@ import 'dart:io';
 import 'package:fitnessapp/Account_setup_screen/physical_screen.dart';
 import 'package:fitnessapp/lets_in_screen/Lets_in.dart';
 import 'package:flutter/material.dart';
-import 'package:country_code_picker/country_code_picker.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:intl_phone_field/phone_number.dart';
 
 import '../Model/CustomButtons.dart';
 import '../Model/CustomTitle.dart';
@@ -21,12 +22,10 @@ class Profile_screen extends StatefulWidget {
 class _Profile_screenState extends State<Profile_screen> {
   File? _image;
 
+  String? _name, _Nickname, _email;
+  PhoneNumber? _phone;
 
-  TextEditingController name = TextEditingController();
-  TextEditingController nickname = TextEditingController();
-  TextEditingController email = TextEditingController();
-  TextEditingController phone = TextEditingController();
-
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   Future getimage(ImageSource source) async {
     final image = await ImagePicker.platform.getImage(source: source);
     if (image == null) return;
@@ -87,7 +86,7 @@ class _Profile_screenState extends State<Profile_screen> {
                         "Don't worry, you can always change it later. or you can skip it for now"),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 15,
+                height: MediaQuery.of(context).size.height / 10,
               ),
               PopupMenuButton(
                 position: PopupMenuPosition.under,
@@ -150,8 +149,8 @@ class _Profile_screenState extends State<Profile_screen> {
                     Column(
                       children: [
                         Container(
-                          height: MediaQuery.of(context).size.height / 8.5,
-                          width: MediaQuery.of(context).size.height / 8.5,
+                          height: 100,
+                          width: 100,
                           decoration: BoxDecoration(
                             color: Colors.black12,
                             shape: BoxShape.circle,
@@ -179,7 +178,7 @@ class _Profile_screenState extends State<Profile_screen> {
                       ],
                     ),
                     Positioned(
-                      top: 18,
+                      top: 35,
                       child: Container(
                         alignment: Alignment.center,
                         margin: EdgeInsets.only(top: 40),
@@ -199,123 +198,359 @@ class _Profile_screenState extends State<Profile_screen> {
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 50,
+                height: 50,
               ),
-              Container(
-                decoration: BoxDecoration(),
-                margin: EdgeInsets.only(
-                  right: 20,
-                  left: 20,
-                  top: 15,
-                ),
-                child: TextFormField(
-                  // validator: (String? val) => val.isEmpty || !val.contains("@")
-                  //     ? "enter a valid eamil"
-                  //     : null,
-                  validator: (String? value) {
-                     if(value == null || !value.contains('@') || !value.contains("."))
-                     {
-                       return "Enter a valid email";
-                     }
-                     else
-                       {
-                         return null;
-                       }
-                  },
-                  style: GoogleFonts.lexendDeca(
-                    textStyle: TextStyle(
-                      color: Colors.black,
-                    ),
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
-                  controller: email,
-                  decoration: InputDecoration(
-                    suffixIcon: Icon(
-                      Icons.email,
-                      color: Colors.black.withOpacity(0.4),
-                    ),
-                    contentPadding: EdgeInsets.only(
-                        left: 30, right: 50, top: 15, bottom: 15),
-                    isDense: true,
-                    fillColor: Colors.black12.withOpacity(0.05),
-                    filled: true,
-                    hintText: "Email",
-                    hintStyle: GoogleFonts.lexendDeca(
-                      textStyle: TextStyle(
-                        color: Colors.black.withOpacity(0.4),
+              Form(
+                key: _formkey,
+                child: Column(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(),
+                      margin: EdgeInsets.only(
+                        right: 20,
+                        left: 20,
+                        top: 5,
                       ),
-                      fontSize: 17,
-                      fontWeight: FontWeight.w300,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                      ),
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
-                        color: Colors.white,
-                      ),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 180,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CustomButton2(
-                      gradient: LinearGradient(colors: [
-                        Color(0xfff0ecff),
-                        Color(0xfff0ecff),
-                      ]),
-                      title: "Skip",
-                      txtcolor: Color(0xff6c47ff),
-                      onTap: () {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Lets_In(),
-                            ));
-                      }),
-
-                  CustomButton2(
-                    gradient: LinearGradient(colors: [
-                      Color(0xff8567ff),
-                      Color(0xff6c47ff),
-                    ]),
-                    title: "Start",
-                    txtcolor: Colors.white,
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Lets_In(),
+                      child: TextFormField(
+                        style: GoogleFonts.lexendDeca(
+                          textStyle: TextStyle(
+                            color: Colors.black,
+                          ),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
                         ),
-                      );
-                    },
-                  ),
-                ],
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        onSaved: (String? name) {
+                          _name = name;
+                        },
+                        validator: (String? value) {
+                          if (value!.isEmpty) {
+                            return "please Enter the name";
+                          }
+                        },
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.only(
+                              left: 30, right: 50, top: 15, bottom: 15),
+                          isDense: true,
+                          fillColor: Colors.black12.withOpacity(0.05),
+                          filled: true,
+                          hintText: "Full Name",
+                          hintStyle: GoogleFonts.lexendDeca(
+                            textStyle: TextStyle(
+                              color: Colors.black.withOpacity(0.4),
+                            ),
+                            fontSize: 17,
+                            fontWeight: FontWeight.w300,
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                            ),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                            ),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.red,
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(),
+                      margin: EdgeInsets.only(
+                        right: 20,
+                        left: 20,
+                        top: 5,
+                      ),
+                      child: TextFormField(
+                        style: GoogleFonts.lexendDeca(
+                          textStyle: TextStyle(
+                            color: Colors.black,
+                          ),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        onSaved: (String? nickname) {
+                          _Nickname = nickname;
+                        },
+                        validator: (String? value) {
+                          if (value!.isEmpty) {
+                            return "please Enter the Nickname";
+                          }
+                        },
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.only(
+                              left: 30, right: 50, top: 15, bottom: 15),
+                          isDense: true,
+                          fillColor: Colors.black12.withOpacity(0.05),
+                          filled: true,
+                          hintText: "Nickname",
+                          hintStyle: GoogleFonts.lexendDeca(
+                            textStyle: TextStyle(
+                              color: Colors.black.withOpacity(0.4),
+                            ),
+                            fontSize: 17,
+                            fontWeight: FontWeight.w300,
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                            ),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                            ),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.red,
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(),
+                      margin: EdgeInsets.only(
+                        right: 20,
+                        left: 20,
+                      ),
+                      child: TextFormField(
+                        onSaved: (String? email) {
+                          _email = email;
+                        },
+                        validator: (String? value) {
+                          if (value!.isEmpty) {
+                            return "Enter the email";
+                          }
+                          if( !RegExp(r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$').hasMatch(value))
+                          {
+                            return "Enter the valid Email";
+                          }
+                          else
+                            {
+                              return null;
+                            }
+                        },
+                        style: GoogleFonts.lexendDeca(
+                          textStyle: TextStyle(
+                            color: Colors.black,
+                          ),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        decoration: InputDecoration(
+                          suffixIcon: Icon(
+                            Icons.email,
+                            color: Colors.black.withOpacity(0.4),
+                          ),
+                          contentPadding: EdgeInsets.only(
+                              left: 30, right: 50, top: 15, bottom: 15),
+                          isDense: true,
+                          fillColor: Colors.black12.withOpacity(0.05),
+                          filled: true,
+                          hintText: "Email",
+                          hintStyle: GoogleFonts.lexendDeca(
+                            textStyle: TextStyle(
+                              color: Colors.black.withOpacity(0.4),
+                            ),
+                            fontSize: 17,
+                            fontWeight: FontWeight.w300,
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                            ),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                            ),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.red,
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(),
+                      margin: EdgeInsets.only(
+                        right: 20,
+                        left: 20,
+                        top: 5,
+                      ),
+                      child: IntlPhoneField(
+
+                        initialCountryCode: 'IN',
+                        invalidNumberMessage: "please enter phone number",
+
+                        onSaved: (phone){
+                          _phone = phone;
+                        },
+                        validator: (value) {
+                          if (value == 0) {
+                            return "please Enter the Phone number";
+                          }
+                        },
+                        style: GoogleFonts.lexendDeca(
+                          textStyle: TextStyle(
+                            color: Colors.black,
+                          ),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.only(
+                              left: 30, right: 50, top: 15, bottom: 15),
+                          isDense: true,
+                          fillColor: Colors.black12.withOpacity(0.05),
+                          filled: true,
+                          hintText: "Phone Number",
+                          hintStyle: GoogleFonts.lexendDeca(
+                            textStyle: TextStyle(
+                              color: Colors.black.withOpacity(0.4),
+                            ),
+                            fontSize: 17,
+                            fontWeight: FontWeight.w300,
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                            ),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                            ),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              color: Colors.red,
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(
+          top: 10,
+          left: 10,
+          right: 10,
+          bottom: 10,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            CustomButton2(
+                gradient: LinearGradient(colors: [
+                  Color(0xfff0ecff),
+                  Color(0xfff0ecff),
+                ]),
+                title: "Skip",
+                txtcolor: Color(0xff6c47ff),
+                onTap: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Lets_In(),
+                      ));
+                }),
+            CustomButton2(
+              gradient: LinearGradient(colors: [
+                Color(0xff8567ff),
+                Color(0xff6c47ff),
+              ]),
+              title: "Start",
+              txtcolor: Colors.white,
+              onTap: () {
+                if(_formkey.currentState!.validate())
+                  {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Lets_In(),
+                      ),
+                    );
+                  }
+                else
+                  {
+                    print("unsuccessful");
+                  }
+              },
+            ),
+          ],
         ),
       ),
     );

@@ -41,7 +41,7 @@ class _welcome_screenState extends State<welcome_screen> {
               child: Opacity(
                   opacity: 0.7,
                   child: Image.asset(
-                    "images/fitness2.jpg",
+                    "Assets/welcome/welcome.jpg",
                     fit: BoxFit.cover,
                   )),
             ),

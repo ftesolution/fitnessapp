@@ -47,7 +47,7 @@ class _Height_ScreenState extends State<Height_Screen> {
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height / 11,
+              height: MediaQuery.of(context).size.height / 8,
             ),
             NumberPicker(
               haptics: true,
@@ -82,44 +82,79 @@ class _Height_ScreenState extends State<Height_Screen> {
               value: _current_valueH,
               onChanged: (value) => setState(() => _current_valueH = value),
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 12,
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //   children: [
+            //     CustomButton2(
+            //       gradient: LinearGradient(colors: [
+            //         Color(0xfff0ecff),
+            //         Color(0xfff0ecff),
+            //       ]),
+            //       title: "Back",
+            //       txtcolor: Color(0xff6c47ff),
+            //       onTap: () {
+            //         Navigator.pushReplacement(
+            //           context,
+            //           MaterialPageRoute(
+            //             builder: (context) => weight_screen(),
+            //           ),
+            //         );
+            //       },
+            //     ),
+            //     CustomButton2(
+            //         gradient: LinearGradient(colors: [
+            //           Color(0xff8567ff),
+            //           Color(0xff6c47ff),
+            //         ]),
+            //         title: "Continue",
+            //         txtcolor: Colors.white,
+            //         onTap: () {
+            //           Navigator.pushReplacement(
+            //               context,
+            //               MaterialPageRoute(
+            //                 builder: (context) => Goal_Screen(),
+            //               ));
+            //         }),
+            //   ],
+            // ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(top: 10,left: 10,right: 10,bottom: 10,),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            CustomButton2(
+              gradient: LinearGradient(colors: [
+                Color(0xfff0ecff),
+                Color(0xfff0ecff),
+              ]),
+              title: "Back",
+              txtcolor: Color(0xff6c47ff),
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => weight_screen(),
+                  ),
+                );
+              },
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                CustomButton2(
-                  gradient: LinearGradient(colors: [
-                    Color(0xfff0ecff),
-                    Color(0xfff0ecff),
-                  ]),
-                  title: "Back",
-                  txtcolor: Color(0xff6c47ff),
-                  onTap: () {
-                    Navigator.pushReplacement(
+            CustomButton2(
+                gradient: LinearGradient(colors: [
+                  Color(0xff8567ff),
+                  Color(0xff6c47ff),
+                ]),
+                title: "Continue",
+                txtcolor: Colors.white,
+                onTap: () {
+                  Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => weight_screen(),
-                      ),
-                    );
-                  },
-                ),
-                CustomButton2(
-                    gradient: LinearGradient(colors: [
-                      Color(0xff8567ff),
-                      Color(0xff6c47ff),
-                    ]),
-                    title: "Continue",
-                    txtcolor: Colors.white,
-                    onTap: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Goal_Screen(),
-                          ));
-                    }),
-              ],
-            ),
+                        builder: (context) => Goal_Screen(),
+                      ));
+                }),
           ],
         ),
       ),

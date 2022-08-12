@@ -23,30 +23,34 @@ class Tab_Page extends StatelessWidget {
           ],
         ),
         extendBody: true,
-        bottomNavigationBar: TabBar(
-          labelColor: Colors.deepPurpleAccent,
-          unselectedLabelColor: Colors.black.withOpacity(0.4),
-          indicatorColor: Colors.white,
-          labelStyle:  GoogleFonts.lexendDeca(
-            textStyle: TextStyle(
-              color: Colors.deepPurpleAccent,
+        bottomNavigationBar: Container(
+          color: Colors.white,
+          child: TabBar(
+
+            labelColor: Colors.deepPurpleAccent,
+            unselectedLabelColor: Colors.black.withOpacity(0.4),
+            indicatorColor: Colors.white,
+            labelStyle:  GoogleFonts.lexendDeca(
+              textStyle: TextStyle(
+                color: Colors.deepPurpleAccent,
+              ),
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
             ),
-            fontSize: 15,
-            fontWeight: FontWeight.w400,
-          ),
-          unselectedLabelStyle:  GoogleFonts.lexendDeca(
-            textStyle: TextStyle(
-              color: Colors.black.withOpacity(0.7),
+            unselectedLabelStyle:  GoogleFonts.lexendDeca(
+              textStyle: TextStyle(
+                color: Colors.black.withOpacity(0.7),
+              ),
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
             ),
-            fontSize: 15,
-            fontWeight: FontWeight.w400,
+            tabs: [
+              Tab(text: 'Home', icon: Icon(Icons.home),),
+              Tab(text: 'Discover', icon: Icon(Icons.auto_graph),),
+              Tab(text: 'Insight', icon: Icon(Icons.insights),),
+              Tab(text: 'Profile', icon: Icon(Icons.person_outline_rounded),),
+            ],
           ),
-          tabs: [
-            Tab(text: 'Home', icon: Icon(Icons.home),),
-            Tab(text: 'Discover', icon: Icon(Icons.auto_graph),),
-            Tab(text: 'Insight', icon: Icon(Icons.insights),),
-            Tab(text: 'Profile', icon: Icon(Icons.person_outline_rounded),),
-          ],
         ),
       ),
     );

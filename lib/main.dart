@@ -1,5 +1,6 @@
 import 'package:fitnessapp/Account_setup_screen/Height.dart';
 import 'package:fitnessapp/Account_setup_screen/age.dart';
+import 'package:fitnessapp/Tabs_Pages/WorkoutDetail/Rest_Page.dart';
 import 'package:fitnessapp/intro_screens/onboarding_screen.dart';
 import 'package:fitnessapp/Account_setup_screen/weight.dart';
 import 'package:fitnessapp/welcome_screens/splashscreen.dart';

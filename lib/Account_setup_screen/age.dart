@@ -83,43 +83,79 @@ class _age_ScreenState extends State<age_Screen> {
               value: _current_valueA,
               onChanged: (value) => setState(() => _current_valueA = value),
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.width / 8.8,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                CustomButton2(
-                    gradient: LinearGradient(colors: [
-                      Color(0xfff0ecff),
-                      Color(0xfff0ecff),
-                    ]),
-                    title: "Back",
-                    txtcolor: Color(0xff6c47ff),
-                    onTap: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => gender_screen(),
-                          ));
-                    }),
-                CustomButton2(
-                  gradient: LinearGradient(colors: [
-                    Color(0xff8567ff),
-                    Color(0xff6c47ff),
-                  ]),
-                  title: "Continue",
-                  txtcolor: Colors.white,
-                  onTap: () {
-                    Navigator.pushReplacement(
+
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //   children: [
+            //     CustomButton2(
+            //         gradient: LinearGradient(colors: [
+            //           Color(0xfff0ecff),
+            //           Color(0xfff0ecff),
+            //         ]),
+            //         title: "Back",
+            //         txtcolor: Color(0xff6c47ff),
+            //         onTap: () {
+            //           Navigator.pushReplacement(
+            //               context,
+            //               MaterialPageRoute(
+            //                 builder: (context) => gender_screen(),
+            //               ));
+            //         }),
+            //     CustomButton2(
+            //       gradient: LinearGradient(colors: [
+            //         Color(0xff8567ff),
+            //         Color(0xff6c47ff),
+            //       ]),
+            //       title: "Continue",
+            //       txtcolor: Colors.white,
+            //       onTap: () {
+            //         Navigator.pushReplacement(
+            //           context,
+            //           MaterialPageRoute(
+            //             builder: (context) => weight_screen(),
+            //           ),
+            //         );
+            //       },
+            //     ),
+            //   ],
+            // ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(top: 10,left: 10,right: 10,bottom: 10,),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            CustomButton2(
+                gradient: LinearGradient(colors: [
+                  Color(0xfff0ecff),
+                  Color(0xfff0ecff),
+                ]),
+                title: "Back",
+                txtcolor: Color(0xff6c47ff),
+                onTap: () {
+                  Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => weight_screen(),
-                      ),
-                    );
-                  },
-                ),
-              ],
+                        builder: (context) => gender_screen(),
+                      ));
+                }),
+            CustomButton2(
+              gradient: LinearGradient(colors: [
+                Color(0xff8567ff),
+                Color(0xff6c47ff),
+              ]),
+              title: "Continue",
+              txtcolor: Colors.white,
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => weight_screen(),
+                  ),
+                );
+              },
             ),
           ],
         ),

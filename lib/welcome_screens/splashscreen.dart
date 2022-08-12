@@ -50,7 +50,16 @@ class _splashscreenState extends State<splashscreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(Icons.integration_instructions_rounded,size: 150,color: Colors.white,),
+              Container(
+                width: 120,
+                height: 60,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage("Assets/welcome/Gymicon.png"),
+                  )
+                ),
+              ),
               SizedBox(height: MediaQuery.of(context).size.height / 3.8,),
               SpinKitCircle(color: Colors.white,duration: Duration(seconds: 2,)),
             ],

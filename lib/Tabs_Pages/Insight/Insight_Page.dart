@@ -57,7 +57,6 @@ class _Insight_PageState extends State<Insight_Page> {
                         textAlign: TextAlign.start,
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
@@ -79,7 +78,6 @@ class _Insight_PageState extends State<Insight_Page> {
                       child: Icon(
                         Icons.more_horiz,
                         size: 20,
-                        color: Colors.black,
                       ),
                     ),
                   ],
@@ -130,7 +128,6 @@ class _Insight_PageState extends State<Insight_Page> {
                         "950",
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 35,
                           fontWeight: FontWeight.w600,
@@ -175,7 +172,6 @@ class _Insight_PageState extends State<Insight_Page> {
                             "64",
                             style: GoogleFonts.lexendDeca(
                               textStyle: TextStyle(
-                                color: Colors.black,
                               ),
                               fontSize: 28,
                               fontWeight: FontWeight.w600,
@@ -216,7 +212,6 @@ class _Insight_PageState extends State<Insight_Page> {
                             "50",
                             style: GoogleFonts.lexendDeca(
                               textStyle: TextStyle(
-                                color: Colors.black,
                               ),
                               fontSize: 28,
                               fontWeight: FontWeight.w600,
@@ -257,7 +252,6 @@ class _Insight_PageState extends State<Insight_Page> {
                             "72",
                             style: GoogleFonts.lexendDeca(
                               textStyle: TextStyle(
-                                color: Colors.black,
                               ),
                               fontSize: 28,
                               fontWeight: FontWeight.w600,
@@ -294,7 +288,6 @@ class _Insight_PageState extends State<Insight_Page> {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 18,
                           fontWeight: FontWeight.w500,

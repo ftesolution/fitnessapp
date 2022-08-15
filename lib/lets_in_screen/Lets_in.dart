@@ -44,7 +44,6 @@ class _Lets_InState extends State<Lets_In> {
                 },
                 child: Icon(
                   Icons.arrow_back_rounded,
-                  color: Colors.black,
                   size: 30,
                 ),
               ),
@@ -58,9 +57,7 @@ class _Lets_InState extends State<Lets_In> {
                 "Let's you in",
                 textAlign: TextAlign.start,
                 style: GoogleFonts.lexendDeca(
-                  textStyle: TextStyle(
-                    color: Colors.black,
-                  ),
+                  textStyle: TextStyle(),
                   fontSize: 42,
                   fontWeight: FontWeight.w600,
                 ),
@@ -73,12 +70,12 @@ class _Lets_InState extends State<Lets_In> {
               height: MediaQuery.of(context).size.height / 15,
               width: MediaQuery.of(context).size.width / 1.1,
               decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).listTileTheme.tileColor,
                   borderRadius: BorderRadius.circular(
                     15,
                   ),
                   border: Border.all(
-                    color: Colors.black12,
+                    color: Theme.of(context).scaffoldBackgroundColor,
                   )),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -99,9 +96,7 @@ class _Lets_InState extends State<Lets_In> {
                     "Continue with Facebook",
                     textAlign: TextAlign.start,
                     style: GoogleFonts.lexendDeca(
-                      textStyle: TextStyle(
-                        color: Colors.black,
-                      ),
+                      textStyle: TextStyle(),
                       fontSize: 17,
                       fontWeight: FontWeight.w500,
                     ),
@@ -116,12 +111,12 @@ class _Lets_InState extends State<Lets_In> {
               height: MediaQuery.of(context).size.height / 15,
               width: MediaQuery.of(context).size.width / 1.1,
               decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).listTileTheme.tileColor,
                   borderRadius: BorderRadius.circular(
                     15,
                   ),
                   border: Border.all(
-                    color: Colors.black12,
+                    color: Theme.of(context).scaffoldBackgroundColor,
                   )),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -142,9 +137,7 @@ class _Lets_InState extends State<Lets_In> {
                     "Continue with Google",
                     textAlign: TextAlign.start,
                     style: GoogleFonts.lexendDeca(
-                      textStyle: TextStyle(
-                        color: Colors.black,
-                      ),
+                      textStyle: TextStyle(),
                       fontSize: 17,
                       fontWeight: FontWeight.w500,
                     ),
@@ -159,12 +152,12 @@ class _Lets_InState extends State<Lets_In> {
               height: MediaQuery.of(context).size.height / 15,
               width: MediaQuery.of(context).size.width / 1.1,
               decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).listTileTheme.tileColor,
                   borderRadius: BorderRadius.circular(
                     15,
                   ),
                   border: Border.all(
-                    color: Colors.black12,
+                    color: Theme.of(context).scaffoldBackgroundColor,
                   )),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -185,9 +178,7 @@ class _Lets_InState extends State<Lets_In> {
                     "Continue with Apple",
                     textAlign: TextAlign.start,
                     style: GoogleFonts.lexendDeca(
-                      textStyle: TextStyle(
-                        color: Colors.black,
-                      ),
+                      textStyle: TextStyle(),
                       fontSize: 17,
                       fontWeight: FontWeight.w500,
                     ),
@@ -206,31 +197,27 @@ class _Lets_InState extends State<Lets_In> {
                 children: [
                   Container(
                     height: 1,
-                    width: MediaQuery.of(context).size.width/3,
+                    width: MediaQuery.of(context).size.width / 3,
                     decoration: BoxDecoration(
-                      color: Colors.black12,
+                      color: Colors.white24,
                     ),
                   ),
                   Text(
                     "or",
                     textAlign: TextAlign.start,
                     style: GoogleFonts.lexendDeca(
-                      textStyle: TextStyle(
-                        color: Colors.black,
-                      ),
+                      textStyle: TextStyle(),
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   Container(
                     height: 1,
-                    width: MediaQuery.of(context).size.width/3,
+                    width: MediaQuery.of(context).size.width / 3,
                     decoration: BoxDecoration(
-                      color: Colors.black12,
+                      color: Colors.white24,
                     ),
                   ),
-
-
                 ],
               ),
             ),
@@ -238,22 +225,22 @@ class _Lets_InState extends State<Lets_In> {
               height: MediaQuery.of(context).size.height / 15,
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => Sign_In()),);
+                  MaterialPageRoute(builder: (context) => Sign_In()),
+                );
               },
               child: Container(
                 alignment: Alignment.center,
                 height: MediaQuery.of(context).size.height / 17,
                 width: MediaQuery.of(context).size.width / 1.2,
                 decoration: BoxDecoration(
-                    color: Colors.deepPurpleAccent,
-                    borderRadius: BorderRadius.circular(
-                      35,
-                    ),
-                   ),
+                  color: Colors.deepPurpleAccent,
+                  borderRadius: BorderRadius.circular(
+                    35,
+                  ),
+                ),
                 child: Text(
                   "Sign in with Password",
                   textAlign: TextAlign.start,
@@ -280,9 +267,7 @@ class _Lets_InState extends State<Lets_In> {
                     "Don't have an account?",
                     textAlign: TextAlign.start,
                     style: GoogleFonts.lexendDeca(
-                      textStyle: TextStyle(
-                        color: Colors.black.withOpacity(0.4),
-                      ),
+                      textStyle: TextStyle(),
                       fontSize: 17,
                       fontWeight: FontWeight.w500,
                     ),
@@ -291,11 +276,11 @@ class _Lets_InState extends State<Lets_In> {
                     width: MediaQuery.of(context).size.width / 60,
                   ),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                          builder: (context) => Sign_Up()),);
+                        context,
+                        MaterialPageRoute(builder: (context) => Sign_Up()),
+                      );
                     },
                     child: Text(
                       "Sign up",
@@ -309,7 +294,6 @@ class _Lets_InState extends State<Lets_In> {
                       ),
                     ),
                   ),
-
                 ],
               ),
             ),

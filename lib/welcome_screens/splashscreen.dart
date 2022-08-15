@@ -18,13 +18,14 @@ class _splashscreenState extends State<splashscreen> {
     // TODO: implement initState
     super.initState();
     Timer(
-      Duration(seconds: 2),
+      Duration(seconds: 4),
       (() {
         Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => welcome_screen(),
-            ),);
+          context,
+          MaterialPageRoute(
+            builder: (context) => welcome_screen(),
+          ),
+        );
       }),
     );
   }
@@ -33,9 +34,11 @@ class _splashscreenState extends State<splashscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height,
           alignment: Alignment.center,
-          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 2.5,),
+          padding: EdgeInsets.only(
+            top: MediaQuery.of(context).size.height / 2.5,
+          ),
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.center,
@@ -54,17 +57,21 @@ class _splashscreenState extends State<splashscreen> {
                 width: 120,
                 height: 60,
                 decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage("Assets/welcome/Gymicon.png"),
-                  )
-                ),
+                    image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage("Assets/welcome/Gymicon.png"),
+                )),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height / 3.8,),
-              SpinKitCircle(color: Colors.white,duration: Duration(seconds: 2,)),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 3.8,
+              ),
+              SpinKitCircle(
+                  color: Colors.white,
+                  duration: Duration(
+                    seconds: 2,
+                  )),
             ],
-          )
-        ),
+          )),
     );
   }
 }

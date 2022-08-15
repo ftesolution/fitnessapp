@@ -6,7 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../forgot _reset_password/select _contact _detail.dart';
 
-
 class Sign_In extends StatefulWidget {
   const Sign_In({Key? key}) : super(key: key);
 
@@ -15,7 +14,6 @@ class Sign_In extends StatefulWidget {
 }
 
 class _Sign_InState extends State<Sign_In> {
-
   bool signIncheckBox = false;
   bool obsText = true;
   String? signinemail;
@@ -25,6 +23,7 @@ class _Sign_InState extends State<Sign_In> {
     FocusNode(),
   ];
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+
   @override
   void initState() {
     _focusNodes.forEach((node) {
@@ -34,6 +33,7 @@ class _Sign_InState extends State<Sign_In> {
     });
     super.initState();
   }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -63,7 +63,6 @@ class _Sign_InState extends State<Sign_In> {
                   },
                   child: Icon(
                     Icons.arrow_back_rounded,
-                    color: Colors.black,
                     size: 30,
                   ),
                 ),
@@ -78,7 +77,6 @@ class _Sign_InState extends State<Sign_In> {
                   textAlign: TextAlign.start,
                   style: GoogleFonts.lexendDeca(
                     textStyle: TextStyle(
-                      color: Colors.black,
                     ),
                     fontSize: 42,
                     fontWeight: FontWeight.w600,
@@ -90,207 +88,203 @@ class _Sign_InState extends State<Sign_In> {
               ),
               Form(
                 key: _formkey,
-                  child:Container(
-                    child: Column(
-                      children: [
-                        TextFormField(
-                          onSaved: (String? email) {
-                            signinemail = email;
-                          },
-                          validator: (String? value) {
-                            if (value!.isEmpty) {
-                              return "Enter the email";
-                            }
-                            if( !RegExp(r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$').hasMatch(value))
-                            {
-                              return "Enter the valid Email";
-                            }
-                            else
-                            {
-                              return null;
-                            }
-                          },
-                          cursorColor: Colors.black,
-                          cursorHeight: 20,
-                          focusNode: _focusNodes[0],
-                          style: GoogleFonts.lexendDeca(
-                            textStyle: TextStyle(
-                              color: Colors.black,
-                            ),
-                            fontSize: 17,
-                            fontWeight: FontWeight.w500,
+                child: Container(
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        onSaved: (String? email) {
+                          signinemail = email;
+                        },
+                        validator: (String? value) {
+                          if (value!.isEmpty) {
+                            return "Enter the email";
+                          }
+                          if (!RegExp(
+                                  r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+                              .hasMatch(value)) {
+                            return "Enter the valid Email";
+                          } else {
+                            return null;
+                          }
+                        },
+                        cursorHeight: 20,
+                        focusNode: _focusNodes[0],
+                        style: GoogleFonts.lexendDeca(
+                          textStyle: TextStyle(
                           ),
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height / 40,
-                              bottom: MediaQuery.of(context).size.height / 40,
-                              left: MediaQuery.of(context).size.width / 10,
-                              right: MediaQuery.of(context).size.width / 10,
-                            ),
-                            prefixIcon: Icon(Icons.email_rounded,
-                                size: 20,
-                                color: _focusNodes[0].hasFocus
-                                    ? Colors.deepPurpleAccent
-                                    : Colors.grey),
-                            hintText: "Email",
-                            hintStyle: GoogleFonts.lexendDeca(
-                              textStyle: TextStyle(
-                                color: Colors.black.withOpacity(0.4),
-                              ),
-                              fontSize: 17,
-                              fontWeight: FontWeight.w300,
-                            ),
-                            isDense: true,
-                            isCollapsed: true,
-                            filled: true,
-                            fillColor: _focusNodes[0].hasFocus
-                                ? Colors.deepPurpleAccent.withOpacity(0.1)
-                                : Colors.black.withOpacity(0.05),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: BorderSide(
-                                color: Colors.white,
-                              ),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: BorderSide(
-                                color: Colors.deepPurpleAccent,
-                                width: 2,
-                              ),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: BorderSide(
-                                color: Colors.red,
-                                width: 2,
-                              ),
-                            ),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: BorderSide(
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
                         ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height / 30,
-                        ),
-                        TextFormField(
-                          controller: signInPassword,
-                          validator: (String? value) {
-                            if (value!.isEmpty) {
-                              return "Enter the Password";
-                            }
-                            if(value.length<8)
-                            {
-                              return "atleast 8 digit)";
-                            }
-                            if(!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$').hasMatch(value))
-                            {
-                              return "Enter valid Password\ncontain(1 upercase,1 lowercase, 1 special,1 numeric";
-                            }
-                          },
-                          obscureText: obsText,
-                          cursorColor: Colors.black,
-                          cursorHeight: 20,
-                          focusNode: _focusNodes[1],
-                          style: GoogleFonts.lexendDeca(
-                            textStyle: TextStyle(
-                              color: Colors.black,
-                            ),
-                            fontSize: 17,
-                            fontWeight: FontWeight.w500,
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height / 40,
+                            bottom: MediaQuery.of(context).size.height / 40,
+                            left: MediaQuery.of(context).size.width / 10,
+                            right: MediaQuery.of(context).size.width / 10,
                           ),
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height / 40,
-                              bottom: MediaQuery.of(context).size.height / 40,
-                              left: MediaQuery.of(context).size.width / 10,
-                              right: MediaQuery.of(context).size.width / 10,
-                            ),
-                            prefixIcon: Icon(
-                              Icons.lock_rounded,
+                          prefixIcon: Icon(Icons.email_rounded,
                               size: 20,
-                              color: _focusNodes[1].hasFocus
+                              color: _focusNodes[0].hasFocus
                                   ? Colors.deepPurpleAccent
-                                  : Colors.grey,
+                                  : Colors.grey,),
+                          hintText: "Email",
+                          hintStyle: GoogleFonts.lexendDeca(
+                            textStyle: TextStyle(
+                              color: Colors.black.withOpacity(0.4),
                             ),
-                            suffixIcon: IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  obsText = !obsText;
-                                });
-                              },
-                              icon: obsText
-                                  ? Icon(
-                                Icons.visibility_off_sharp,
-                                color: _focusNodes[1].hasFocus
-                                    ? Colors.deepPurpleAccent
-                                    : Colors.grey,
-                                size: 20,
-                              )
-                                  : Icon(
-                                Icons.visibility,
-                                color: _focusNodes[1].hasFocus
-                                    ? Colors.deepPurpleAccent
-                                    : Colors.grey,
-                                size: 20,
-                              ),
+                            fontSize: 17,
+                            fontWeight: FontWeight.w300,
+                          ),
+                          isDense: true,
+                          isCollapsed: true,
+                          filled: true,
+                          fillColor: _focusNodes[0].hasFocus
+                              ? Colors.deepPurpleAccent.withOpacity(0.1)
+                              : Theme.of(context).listTileTheme.tileColor,
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            borderSide: BorderSide(
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
-                            hintText: "password",
-                            hintStyle: GoogleFonts.lexendDeca(
-                              textStyle: TextStyle(
-                                color: Colors.black.withOpacity(0.4),
-                              ),
-                              fontSize: 17,
-                              fontWeight: FontWeight.w300,
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            borderSide: BorderSide(
+                              color: Colors.deepPurpleAccent,
+                              width: 2,
                             ),
-                            isDense: true,
-                            isCollapsed: true,
-                            filled: true,
-                            fillColor: _focusNodes[1].hasFocus
-                                ? Colors.deepPurpleAccent.withOpacity(0.1)
-                                : Colors.black.withOpacity(0.05),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: BorderSide(
-                                color: Colors.white,
-                              ),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            borderSide: BorderSide(
+                              color: Colors.red,
+                              width: 2,
                             ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: BorderSide(
-                                color: Colors.deepPurpleAccent,
-                                width: 2,
-                              ),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: BorderSide(
-                                color: Colors.red,
-                                width: 2,
-                              ),
-                            ),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: BorderSide(
-                                color: Colors.white,
-                              ),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            borderSide: BorderSide(
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                         ),
-                      ],
-                    ),
-                  ),),
-
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height / 30,
+                      ),
+                      TextFormField(
+                        controller: signInPassword,
+                        validator: (String? value) {
+                          if (value!.isEmpty) {
+                            return "Enter the Password";
+                          }
+                          if (value.length < 8) {
+                            return "atleast 8 digit)";
+                          }
+                          if (!RegExp(
+                                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
+                              .hasMatch(value)) {
+                            return "Enter valid Password\ncontain(1 upercase,1 lowercase, 1 special,1 numeric";
+                          }
+                        },
+                        obscureText: obsText,
+                        cursorHeight: 20,
+                        focusNode: _focusNodes[1],
+                        style: GoogleFonts.lexendDeca(
+                          textStyle: TextStyle(
+                          ),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height / 40,
+                            bottom: MediaQuery.of(context).size.height / 40,
+                            left: MediaQuery.of(context).size.width / 10,
+                            right: MediaQuery.of(context).size.width / 10,
+                          ),
+                          prefixIcon: Icon(
+                            Icons.lock_rounded,
+                            size: 20,
+                            color: _focusNodes[1].hasFocus
+                                ? Colors.deepPurpleAccent
+                                : Colors.grey,
+                          ),
+                          suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                obsText = !obsText;
+                              });
+                            },
+                            icon: obsText
+                                ? Icon(
+                                    Icons.visibility_off_sharp,
+                                    color: _focusNodes[1].hasFocus
+                                        ? Colors.deepPurpleAccent
+                                        : Colors.grey,
+                                    size: 20,
+                                  )
+                                : Icon(
+                                    Icons.visibility,
+                                    color: _focusNodes[1].hasFocus
+                                        ? Colors.deepPurpleAccent
+                                        : Colors.grey,
+                                    size: 20,
+                                  ),
+                          ),
+                          hintText: "password",
+                          hintStyle: GoogleFonts.lexendDeca(
+                            textStyle: TextStyle(
+                              color: Colors.black.withOpacity(0.4),
+                            ),
+                            fontSize: 17,
+                            fontWeight: FontWeight.w300,
+                          ),
+                          isDense: true,
+                          isCollapsed: true,
+                          filled: true,
+                          fillColor: _focusNodes[1].hasFocus
+                              ? Colors.deepPurpleAccent.withOpacity(0.1)
+                              : Theme.of(context).listTileTheme.tileColor,
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            borderSide: BorderSide(
+                              color: Theme.of(context).scaffoldBackgroundColor,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            borderSide: BorderSide(
+                              color: Colors.deepPurpleAccent,
+                              width: 2,
+                            ),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            borderSide: BorderSide(
+                              color: Colors.red,
+                              width: 2,
+                            ),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            borderSide: BorderSide(
+                              color: Theme.of(context).scaffoldBackgroundColor,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 90,
               ),
               Container(
                 alignment: Alignment.center,
                 child: CheckboxListTile(
+                  tileColor: Colors.transparent,
                   side: BorderSide(
                     color: Colors.deepPurpleAccent,
                     width: 2,
@@ -306,7 +300,6 @@ class _Sign_InState extends State<Sign_In> {
                     textAlign: TextAlign.start,
                     style: GoogleFonts.lexendDeca(
                       textStyle: TextStyle(
-                        color: Colors.black,
                       ),
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
@@ -319,7 +312,7 @@ class _Sign_InState extends State<Sign_In> {
                   controlAffinity: ListTileControlAffinity.leading,
                   onChanged: (bool? value) {
                     setState(
-                          () {
+                      () {
                         signIncheckBox = value!;
                       },
                     );
@@ -331,17 +324,14 @@ class _Sign_InState extends State<Sign_In> {
               ),
               GestureDetector(
                 onTap: () {
-                  if(_formkey.currentState!.validate())
-                  {
+                  if (_formkey.currentState!.validate()) {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                         builder: (context) => Tab_Page(),
                       ),
                     );
-                  }
-                  else
-                  {
+                  } else {
                     print("unsuccessful");
                   }
                 },
@@ -373,11 +363,11 @@ class _Sign_InState extends State<Sign_In> {
               ),
               Container(
                 child: GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => Select_Contact()),);
+                      MaterialPageRoute(builder: (context) => Select_Contact()),
+                    );
                   },
                   child: Text(
                     "Forgot the password?",
@@ -405,7 +395,7 @@ class _Sign_InState extends State<Sign_In> {
                       height: 1,
                       width: MediaQuery.of(context).size.width / 4,
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.2),
+                        color: Colors.white24,
                       ),
                     ),
                     Text(
@@ -413,7 +403,6 @@ class _Sign_InState extends State<Sign_In> {
                       textAlign: TextAlign.start,
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: Colors.black.withOpacity(0.6),
                         ),
                         fontSize: 15,
                         fontWeight: FontWeight.w500,
@@ -423,7 +412,7 @@ class _Sign_InState extends State<Sign_In> {
                       height: 1,
                       width: MediaQuery.of(context).size.width / 4,
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.2),
+                        color: Colors.white24,
                       ),
                     ),
                   ],
@@ -538,7 +527,6 @@ class _Sign_InState extends State<Sign_In> {
                       textAlign: TextAlign.start,
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: Colors.black.withOpacity(0.4),
                         ),
                         fontSize: 17,
                         fontWeight: FontWeight.w500,
@@ -548,11 +536,11 @@ class _Sign_InState extends State<Sign_In> {
                       width: MediaQuery.of(context).size.width / 60,
                     ),
                     GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Navigator.pushReplacement(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => Sign_Up()),);
+                          MaterialPageRoute(builder: (context) => Sign_Up()),
+                        );
                       },
                       child: Text(
                         "Sign up",
@@ -566,7 +554,6 @@ class _Sign_InState extends State<Sign_In> {
                         ),
                       ),
                     ),
-
                   ],
                 ),
               ),
@@ -574,6 +561,7 @@ class _Sign_InState extends State<Sign_In> {
           ),
         ),
       ),
-    );;
+    );
+    ;
   }
 }

@@ -89,7 +89,6 @@ class _One_Leg_DownState extends State<One_Leg_Down> {
                 textAlign: TextAlign.center,
                 style: GoogleFonts.lexendDeca(
                   textStyle: TextStyle(
-                    color: Colors.black,
                   ),
                   fontSize: 35,
                   fontWeight: FontWeight.w500,
@@ -113,7 +112,6 @@ class _One_Leg_DownState extends State<One_Leg_Down> {
                 strokeWidth: 12,
                 textStyle: GoogleFonts.lexendDeca(
                   textStyle: TextStyle(
-                    color: Colors.black,
                   ),
                   fontSize: 30,
                   fontWeight: FontWeight.w600,
@@ -233,16 +231,16 @@ class _One_Leg_DownState extends State<One_Leg_Down> {
                 width: 150,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: Colors.deepPurpleAccent.withOpacity(0.2),
+                  color: Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.subdirectory_arrow_left_rounded,color: Colors.deepPurpleAccent,size: 25,),
+                    Icon(Icons.subdirectory_arrow_left_rounded,color:  Theme.of(context).accentColor,size: 25,),
                     SizedBox(width: 15,),
                     Text( 'Previous',style: TextStyle(
-                      color: Colors.deepPurpleAccent,
+                      color:  Theme.of(context).accentColor,
                       fontWeight: FontWeight.bold,
                     ),),
                   ],
@@ -261,18 +259,18 @@ class _One_Leg_DownState extends State<One_Leg_Down> {
                 width: 150,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: Colors.deepPurpleAccent.withOpacity(0.2),
+                  color: Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(_isCompleted ? 'Next' : 'Skip',style: TextStyle(
-                      color: Colors.deepPurpleAccent,
+                      color:  Theme.of(context).accentColor,
                       fontWeight: FontWeight.bold,
                     ),),
                     SizedBox(width: 15,),
-                    Icon( Icons.arrow_right_alt_rounded,color: Colors.deepPurpleAccent,size: 30,),
+                    Icon( Icons.arrow_right_alt_rounded,color:  Theme.of(context).accentColor,size: 30,),
                   ],
                 ),
               ),

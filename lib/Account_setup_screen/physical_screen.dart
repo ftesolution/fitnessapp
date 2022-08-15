@@ -72,40 +72,6 @@ class _Physical_ScreenState extends State<Physical_Screen> {
               label: "C",
               onChanged: _valueChangedHandler(),
             ),
-
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //   children: [
-            //     CustomButton2(
-            //         gradient: LinearGradient(colors: [
-            //           Color(0xfff0ecff),
-            //           Color(0xfff0ecff),
-            //         ]),
-            //         title: "Back",
-            //         txtcolor: Color(0xff6c47ff),
-            //         onTap: () {
-            //           Navigator.pushReplacement(
-            //               context,
-            //               MaterialPageRoute(
-            //                 builder: (context) => Goal_Screen(),
-            //               ));
-            //         }),
-            //     CustomButton2(
-            //         gradient: LinearGradient(colors: [
-            //           Color(0xff8567ff),
-            //           Color(0xff6c47ff),
-            //         ]),
-            //         title: "Continue",
-            //         txtcolor: Colors.white,
-            //         onTap: () {
-            //           Navigator.pushReplacement(
-            //               context,
-            //               MaterialPageRoute(
-            //                 builder: (context) => Profile_screen(),
-            //               ));
-            //         }),
-            //   ],
-            // ),
           ],
         ),
       ),
@@ -116,11 +82,11 @@ class _Physical_ScreenState extends State<Physical_Screen> {
           children: [
             CustomButton2(
                 gradient: LinearGradient(colors: [
-                  Color(0xfff0ecff),
-                  Color(0xfff0ecff),
+                  Theme.of(context).primaryColor,
+                  Theme.of(context).primaryColor,
                 ]),
                 title: "Back",
-                txtcolor: Color(0xff6c47ff),
+                txtcolor: Theme.of(context).accentColor,
                 onTap: () {
                   Navigator.pushReplacement(
                       context,

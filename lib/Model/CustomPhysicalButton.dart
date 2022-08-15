@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CustomPhysical<T> extends StatelessWidget {
+class CustomPhysical<T> extends StatefulWidget {
 
 
   final T value;
@@ -18,8 +18,13 @@ class CustomPhysical<T> extends StatelessWidget {
     required this.onChanged,
   });
 
+  @override
+  State<CustomPhysical<T>> createState() => _CustomPhysicalState<T>();
+}
+
+class _CustomPhysicalState<T> extends State<CustomPhysical<T>> {
   Widget _buildLabel() {
-    final bool isSelected = value == groupValue;
+    final bool isSelected = widget.value == widget.groupValue;
 
     return Container(
       width: 350,
@@ -36,8 +41,8 @@ class CustomPhysical<T> extends StatelessWidget {
         LinearGradient(
 
             colors: [
-              Colors.white,
-              Colors.white,
+              Theme.of(context).backgroundColor,
+              Theme.of(context).backgroundColor,
             ])
         // color: isSelected ? Colors.deepPurpleAccent : Colors.white,
       ),
@@ -47,11 +52,11 @@ class CustomPhysical<T> extends StatelessWidget {
         children: [
           Center(
             child: Text(
-              value.toString(),
+              widget.value.toString(),
               textAlign: TextAlign.center,
               style: GoogleFonts.lexendDeca(
                 textStyle: TextStyle(
-                  color: isSelected? Colors.white:Colors.black,
+                  color: isSelected? Colors.white: Theme.of(context).listTileTheme.textColor,
                 ),
                 fontSize: 22,
                 fontWeight: FontWeight.w400,
@@ -63,11 +68,10 @@ class CustomPhysical<T> extends StatelessWidget {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => onChanged(value),
+      onTap: () => widget.onChanged(widget.value),
       splashColor: Colors.yellow.withOpacity(0.1),
       child: _buildLabel(),
     );

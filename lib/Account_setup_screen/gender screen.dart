@@ -113,7 +113,7 @@ class _gender_screenState extends State<gender_screen> {
                 label: "B",
                 onChanged: _valueChangedHandler(),
                 icn: Icon(
-                  Icons.male,
+                  Icons.female,
                   size: 50,
                   color: Colors.white,
                 ),

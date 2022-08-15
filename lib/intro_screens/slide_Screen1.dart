@@ -8,7 +8,6 @@ class slide_screen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
       child: Column(
         children: [
           Container(
@@ -33,12 +32,11 @@ class slide_screen1 extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: GoogleFonts.lexendDeca(
                   textStyle: TextStyle(
-                    color: Colors.black,
                   ),
                   fontSize: 40,
                   fontWeight: FontWeight.w500,
                 ),
-              )),
+              ),),
         ],
       ),
     );

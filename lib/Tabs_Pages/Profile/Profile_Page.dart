@@ -11,6 +11,7 @@ import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
+import '../../Change_Theme_Button_Widget.dart';
 import '../../forgot _reset_password/select _contact _detail.dart';
 import 'Security.dart';
 
@@ -97,7 +98,6 @@ class _Profile_PageState extends State<Profile_Page> {
                         textAlign: TextAlign.start,
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 22,
                           fontWeight: FontWeight.w600,
@@ -113,13 +113,11 @@ class _Profile_PageState extends State<Profile_Page> {
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(
-                            color: Colors.black,
                             width: 1,
-                          )),
+                          ),),
                       child: Icon(
                         Icons.more_horiz,
                         size: 20,
-                        color: Colors.black,
                       ),
                     ),
                   ],
@@ -245,7 +243,6 @@ class _Profile_PageState extends State<Profile_Page> {
                 textAlign: TextAlign.center,
                 style: GoogleFonts.lexendDeca(
                   textStyle: TextStyle(
-                    color: Colors.black,
                   ),
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
@@ -259,7 +256,6 @@ class _Profile_PageState extends State<Profile_Page> {
                 textAlign: TextAlign.center,
                 style: GoogleFonts.lexendDeca(
                   textStyle: TextStyle(
-                    color: Colors.black,
                   ),
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
@@ -383,7 +379,6 @@ class _Profile_PageState extends State<Profile_Page> {
                     Container(
                       child: Icon(
                         Icons.person_outline_rounded,
-                        color: Colors.black,
                         size: 35,
                       ),
                     ),
@@ -396,7 +391,6 @@ class _Profile_PageState extends State<Profile_Page> {
                         textAlign: TextAlign.left,
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 22,
                           fontWeight: FontWeight.w400,
@@ -418,7 +412,6 @@ class _Profile_PageState extends State<Profile_Page> {
                     Container(
                       child: Icon(
                         Icons.notifications_none_rounded,
-                        color: Colors.black,
                         size: 35,
                       ),
                     ),
@@ -431,7 +424,6 @@ class _Profile_PageState extends State<Profile_Page> {
                         textAlign: TextAlign.left,
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 22,
                           fontWeight: FontWeight.w400,
@@ -453,7 +445,6 @@ class _Profile_PageState extends State<Profile_Page> {
                     Container(
                       child: Icon(
                         Icons.security_rounded,
-                        color: Colors.black,
                         size: 30,
                       ),
                     ),
@@ -466,7 +457,6 @@ class _Profile_PageState extends State<Profile_Page> {
                         textAlign: TextAlign.left,
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 22,
                           fontWeight: FontWeight.w400,
@@ -484,7 +474,6 @@ class _Profile_PageState extends State<Profile_Page> {
                   Container(
                     child: Icon(
                       Icons.live_help_rounded,
-                      color: Colors.black,
                       size: 25,
                     ),
                   ),
@@ -497,7 +486,6 @@ class _Profile_PageState extends State<Profile_Page> {
                       textAlign: TextAlign.left,
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: Colors.black,
                         ),
                         fontSize: 22,
                         fontWeight: FontWeight.w400,
@@ -514,7 +502,6 @@ class _Profile_PageState extends State<Profile_Page> {
                   Container(
                     child: Icon(
                       Icons.remove_red_eye_outlined,
-                      color: Colors.black,
                       size: 25,
                     ),
                   ),
@@ -527,7 +514,6 @@ class _Profile_PageState extends State<Profile_Page> {
                       textAlign: TextAlign.left,
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: Colors.black,
                         ),
                         fontSize: 22,
                         fontWeight: FontWeight.w400,
@@ -535,19 +521,20 @@ class _Profile_PageState extends State<Profile_Page> {
                     ),
                   ),
                   Spacer(),
-                  Container(
-                    child: FlutterSwitch(
-                      width: 50,
-                      height: 28,
-                      activeColor: Colors.deepPurpleAccent,
-                      value: theme_value,
-                      onToggle: (bool index) {
-                        setState(() {
-                          theme_value = index;
-                        });
-                      },
-                    ),
-                  )
+                  ChangeThemeButtonWidget(),
+                  // Container(
+                  //   child: FlutterSwitch(
+                  //     width: 50,
+                  //     height: 28,
+                  //     activeColor: Colors.deepPurpleAccent,
+                  //     value: theme_value,
+                  //     onToggle: (bool index) {
+                  //       setState(() {
+                  //         theme_value = index;
+                  //       });
+                  //     },
+                  //   ),
+                  // )
                 ],
               ),
               SizedBox(

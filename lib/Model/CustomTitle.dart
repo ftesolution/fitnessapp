@@ -12,9 +12,9 @@ class CustomTitle extends StatelessWidget {
         textAlign: TextAlign.center,
         style: GoogleFonts.lexendDeca(
           textStyle: TextStyle(
-            color: Colors.black,
+            // color: Theme.of(context).iconTheme.color,
           ),
-          fontSize: 30,
+          fontSize: 33,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -32,7 +32,6 @@ class CustomSubTitle extends StatelessWidget {
         textAlign: TextAlign.center,
         style: GoogleFonts.lexendDeca(
           textStyle: TextStyle(
-            color: Colors.black,
           ),
           fontSize: 19,
           fontWeight: FontWeight.w300,

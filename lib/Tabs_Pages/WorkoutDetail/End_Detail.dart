@@ -49,7 +49,6 @@ class End_Detail extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.lexendDeca(
                     textStyle: TextStyle(
-                      color: Colors.black.withOpacity(0.8),
                     ),
                     fontSize: 20,
                     fontWeight: FontWeight.w400,
@@ -77,7 +76,6 @@ class End_Detail extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: GoogleFonts.lexendDeca(
                             textStyle: TextStyle(
-                              color: Colors.black,
                             ),
                             fontSize: 30,
                             fontWeight: FontWeight.w500,
@@ -91,7 +89,6 @@ class End_Detail extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: GoogleFonts.lexendDeca(
                             textStyle: TextStyle(
-                              color: Colors.black.withOpacity(0.8),
                             ),
                             fontSize: 18,
                             fontWeight: FontWeight.w400,
@@ -116,7 +113,6 @@ class End_Detail extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: GoogleFonts.lexendDeca(
                             textStyle: TextStyle(
-                              color: Colors.black,
                             ),
                             fontSize: 30,
                             fontWeight: FontWeight.w500,
@@ -130,7 +126,6 @@ class End_Detail extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: GoogleFonts.lexendDeca(
                             textStyle: TextStyle(
-                              color: Colors.black.withOpacity(0.8),
                             ),
                             fontSize: 18,
                             fontWeight: FontWeight.w400,
@@ -155,7 +150,6 @@ class End_Detail extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: GoogleFonts.lexendDeca(
                             textStyle: TextStyle(
-                              color: Colors.black,
                             ),
                             fontSize: 30,
                             fontWeight: FontWeight.w500,
@@ -169,7 +163,6 @@ class End_Detail extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: GoogleFonts.lexendDeca(
                             textStyle: TextStyle(
-                              color: Colors.black.withOpacity(0.8),
                             ),
                             fontSize: 18,
                             fontWeight: FontWeight.w400,
@@ -235,7 +228,7 @@ class End_Detail extends StatelessWidget {
                   height: 55,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                    color: Colors.deepPurpleAccent.withOpacity(0.2),
+                    color: Theme.of(context).primaryColor,
                     borderRadius: BorderRadius.circular(
                       35,
                     ),
@@ -245,7 +238,7 @@ class End_Detail extends StatelessWidget {
                     textAlign: TextAlign.start,
                     style: GoogleFonts.lexendDeca(
                       textStyle: TextStyle(
-                        color: Colors.deepPurpleAccent,
+                        color: Theme.of(context).accentColor,
                       ),
                       fontSize: 20,
                       fontWeight: FontWeight.w500,

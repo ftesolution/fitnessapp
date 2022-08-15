@@ -33,7 +33,6 @@ class See_All extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.lexendDeca(
                       textStyle: TextStyle(
-                        color: Colors.black,
                       ),
                       fontSize: 18,
                       fontWeight: FontWeight.w500,

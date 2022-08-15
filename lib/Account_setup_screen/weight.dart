@@ -61,7 +61,6 @@ class _weight_screenState extends State<weight_screen> {
               infiniteLoop: false,
               textStyle: TextStyle(
                 fontSize: 30,
-                color: allColors.primaryColor.withOpacity(0.5),
                 fontWeight: FontWeight.bold,
               ),
               selectedTextStyle: TextStyle(
@@ -121,11 +120,11 @@ class _weight_screenState extends State<weight_screen> {
           children: [
             CustomButton2(
                 gradient: LinearGradient(colors: [
-                  Color(0xfff0ecff),
-                  Color(0xfff0ecff),
+                  Theme.of(context).primaryColor,
+                  Theme.of(context).primaryColor,
                 ]),
                 title: "Back",
-                txtcolor: Color(0xff6c47ff),
+                txtcolor: Theme.of(context).accentColor,
                 onTap: () {
                   Navigator.pushReplacement(
                       context,

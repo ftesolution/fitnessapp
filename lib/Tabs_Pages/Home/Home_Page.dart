@@ -1,5 +1,6 @@
 import 'package:fitnessapp/Tabs_Pages/Home/Advance.dart';
 import 'package:fitnessapp/Tabs_Pages/Home/Beginner.dart';
+import 'package:fitnessapp/Tabs_Pages/Home/Home_Bookmark.dart';
 import 'package:fitnessapp/Tabs_Pages/Home/Home_Notification.dart';
 import 'package:fitnessapp/Tabs_Pages/Home/Home_SeeAll.dart';
 import 'package:flutter/material.dart';
@@ -96,7 +97,7 @@ class _Home_PageState extends State<Home_Page> {
                     ),
                     GestureDetector(
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_(),));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_Bookmark(),));
                       },
                       child: Container(
                         child: Icon(

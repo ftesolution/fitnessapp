@@ -56,7 +56,6 @@ class _Rest_PageState extends State<Rest_Page> {
                           alignment: Alignment.centerLeft,
                           child: Icon(
                             Icons.arrow_back_rounded,
-                            color: Colors.black,
                             size: 25,
                           )),
                     ),
@@ -90,19 +89,19 @@ class _Rest_PageState extends State<Rest_Page> {
                   width: MediaQuery.of(context).size.width / 2,
                   duration: 20,
                   initialDuration: 0,
-                  ringColor: Colors.white,
-                  fillColor: Colors.white,
+                  ringColor: Theme.of(context).scaffoldBackgroundColor,
+                  fillColor: Theme.of(context).scaffoldBackgroundColor,
                   strokeWidth: 0,
                   textFormat: CountdownTextFormat.MM_SS,
                   textStyle: GoogleFonts.lexendDeca(
                     textStyle: TextStyle(
-                      color: Colors.black,
                     ),
                     fontSize: 37,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
+              SizedBox(height: 10,),
               Container(
                 height: 2,
                 width: MediaQuery.of(context).size.width / 1,
@@ -120,7 +119,6 @@ class _Rest_PageState extends State<Rest_Page> {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.lexendDeca(
                     textStyle: TextStyle(
-                      color: Colors.black,
                     ),
                     fontSize: 20,
                     fontWeight: FontWeight.w400,
@@ -134,7 +132,6 @@ class _Rest_PageState extends State<Rest_Page> {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.lexendDeca(
                     textStyle: TextStyle(
-                      color: Colors.black,
                     ),
                     fontSize: 25,
                     fontWeight: FontWeight.w600,

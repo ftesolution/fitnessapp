@@ -59,7 +59,6 @@ class _Height_ScreenState extends State<Height_Screen> {
               axis: Axis.vertical,
               textStyle: TextStyle(
                 fontSize: 30,
-                color: Colors.black.withOpacity(0.5),
                 fontWeight: FontWeight.bold,
               ),
               selectedTextStyle: TextStyle(
@@ -127,11 +126,11 @@ class _Height_ScreenState extends State<Height_Screen> {
           children: [
             CustomButton2(
               gradient: LinearGradient(colors: [
-                Color(0xfff0ecff),
-                Color(0xfff0ecff),
+                Theme.of(context).primaryColor,
+                Theme.of(context).primaryColor,
               ]),
               title: "Back",
-              txtcolor: Color(0xff6c47ff),
+              txtcolor: Theme.of(context).accentColor,
               onTap: () {
                 Navigator.pushReplacement(
                   context,

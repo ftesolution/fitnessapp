@@ -216,7 +216,6 @@ class _Workout_DetailState extends State<Workout_Detail> {
                         "Yoga Body Stretching",
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 32,
                           fontWeight: FontWeight.w600,
@@ -320,7 +319,6 @@ class _Workout_DetailState extends State<Workout_Detail> {
                               textAlign: TextAlign.center,
                               style: GoogleFonts.lexendDeca(
                                 textStyle: TextStyle(
-                                  color: Colors.black,
                                 ),
                                 fontSize: 18,
                                 fontWeight: FontWeight.w500,

@@ -67,7 +67,6 @@ class Get_Ready extends StatelessWidget {
                 strokeWidth: 20,
                 textStyle: GoogleFonts.lexendDeca(
                   textStyle: TextStyle(
-                    color: Colors.black,
                   ),
                   fontSize: 40,
                   fontWeight: FontWeight.w600,

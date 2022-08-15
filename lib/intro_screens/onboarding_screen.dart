@@ -24,9 +24,11 @@ class _onboarding_screenState extends State<onboarding_screen> {
           PageView(
             controller: _controller,
             onPageChanged: (index) {
-              setState(() {
-                onlastpage = (index == 2);
-              });
+              setState(
+                () {
+                  onlastpage = (index == 2);
+                },
+              );
             },
             children: [
               slide_screen1(),
@@ -44,92 +46,19 @@ class _onboarding_screenState extends State<onboarding_screen> {
                       height: 670,
                     ),
                     SmoothPageIndicator(
-                        effect: ExpandingDotsEffect(
-                          spacing: 8,
-                          dotHeight: 8,
-                          dotWidth: 8,
-                          dotColor: Colors.grey,
-                          activeDotColor: Color(0xff8567ff),
-                        ),
-                        controller: _controller,
-                        count: 3),
+                      effect: ExpandingDotsEffect(
+                        spacing: 8,
+                        dotHeight: 8,
+                        dotWidth: 8,
+                        dotColor: Colors.grey,
+                        activeDotColor: Color(0xff8567ff),
+                      ),
+                      controller: _controller,
+                      count: 3,
+                    ),
                     SizedBox(
                       height: MediaQuery.of(context).size.height / 20,
                     ),
-                    // onlastpage
-                    //     ? GestureDetector(
-                    //         onTap: () {
-                    //           Navigator.pushReplacement(
-                    //               context,
-                    //               MaterialPageRoute(
-                    //                 builder: (Context) => gender_screen(),
-                    //               ));
-                    //         },
-                    //         child: Container(
-                    //             margin: EdgeInsets.only(left: 30, right: 30),
-                    //             alignment: Alignment.center,
-                    //             height: MediaQuery.of(context).size.height / 15,
-                    //             width: MediaQuery.of(context).size.width / 1,
-                    //             decoration: BoxDecoration(
-                    //                 gradient: LinearGradient(colors: [
-                    //                   Color(0xff8567ff),
-                    //                   Color(0xff6c47ff),
-                    //                 ]),
-                    //                 borderRadius: BorderRadius.all(
-                    //                   Radius.circular(30),
-                    //                 ),
-                    //                 boxShadow: [
-                    //                   BoxShadow(
-                    //                     color: Colors.blueGrey.withOpacity(0.9),
-                    //                     spreadRadius: 3,
-                    //                     offset: Offset(0, 3),
-                    //                     blurRadius: 15,
-                    //                   )
-                    //                 ]),
-                    //             child: Text(
-                    //               "Done",
-                    //               style: TextStyle(
-                    //                   color: Colors.white,
-                    //                   fontWeight: FontWeight.bold,
-                    //                   fontSize: 17),
-                    //             )),
-                    //       )
-                    //     : GestureDetector(
-                    //         onTap: () {
-                    //           _controller.nextPage(
-                    //             duration: Duration(microseconds: 500),
-                    //             curve: Curves.easeIn,
-                    //           );
-                    //         },
-                    //         child: Container(
-                    //             margin: EdgeInsets.only(left: 30, right: 30),
-                    //             alignment: Alignment.center,
-                    //             height: MediaQuery.of(context).size.height / 15,
-                    //             width: MediaQuery.of(context).size.width / 1,
-                    //             decoration: BoxDecoration(
-                    //                 gradient: LinearGradient(colors: [
-                    //                   Color(0xff8567ff),
-                    //                   Color(0xff6c47ff),
-                    //                 ]),
-                    //                 borderRadius: BorderRadius.all(
-                    //                   Radius.circular(30),
-                    //                 ),
-                    //                 boxShadow: [
-                    //                   BoxShadow(
-                    //                     color: Colors.blueGrey.withOpacity(0.9),
-                    //                     spreadRadius: 3,
-                    //                     offset: Offset(0, 3),
-                    //                     blurRadius: 15,
-                    //                   )
-                    //                 ]),
-                    //             child: Text(
-                    //               "Next",
-                    //               style: TextStyle(
-                    //                   color: Colors.white,
-                    //                   fontWeight: FontWeight.bold,
-                    //                   fontSize: 17),
-                    //             )),
-                    //       ),
                   ],
                 ),
               ))
@@ -142,10 +71,11 @@ class _onboarding_screenState extends State<onboarding_screen> {
             ? GestureDetector(
                 onTap: () {
                   Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (Context) => gender_screen(),
-                      ));
+                    context,
+                    MaterialPageRoute(
+                      builder: (Context) => gender_screen(),
+                    ),
+                  );
                 },
                 child: Container(
                     margin: EdgeInsets.only(left: 30, right: 30),
@@ -153,21 +83,24 @@ class _onboarding_screenState extends State<onboarding_screen> {
                     height: MediaQuery.of(context).size.height / 15,
                     width: MediaQuery.of(context).size.width / 1,
                     decoration: BoxDecoration(
-                        gradient: LinearGradient(colors: [
+                      gradient: LinearGradient(
+                        colors: [
                           Color(0xff8567ff),
                           Color(0xff6c47ff),
-                        ]),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(30),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.blueGrey.withOpacity(0.9),
-                            spreadRadius: 3,
-                            offset: Offset(0, 3),
-                            blurRadius: 15,
-                          )
-                        ]),
+                        ],
+                      ),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(30),
+                      ),
+                      // boxShadow: [
+                      //   BoxShadow(
+                      //     color: Colors.blueGrey.withOpacity(0.9),
+                      //     spreadRadius: 3,
+                      //     offset: Offset(0, 3),
+                      //     blurRadius: 15,
+                      //   )
+                      // ],
+                    ),
                     child: Text(
                       "Done",
                       style: TextStyle(
@@ -184,33 +117,35 @@ class _onboarding_screenState extends State<onboarding_screen> {
                   );
                 },
                 child: Container(
-                    margin: EdgeInsets.only(left: 30, right: 30),
-                    alignment: Alignment.center,
-                    height: MediaQuery.of(context).size.height / 15,
-                    width: MediaQuery.of(context).size.width / 1,
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(colors: [
-                          Color(0xff8567ff),
-                          Color(0xff6c47ff),
-                        ]),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(30),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.blueGrey.withOpacity(0.9),
-                            spreadRadius: 3,
-                            offset: Offset(0, 3),
-                            blurRadius: 15,
-                          )
-                        ]),
-                    child: Text(
-                      "Next",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17),
-                    )),
+                  margin: EdgeInsets.only(left: 30, right: 30),
+                  alignment: Alignment.center,
+                  height: MediaQuery.of(context).size.height / 15,
+                  width: MediaQuery.of(context).size.width / 1,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [
+                      Color(0xff8567ff),
+                      Color(0xff6c47ff),
+                    ]),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(30),
+                    ),
+                    // boxShadow: [
+                    //   BoxShadow(
+                    //     color: Colors.blueGrey.withOpacity(0.9),
+                    //     spreadRadius: 3,
+                    //     offset: Offset(0, 3),
+                    //     blurRadius: 15,
+                    //   )
+                    // ],
+                  ),
+                  child: Text(
+                    "Next",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17),
+                  ),
+                ),
               ),
       ),
     );

@@ -152,7 +152,7 @@ class _Profile_screenState extends State<Profile_screen> {
                           height: 100,
                           width: 100,
                           decoration: BoxDecoration(
-                            color: Colors.black12,
+                            color: Colors.black,
                             shape: BoxShape.circle,
                           ),
                           child: ClipOval(
@@ -214,7 +214,6 @@ class _Profile_screenState extends State<Profile_screen> {
                       child: TextFormField(
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 17,
                           fontWeight: FontWeight.w500,
@@ -232,7 +231,7 @@ class _Profile_screenState extends State<Profile_screen> {
                           contentPadding: EdgeInsets.only(
                               left: 30, right: 50, top: 15, bottom: 15),
                           isDense: true,
-                          fillColor: Colors.black12.withOpacity(0.05),
+                          fillColor: Colors.black12,
                           filled: true,
                           hintText: "Full Name",
                           hintStyle: GoogleFonts.lexendDeca(
@@ -245,19 +244,19 @@ class _Profile_screenState extends State<Profile_screen> {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           errorBorder: OutlineInputBorder(
@@ -283,7 +282,6 @@ class _Profile_screenState extends State<Profile_screen> {
                       child: TextFormField(
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 17,
                           fontWeight: FontWeight.w500,
@@ -314,19 +312,19 @@ class _Profile_screenState extends State<Profile_screen> {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           errorBorder: OutlineInputBorder(
@@ -367,7 +365,6 @@ class _Profile_screenState extends State<Profile_screen> {
                         },
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 17,
                           fontWeight: FontWeight.w500,
@@ -386,7 +383,7 @@ class _Profile_screenState extends State<Profile_screen> {
                           hintText: "Email",
                           hintStyle: GoogleFonts.lexendDeca(
                             textStyle: TextStyle(
-                              color: Colors.black.withOpacity(0.4),
+                              // color: Colors.black.withOpacity(0.4),
                             ),
                             fontSize: 17,
                             fontWeight: FontWeight.w300,
@@ -394,19 +391,19 @@ class _Profile_screenState extends State<Profile_screen> {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           errorBorder: OutlineInputBorder(
@@ -444,7 +441,6 @@ class _Profile_screenState extends State<Profile_screen> {
                         },
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 17,
                           fontWeight: FontWeight.w500,
@@ -468,19 +464,19 @@ class _Profile_screenState extends State<Profile_screen> {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           errorBorder: OutlineInputBorder(
@@ -515,11 +511,11 @@ class _Profile_screenState extends State<Profile_screen> {
           children: [
             CustomButton2(
                 gradient: LinearGradient(colors: [
-                  Color(0xfff0ecff),
-                  Color(0xfff0ecff),
+                  Theme.of(context).primaryColor,
+                  Theme.of(context).primaryColor,
                 ]),
                 title: "Skip",
-                txtcolor: Color(0xff6c47ff),
+                txtcolor: Theme.of(context).accentColor,
                 onTap: () {
                   Navigator.pushReplacement(
                       context,

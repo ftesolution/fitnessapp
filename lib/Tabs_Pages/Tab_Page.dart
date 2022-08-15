@@ -24,11 +24,11 @@ class Tab_Page extends StatelessWidget {
         ),
         extendBody: true,
         bottomNavigationBar: Container(
-          color: Colors.white,
+          color: Theme.of(context).scaffoldBackgroundColor,
           child: TabBar(
 
             labelColor: Colors.deepPurpleAccent,
-            unselectedLabelColor: Colors.black.withOpacity(0.4),
+            // unselectedLabelColor: Colors.black.withOpacity(0.4),
             indicatorColor: Colors.white,
             labelStyle:  GoogleFonts.lexendDeca(
               textStyle: TextStyle(

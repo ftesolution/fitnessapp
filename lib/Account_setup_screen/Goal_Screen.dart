@@ -67,7 +67,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                     right: MediaQuery.of(context).size.width / 30,
                   ),
                   child: CheckboxListTile(
-                    tileColor: Colors.white,
+                    tileColor: Theme.of(context).listTileTheme.tileColor,
                     side: BorderSide(
                       color: Colors.deepPurpleAccent,
                       width: 2,
@@ -81,7 +81,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                         ),
                         side: BorderSide(
                             color:
-                                check1 ? Colors.deepPurpleAccent : Colors.white,
+                                check1 ? Colors.deepPurpleAccent : Theme.of(context).scaffoldBackgroundColor,
                             width: 2)),
                     checkboxShape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(7)),
@@ -89,7 +89,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                       "Get Fitter",
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: check1 ? Colors.black : Colors.black,
+                          color: check1 ? Theme.of(context).listTileTheme.textColor: Theme.of(context).listTileTheme.textColor,
                         ),
                         fontSize: 23,
                         fontWeight: FontWeight.w400,
@@ -119,7 +119,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                     right: MediaQuery.of(context).size.width / 30,
                   ),
                   child: CheckboxListTile(
-                    tileColor: Colors.white,
+                    tileColor: Theme.of(context).listTileTheme.tileColor,
                     side: BorderSide(
                       color: Colors.deepPurpleAccent,
                       width: 2,
@@ -133,7 +133,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                         ),
                         side: BorderSide(
                             color:
-                                check2 ? Colors.deepPurpleAccent : Colors.white,
+                                check2 ? Colors.deepPurpleAccent : Theme.of(context).scaffoldBackgroundColor,
                             width: 2)),
                     checkboxShape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(7)),
@@ -141,7 +141,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                       "Gain Weight",
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: check2 ? Colors.black : Colors.black,
+                          color: check2 ? Theme.of(context).listTileTheme.textColor: Theme.of(context).listTileTheme.textColor,
                         ),
                         fontSize: 23,
                         fontWeight: FontWeight.w400,
@@ -171,7 +171,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                     right: MediaQuery.of(context).size.width / 30,
                   ),
                   child: CheckboxListTile(
-                    tileColor: Colors.white,
+                    tileColor: Theme.of(context).listTileTheme.tileColor,
                     side: BorderSide(
                       color: Colors.deepPurpleAccent,
                       width: 2,
@@ -185,7 +185,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                         ),
                         side: BorderSide(
                             color:
-                                check3 ? Colors.deepPurpleAccent : Colors.white,
+                                check3 ? Colors.deepPurpleAccent : Theme.of(context).scaffoldBackgroundColor,
                             width: 2)),
                     checkboxShape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(7)),
@@ -193,7 +193,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                       "Lose Weight",
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: check3 ? Colors.black : Colors.black,
+                          color: check3 ? Theme.of(context).listTileTheme.textColor: Theme.of(context).listTileTheme.textColor,
                         ),
                         fontSize: 23,
                         fontWeight: FontWeight.w400,
@@ -223,7 +223,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                     right: MediaQuery.of(context).size.width / 30,
                   ),
                   child: CheckboxListTile(
-                    tileColor: Colors.white,
+                    tileColor: Theme.of(context).listTileTheme.tileColor,
                     side: BorderSide(
                       color: Colors.deepPurpleAccent,
                       width: 2,
@@ -237,7 +237,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                         ),
                         side: BorderSide(
                             color:
-                                check4 ? Colors.deepPurpleAccent : Colors.white,
+                                check4 ? Colors.deepPurpleAccent : Theme.of(context).scaffoldBackgroundColor,
                             width: 2)),
                     checkboxShape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(7)),
@@ -245,7 +245,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                       "Building Muscles",
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: check4 ? Colors.black : Colors.black,
+                          color: check4 ? Theme.of(context).listTileTheme.textColor: Theme.of(context).listTileTheme.textColor,
                         ),
                         fontSize: 23,
                         fontWeight: FontWeight.w400,
@@ -275,7 +275,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                     right: MediaQuery.of(context).size.width / 30,
                   ),
                   child: CheckboxListTile(
-                    tileColor: Colors.white,
+                    tileColor: Theme.of(context).listTileTheme.tileColor,
                     side: BorderSide(
                       color: Colors.deepPurpleAccent,
                       width: 2,
@@ -289,7 +289,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                         ),
                         side: BorderSide(
                             color:
-                                check5 ? Colors.deepPurpleAccent : Colors.white,
+                                check5 ? Colors.deepPurpleAccent : Theme.of(context).scaffoldBackgroundColor,
                             width: 2)),
                     checkboxShape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(7)),
@@ -297,7 +297,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                       "Improving Endurance",
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: check5 ? Colors.black : Colors.black,
+                          color: check5 ? Theme.of(context).listTileTheme.textColor: Theme.of(context).listTileTheme.textColor,
                         ),
                         fontSize: 23,
                         fontWeight: FontWeight.w400,
@@ -327,7 +327,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                     right: MediaQuery.of(context).size.width / 30,
                   ),
                   child: CheckboxListTile(
-                    tileColor: Colors.white,
+                    tileColor: Theme.of(context).listTileTheme.tileColor,
                     side: BorderSide(
                       color: Colors.deepPurpleAccent,
                       width: 2,
@@ -341,7 +341,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                         ),
                         side: BorderSide(
                             color:
-                                check6 ? Colors.deepPurpleAccent : Colors.white,
+                                check6 ? Colors.deepPurpleAccent : Theme.of(context).scaffoldBackgroundColor,
                             width: 2)),
                     checkboxShape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(7)),
@@ -349,7 +349,7 @@ class _Goal_ScreenState extends State<Goal_Screen> {
                       "Others",
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: check6 ? Colors.black : Colors.black,
+                          color: check6 ? Theme.of(context).listTileTheme.textColor: Theme.of(context).listTileTheme.textColor,
                         ),
                         fontSize: 23,
                         fontWeight: FontWeight.w400,
@@ -411,11 +411,11 @@ class _Goal_ScreenState extends State<Goal_Screen> {
           children: [
             CustomButton2(
               gradient: LinearGradient(colors: [
-                Color(0xfff0ecff),
-                Color(0xfff0ecff),
+                Theme.of(context).primaryColor,
+                Theme.of(context).primaryColor,
               ]),
               title: "Back",
-              txtcolor: Color(0xff6c47ff),
+              txtcolor: Theme.of(context).accentColor,
               onTap: () {
                 Navigator.pushReplacement(
                   context,

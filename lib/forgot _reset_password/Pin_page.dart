@@ -14,31 +14,6 @@ class Pin_Page extends StatefulWidget {
 
 class _Pin_PageState extends State<Pin_Page> {
 
-  final defaultPinTheme = PinTheme(
-    width: 70,
-    height: 55,
-    textStyle: TextStyle(fontSize: 20, color: Color.fromRGBO(30, 60, 87, 1), fontWeight: FontWeight.w600),
-    decoration: BoxDecoration(
-      color: Colors.grey.withOpacity(0.1),
-      border: Border.all(color: Colors.white,),
-      borderRadius: BorderRadius.circular(10),
-    ),
-  );
-
-  final focusedPinTheme = PinTheme(
-    width: 70,
-    height: 55,
-    textStyle: TextStyle(fontSize: 20, color: Color.fromRGBO(30, 60, 87, 1), fontWeight: FontWeight.w600),
-    decoration: BoxDecoration(
-      color: Colors.deepPurpleAccent.withOpacity(0.1),
-      border: Border.all(color: Colors.deepPurpleAccent,),
-      borderRadius: BorderRadius.circular(10),
-    ),
-  );
-
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,7 +44,6 @@ class _Pin_PageState extends State<Pin_Page> {
                       },
                       child: Icon(
                         Icons.arrow_back_rounded,
-                        color: Colors.black,
                         size: 30,
                       ),
                     ),
@@ -84,7 +58,6 @@ class _Pin_PageState extends State<Pin_Page> {
                       textAlign: TextAlign.start,
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: Colors.black,
                         ),
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
@@ -101,7 +74,6 @@ class _Pin_PageState extends State<Pin_Page> {
                 textAlign: TextAlign.center,
                 style: GoogleFonts.lexendDeca(
                   textStyle: TextStyle(
-                    color: Colors.black,
                   ),
                   fontSize: 15,
                   fontWeight: FontWeight.w300,
@@ -111,8 +83,26 @@ class _Pin_PageState extends State<Pin_Page> {
                 height: 30,
               ),
               Pinput(
-                defaultPinTheme: defaultPinTheme,
-                focusedPinTheme: focusedPinTheme,
+                defaultPinTheme:  PinTheme(
+                  width: 70,
+                  height: 55,
+                  textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.1),
+                    border: Border.all(color: Theme.of(context).scaffoldBackgroundColor,),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                focusedPinTheme:PinTheme(
+                  width: 70,
+                  height: 55,
+                  textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurpleAccent.withOpacity(0.1),
+                    border: Border.all(color: Colors.deepPurpleAccent,),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
               ),
 
 

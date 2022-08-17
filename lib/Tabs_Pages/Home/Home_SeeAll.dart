@@ -51,7 +51,7 @@ class _Home_SeeAllState extends State<Home_SeeAll> {
                   child: Container(
                       padding: EdgeInsets.only(left: 0,),
                       alignment: Alignment.centerLeft,
-                      child: Icon(Icons.arrow_back_rounded,color: Colors.black,size: 25,)),
+                      child: Icon(Icons.arrow_back_rounded,size: 25,)),
                 ),
                 SizedBox(width: MediaQuery.of(context).size.width/20,),
                 Container(
@@ -61,14 +61,13 @@ class _Home_SeeAllState extends State<Home_SeeAll> {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.lexendDeca(
                       textStyle: TextStyle(
-                        color: Colors.black,
                       ),
                       fontSize: 25,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
-                SizedBox(width: MediaQuery.of(context).size.width/3.5,),
+                SizedBox(width: MediaQuery.of(context).size.width/3.7,),
                 Container(
                   alignment: Alignment.center,
                   height: 20,
@@ -76,13 +75,12 @@ class _Home_SeeAllState extends State<Home_SeeAll> {
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
-                        color: Colors.black,
+                        color: Theme.of(context).hintColor,
                         width: 1,
                       )),
                   child: Icon(
                     Icons.more_horiz,
                     size: 18,
-                    color: Colors.black,
                   ),
                 ),
 
@@ -116,7 +114,7 @@ class _Home_SeeAllState extends State<Home_SeeAll> {
                                   decoration: BoxDecoration(
                                     color: current == index
                                         ? Colors.deepPurpleAccent
-                                        : Colors.white54,
+                                        : Theme.of(context).scaffoldBackgroundColor,
                                     borderRadius: current == index
                                         ? BorderRadius.circular(20)
                                         : BorderRadius.circular(20),

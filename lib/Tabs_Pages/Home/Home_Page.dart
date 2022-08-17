@@ -70,7 +70,6 @@ class _Home_PageState extends State<Home_Page> {
                         textAlign: TextAlign.start,
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 22,
                           fontWeight: FontWeight.w600,
@@ -88,7 +87,6 @@ class _Home_PageState extends State<Home_Page> {
                         child: Icon(
                           Icons.notifications_none_rounded,
                           size: 30,
-                          color: Colors.black,
                         ),
                       ),
                     ),
@@ -103,7 +101,6 @@ class _Home_PageState extends State<Home_Page> {
                         child: Icon(
                           Icons.bookmark_border_rounded,
                           size: 30,
-                          color: Colors.black,
                         ),
                       ),
                     ),
@@ -120,7 +117,6 @@ class _Home_PageState extends State<Home_Page> {
                   Text("Morning, Christina",
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: Colors.black,
                         ),
                         fontWeight: FontWeight.w600,
                         fontSize: 30,
@@ -148,7 +144,6 @@ class _Home_PageState extends State<Home_Page> {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
@@ -420,7 +415,6 @@ class _Home_PageState extends State<Home_Page> {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
@@ -476,7 +470,7 @@ class _Home_PageState extends State<Home_Page> {
                                     decoration: BoxDecoration(
                                       color: current == index
                                           ? Colors.deepPurpleAccent
-                                          : Colors.white54,
+                                          : Theme.of(context).scaffoldBackgroundColor,
                                       borderRadius: current == index
                                           ? BorderRadius.circular(20)
                                           : BorderRadius.circular(20),

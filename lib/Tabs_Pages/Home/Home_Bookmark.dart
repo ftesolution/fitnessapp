@@ -31,7 +31,7 @@ class Home_Bookmark extends StatelessWidget {
                   child: Container(
                       padding: EdgeInsets.only(left: 0,),
                       alignment: Alignment.centerLeft,
-                      child: Icon(Icons.arrow_back_rounded,color: Colors.black,size: 25,)),
+                      child: Icon(Icons.arrow_back_rounded,size: 25,)),
                 ),
                 SizedBox(width: MediaQuery.of(context).size.width/20,),
                 Container(
@@ -41,7 +41,6 @@ class Home_Bookmark extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.lexendDeca(
                       textStyle: TextStyle(
-                        color: Colors.black,
                       ),
                       fontSize: 25,
                       fontWeight: FontWeight.w500,
@@ -51,7 +50,7 @@ class Home_Bookmark extends StatelessWidget {
                 SizedBox(width: MediaQuery.of(context).size.width/5,),
                 Container(
                   child: Icon(
-                    Icons.list_alt_rounded,color: Colors.black,size: 25,
+                    Icons.list_alt_rounded,size: 25,
                   ),
                 ),
                 SizedBox(width: MediaQuery.of(context).size.width/20,),

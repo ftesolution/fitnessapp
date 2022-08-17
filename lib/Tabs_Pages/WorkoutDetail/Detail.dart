@@ -143,7 +143,7 @@ class _Workout_DetailState extends State<Workout_Detail> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             GestureDetector(
                               onTap: (){
@@ -159,7 +159,7 @@ class _Workout_DetailState extends State<Workout_Detail> {
                               padding: EdgeInsets.only(left: 20),
                               alignment: Alignment.centerLeft,
                                 child: Icon(Icons.bookmark_outline_rounded,color: Colors.white,size: 25,)),
-                            SizedBox(width: 20,),
+                            SizedBox(width: 40,),
                             Container(
                               height: 25,
                               width: 25,
@@ -351,7 +351,7 @@ class _Workout_DetailState extends State<Workout_Detail> {
                       width: MediaQuery.of(context).size.width,
                       height: 110,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).listTileTheme.tileColor,
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: Row(
@@ -360,12 +360,12 @@ class _Workout_DetailState extends State<Workout_Detail> {
                             height: 120,
                             width: MediaQuery.of(context).size.width/3.5,
                             decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.horizontal(left:Radius.circular(25),),
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage('Assets/yoga body streching/Worrior.jpg')
-                              )
+                                color: Colors.black,
+                                borderRadius: BorderRadius.horizontal(left:Radius.circular(25),),
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage('Assets/yoga body streching/Worrior.jpg')
+                                )
                             ),
                           ),
                           SizedBox(width: 30,),
@@ -378,7 +378,6 @@ class _Workout_DetailState extends State<Workout_Detail> {
                                   "Warrior 1",
                                   style: GoogleFonts.lexendDeca(
                                     textStyle: TextStyle(
-                                      color: Colors.black,
                                     ),
                                     fontSize: 30,
                                     fontWeight: FontWeight.w500,
@@ -411,7 +410,7 @@ class _Workout_DetailState extends State<Workout_Detail> {
                       width: MediaQuery.of(context).size.width,
                       height: 110,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).listTileTheme.tileColor,
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: Row(
@@ -438,7 +437,6 @@ class _Workout_DetailState extends State<Workout_Detail> {
                                   "Side Plank",
                                   style: GoogleFonts.lexendDeca(
                                     textStyle: TextStyle(
-                                      color: Colors.black,
                                     ),
                                     fontSize: 30,
                                     fontWeight: FontWeight.w500,
@@ -471,7 +469,7 @@ class _Workout_DetailState extends State<Workout_Detail> {
                       width: MediaQuery.of(context).size.width,
                       height: 110,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).listTileTheme.tileColor,
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: Row(
@@ -498,7 +496,6 @@ class _Workout_DetailState extends State<Workout_Detail> {
                                   "One Leg Down",
                                   style: GoogleFonts.lexendDeca(
                                     textStyle: TextStyle(
-                                      color: Colors.black,
                                     ),
                                     fontSize: 30,
                                     fontWeight: FontWeight.w500,
@@ -531,7 +528,7 @@ class _Workout_DetailState extends State<Workout_Detail> {
                       width: MediaQuery.of(context).size.width,
                       height: 110,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).listTileTheme.tileColor,
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: Row(
@@ -558,7 +555,6 @@ class _Workout_DetailState extends State<Workout_Detail> {
                                   "Triangle Pose",
                                   style: GoogleFonts.lexendDeca(
                                     textStyle: TextStyle(
-                                      color: Colors.black,
                                     ),
                                     fontSize: 30,
                                     fontWeight: FontWeight.w500,
@@ -591,7 +587,7 @@ class _Workout_DetailState extends State<Workout_Detail> {
                       width: MediaQuery.of(context).size.width,
                       height: 110,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).listTileTheme.tileColor,
                         borderRadius: BorderRadius.circular(25),
                       ),
                       child: Row(
@@ -618,7 +614,6 @@ class _Workout_DetailState extends State<Workout_Detail> {
                                   "Stork Pose",
                                   style: GoogleFonts.lexendDeca(
                                     textStyle: TextStyle(
-                                      color: Colors.black,
                                     ),
                                     fontSize: 30,
                                     fontWeight: FontWeight.w500,
@@ -631,66 +626,6 @@ class _Workout_DetailState extends State<Workout_Detail> {
                                 alignment: Alignment.centerLeft,
                                 child: Text(
                                   "20 seconds",
-                                  textAlign: TextAlign.start,
-                                  style: GoogleFonts.lexendDeca(
-                                    textStyle: TextStyle(
-                                      color: Colors.grey,
-                                    ),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 15,),
-                      width: MediaQuery.of(context).size.width,
-                      height: 110,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 120,
-                            width: MediaQuery.of(context).size.width/3.5,
-                            decoration: BoxDecoration(
-                                color: Colors.black,
-                                borderRadius: BorderRadius.horizontal(left:Radius.circular(25),),
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage('Assets/yoga body streching/wheelpose.jpg')
-                                )
-                            ),
-                          ),
-                          SizedBox(width: 30,),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                child: Text(
-                                  "Wheel Pose",
-                                  style: GoogleFonts.lexendDeca(
-                                    textStyle: TextStyle(
-                                      color: Colors.black,
-                                    ),
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                  textAlign: TextAlign.start,
-                                ),
-                              ),
-                              SizedBox(height: 8,),
-                              Container(
-                                alignment: Alignment.centerLeft,
-                                child: Text(
-                                  "30 seconds",
                                   textAlign: TextAlign.start,
                                   style: GoogleFonts.lexendDeca(
                                     textStyle: TextStyle(

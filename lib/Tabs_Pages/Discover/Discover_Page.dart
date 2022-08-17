@@ -61,12 +61,10 @@ class _Discover_pageState extends State<Discover_page> {
                   ? TextFormField(
                       autofocus: true,
                       controller: signInPassword,
-                      cursorColor: Colors.black,
                       cursorHeight: 20,
                       focusNode: _focusNodes[0],
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: Colors.black,
                         ),
                         fontSize: 17,
                         fontWeight: FontWeight.w500,
@@ -103,7 +101,6 @@ class _Discover_pageState extends State<Discover_page> {
                         hintText: "Search",
                         hintStyle: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black.withOpacity(0.4),
                           ),
                           fontSize: 17,
                           fontWeight: FontWeight.w300,
@@ -113,11 +110,11 @@ class _Discover_pageState extends State<Discover_page> {
                         filled: true,
                         fillColor: _focusNodes[0].hasFocus
                             ? Colors.deepPurpleAccent.withOpacity(0.1)
-                            : Colors.black.withOpacity(0.05),
+                            : Theme.of(context).cardColor,
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(
-                            color: Colors.white,
+                            color: Theme.of(context).scaffoldBackgroundColor,
                           ),
                         ),
                         focusedBorder: OutlineInputBorder(
@@ -152,7 +149,6 @@ class _Discover_pageState extends State<Discover_page> {
                               textAlign: TextAlign.start,
                               style: GoogleFonts.lexendDeca(
                                 textStyle: TextStyle(
-                                  color: Colors.black,
                                 ),
                                 fontSize: 22,
                                 fontWeight: FontWeight.w600,
@@ -171,7 +167,6 @@ class _Discover_pageState extends State<Discover_page> {
                             icon: Icon(
                               Icons.search_outlined,
                               size: 30,
-                              color: Colors.black,
                             ),
                           )
                         ],
@@ -207,7 +202,7 @@ class _Discover_pageState extends State<Discover_page> {
                                     decoration: BoxDecoration(
                                       color: current == index
                                           ? Colors.deepPurpleAccent
-                                          : Colors.white54,
+                                          : Theme.of(context).scaffoldBackgroundColor,
                                       borderRadius: current == index
                                           ? BorderRadius.circular(20)
                                           : BorderRadius.circular(20),

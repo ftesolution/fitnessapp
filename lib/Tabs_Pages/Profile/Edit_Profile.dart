@@ -83,7 +83,7 @@ class _Edit_ProfileState extends State<Edit_Profile> {
                       child: Container(
                           padding: EdgeInsets.only(left: 0,),
                           alignment: Alignment.centerLeft,
-                          child: Icon(Icons.arrow_back_rounded,color: Colors.black,size: 25,)),
+                          child: Icon(Icons.arrow_back_rounded,size: 25,)),
                     ),
                     SizedBox(width: 20,),
                     Container(
@@ -93,7 +93,6 @@ class _Edit_ProfileState extends State<Edit_Profile> {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 25,
                           fontWeight: FontWeight.w500,
@@ -106,7 +105,6 @@ class _Edit_ProfileState extends State<Edit_Profile> {
               TextFormField(
                 style: GoogleFonts.lexendDeca(
                   textStyle: TextStyle(
-                    color: Colors.black,
                   ),
                   fontSize: 17,
                   fontWeight: FontWeight.w500,
@@ -124,36 +122,35 @@ class _Edit_ProfileState extends State<Edit_Profile> {
                   contentPadding: EdgeInsets.only(
                       left: 30, right: 50, top: 15, bottom: 15),
                   isDense: true,
-                  fillColor: Colors.black12.withOpacity(0.05),
+                  fillColor: Theme.of(context).cardColor,
                   filled: true,
                   hintText: "Full Name",
                   hintStyle: GoogleFonts.lexendDeca(
                     textStyle: TextStyle(
-                      color: Colors.black.withOpacity(0.4),
                     ),
                     fontSize: 17,
                     fontWeight: FontWeight.w300,
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                     ),
                   ),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                     ),
                   ),
                   errorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
                       color: Colors.red,
                       width: 2,
@@ -165,7 +162,6 @@ class _Edit_ProfileState extends State<Edit_Profile> {
               TextFormField(
                 style: GoogleFonts.lexendDeca(
                   textStyle: TextStyle(
-                    color: Colors.black,
                   ),
                   fontSize: 17,
                   fontWeight: FontWeight.w500,
@@ -183,36 +179,35 @@ class _Edit_ProfileState extends State<Edit_Profile> {
                   contentPadding: EdgeInsets.only(
                       left: 30, right: 50, top: 15, bottom: 15),
                   isDense: true,
-                  fillColor: Colors.black12.withOpacity(0.05),
+                  fillColor: Theme.of(context).cardColor,
                   filled: true,
                   hintText: "Nickname",
                   hintStyle: GoogleFonts.lexendDeca(
                     textStyle: TextStyle(
-                      color: Colors.black.withOpacity(0.4),
                     ),
                     fontSize: 17,
                     fontWeight: FontWeight.w300,
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                     ),
                   ),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                     ),
                   ),
                   errorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
                       color: Colors.red,
                       width: 2,
@@ -232,36 +227,35 @@ class _Edit_ProfileState extends State<Edit_Profile> {
                         contentPadding: EdgeInsets.only(
                             left: 30, right: 50, top: 15, bottom: 15),
                         isDense: true,
-                        fillColor: Colors.black12.withOpacity(0.05),
+                        fillColor: Theme.of(context).cardColor,
                         filled: true,
                         hintStyle: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black.withOpacity(0.4),
                           ),
                           fontSize: 17,
                           fontWeight: FontWeight.w300,
                         ),
 
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(
-                            color: Colors.white,
+                            color: Theme.of(context).scaffoldBackgroundColor,
                           ),
                         ),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(
-                            color: Colors.white,
+                            color: Theme.of(context).scaffoldBackgroundColor,
                           ),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(
-                            color: Colors.white,
+                            color: Theme.of(context).scaffoldBackgroundColor,
                           ),
                         ),
                         errorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(
                             color: Colors.red,
                             width: 2,
@@ -318,7 +312,6 @@ class _Edit_ProfileState extends State<Edit_Profile> {
                 },
                 style: GoogleFonts.lexendDeca(
                   textStyle: TextStyle(
-                    color: Colors.black,
                   ),
                   fontSize: 17,
                   fontWeight: FontWeight.w500,
@@ -327,41 +320,40 @@ class _Edit_ProfileState extends State<Edit_Profile> {
                 decoration: InputDecoration(
                   suffixIcon: Icon(
                     Icons.email,
-                    color: Colors.black.withOpacity(0.4),
+                    size: 20,
                   ),
                   contentPadding: EdgeInsets.only(
                       left: 30, right: 50, top: 15, bottom: 15),
                   isDense: true,
-                  fillColor: Colors.black12.withOpacity(0.05),
+                  fillColor: Theme.of(context).cardColor,
                   filled: true,
                   hintText: "Email",
                   hintStyle: GoogleFonts.lexendDeca(
                     textStyle: TextStyle(
-                      color: Colors.black.withOpacity(0.4),
                     ),
                     fontSize: 17,
                     fontWeight: FontWeight.w300,
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                     ),
                   ),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                     ),
                   ),
                   errorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
                       color: Colors.red,
                       width: 2,
@@ -374,7 +366,7 @@ class _Edit_ProfileState extends State<Edit_Profile> {
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.only(left: 20,right: 20),
                 decoration: BoxDecoration(
-                  color: Colors.black12.withOpacity(0.05),
+                  color: Theme.of(context).cardColor,
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: DropdownButtonHideUnderline(
@@ -400,7 +392,17 @@ class _Edit_ProfileState extends State<Edit_Profile> {
               ),
               SizedBox(height: 20,),
               IntlPhoneField(
-                initialCountryCode: 'IN',
+                dropdownIcon: Icon(
+                  Icons.arrow_drop_down,color: Theme.of(context).textSelectionTheme.cursorColor,
+                  size: 22,
+                ),
+                dropdownTextStyle: GoogleFonts.lexendDeca(
+                  textStyle: TextStyle(
+                  ),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
+                initialCountryCode: 'PK',
                 invalidNumberMessage: "please enter phone number",
 
                 onSaved: (phone){
@@ -413,9 +415,8 @@ class _Edit_ProfileState extends State<Edit_Profile> {
                 },
                 style: GoogleFonts.lexendDeca(
                   textStyle: TextStyle(
-                    color: Colors.black,
                   ),
-                  fontSize: 17,
+                  fontSize: 18,
                   fontWeight: FontWeight.w500,
                 ),
                 autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -424,36 +425,35 @@ class _Edit_ProfileState extends State<Edit_Profile> {
                   contentPadding: EdgeInsets.only(
                       left: 30, right: 50, top: 15, bottom: 15),
                   isDense: true,
-                  fillColor: Colors.black12.withOpacity(0.05),
+                  fillColor: Theme.of(context).cardColor,
                   filled: true,
                   hintText: "Phone Number",
                   hintStyle: GoogleFonts.lexendDeca(
                     textStyle: TextStyle(
-                      color: Colors.black.withOpacity(0.4),
                     ),
-                    fontSize: 17,
+                    fontSize: 20,
                     fontWeight: FontWeight.w300,
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                     ),
                   ),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                     ),
                   ),
                   errorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide(
                       color: Colors.red,
                       width: 2,
@@ -466,7 +466,7 @@ class _Edit_ProfileState extends State<Edit_Profile> {
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.only(left: 20,right: 20),
                 decoration: BoxDecoration(
-                  color: Colors.black12.withOpacity(0.05),
+                  color: Theme.of(context).cardColor,
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: DropdownButtonHideUnderline(

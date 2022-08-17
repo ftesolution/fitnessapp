@@ -61,7 +61,6 @@ class _Sign_UpState extends State<Sign_Up> {
                   },
                   child: Icon(
                     Icons.arrow_back_rounded,
-                    color: Colors.black,
                     size: 30,
                   ),
                 ),
@@ -76,7 +75,6 @@ class _Sign_UpState extends State<Sign_Up> {
                   textAlign: TextAlign.start,
                   style: GoogleFonts.lexendDeca(
                     textStyle: TextStyle(
-                      color: Colors.black,
                     ),
                     fontSize: 42,
                     fontWeight: FontWeight.w600,
@@ -113,7 +111,6 @@ class _Sign_UpState extends State<Sign_Up> {
                       focusNode: _focusNodes[0],
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: Colors.black,
                         ),
                         fontSize: 17,
                         fontWeight: FontWeight.w500,
@@ -133,7 +130,6 @@ class _Sign_UpState extends State<Sign_Up> {
                         hintText: "Email",
                         hintStyle: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black.withOpacity(0.4),
                           ),
                           fontSize: 17,
                           fontWeight: FontWeight.w300,
@@ -143,11 +139,11 @@ class _Sign_UpState extends State<Sign_Up> {
                         filled: true,
                         fillColor: _focusNodes[0].hasFocus
                             ? Colors.deepPurpleAccent.withOpacity(0.1)
-                            : Colors.black.withOpacity(0.05),
+                            : Theme.of(context).cardColor,
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(
-                            color: Colors.white,
+                            color: Theme.of(context).scaffoldBackgroundColor,
                           ),
                         ),
                         focusedBorder: OutlineInputBorder(
@@ -167,7 +163,7 @@ class _Sign_UpState extends State<Sign_Up> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(
-                            color: Colors.white,
+                            color: Theme.of(context).scaffoldBackgroundColor,
                           ),
                         ),
                       ),
@@ -196,7 +192,6 @@ class _Sign_UpState extends State<Sign_Up> {
                       },
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: Colors.black,
                         ),
                         fontSize: 17,
                         fontWeight: FontWeight.w500,
@@ -240,7 +235,6 @@ class _Sign_UpState extends State<Sign_Up> {
                         hintText: "password",
                         hintStyle: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black.withOpacity(0.4),
                           ),
                           fontSize: 17,
                           fontWeight: FontWeight.w300,
@@ -250,11 +244,11 @@ class _Sign_UpState extends State<Sign_Up> {
                         filled: true,
                         fillColor: _focusNodes[1].hasFocus
                             ? Colors.deepPurpleAccent.withOpacity(0.1)
-                            : Colors.black.withOpacity(0.05),
+                            : Theme.of(context).cardColor,
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(
-                            color: Colors.white,
+                            color: Theme.of(context).scaffoldBackgroundColor,
                           ),
                         ),
                         focusedBorder: OutlineInputBorder(
@@ -274,7 +268,7 @@ class _Sign_UpState extends State<Sign_Up> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(
-                            color: Colors.white,
+                            color: Theme.of(context).scaffoldBackgroundColor,
                           ),
                         ),
                       ),
@@ -288,6 +282,7 @@ class _Sign_UpState extends State<Sign_Up> {
               Container(
                 alignment: Alignment.center,
                 child: CheckboxListTile(
+                  tileColor: Colors.transparent,
                   side: BorderSide(
                     color: Colors.deepPurpleAccent,
                     width: 2,
@@ -303,7 +298,6 @@ class _Sign_UpState extends State<Sign_Up> {
                     textAlign: TextAlign.start,
                     style: GoogleFonts.lexendDeca(
                       textStyle: TextStyle(
-                        color: Colors.black,
                       ),
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
@@ -376,27 +370,25 @@ class _Sign_UpState extends State<Sign_Up> {
                   children: [
                     Container(
                       height: 1,
-                      width: MediaQuery.of(context).size.width / 4,
+                      width: MediaQuery.of(context).size.width / 3,
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.2),
+                        color: Theme.of(context).dividerColor,
                       ),
                     ),
                     Text(
-                      "or continue with",
+                      "or",
                       textAlign: TextAlign.start,
                       style: GoogleFonts.lexendDeca(
-                        textStyle: TextStyle(
-                          color: Colors.black.withOpacity(0.6),
-                        ),
+                        textStyle: TextStyle(),
                         fontSize: 15,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     Container(
                       height: 1,
-                      width: MediaQuery.of(context).size.width / 4,
+                      width: MediaQuery.of(context).size.width / 3,
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.2),
+                        color: Theme.of(context).dividerColor,
                       ),
                     ),
                   ],
@@ -414,7 +406,7 @@ class _Sign_UpState extends State<Sign_Up> {
                       height: MediaQuery.of(context).size.height / 11,
                       width: MediaQuery.of(context).size.width / 4.6,
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Theme.of(context).listTileTheme.tileColor,
                           borderRadius: BorderRadius.circular(
                             20,
                           ),
@@ -442,7 +434,7 @@ class _Sign_UpState extends State<Sign_Up> {
                       height: MediaQuery.of(context).size.height / 11,
                       width: MediaQuery.of(context).size.width / 4.6,
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Theme.of(context).listTileTheme.tileColor,
                           borderRadius: BorderRadius.circular(
                             20,
                           ),
@@ -470,7 +462,7 @@ class _Sign_UpState extends State<Sign_Up> {
                       height: MediaQuery.of(context).size.height / 11,
                       width: MediaQuery.of(context).size.width / 4.6,
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Theme.of(context).listTileTheme.tileColor,
                           borderRadius: BorderRadius.circular(
                             20,
                           ),
@@ -511,7 +503,6 @@ class _Sign_UpState extends State<Sign_Up> {
                       textAlign: TextAlign.start,
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: Colors.black.withOpacity(0.4),
                         ),
                         fontSize: 17,
                         fontWeight: FontWeight.w500,

@@ -40,8 +40,8 @@ class _Premium_PakagesState extends State<Premium_Pakages> {
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
                   colors: [
-                Colors.white.withOpacity(0.9),
-                Colors.white.withOpacity(0.0)
+                Theme.of(context).scaffoldBackgroundColor,
+                Theme.of(context).scaffoldBackgroundColor.withOpacity(0.0),
               ])),
           child: SingleChildScrollView(
             child: Column(
@@ -92,7 +92,6 @@ class _Premium_PakagesState extends State<Premium_Pakages> {
                     textAlign: TextAlign.start,
                     style: GoogleFonts.lexendDeca(
                       textStyle: TextStyle(
-                        color: Colors.black,
                       ),
                       fontSize: 20,
                       fontWeight: FontWeight.w400,
@@ -111,11 +110,6 @@ class _Premium_PakagesState extends State<Premium_Pakages> {
                   label: "A",
                   tailValue: "16.99",
                   onChanged: _valueChangedHandler(),
-                  icn: Icon(
-                    Icons.male,
-                    size: 50,
-                    color: Colors.white,
-                  ),
                 ),
                 SizedBox(
                   height: 10,
@@ -129,11 +123,6 @@ class _Premium_PakagesState extends State<Premium_Pakages> {
                   groupValue: _groupValue,
                   label: "B",
                   onChanged: _valueChangedHandler(),
-                  icn: Icon(
-                    Icons.male,
-                    size: 50,
-                    color: Colors.white,
-                  ),
                 ),
                 SizedBox(
                   height: 10,
@@ -147,11 +136,6 @@ class _Premium_PakagesState extends State<Premium_Pakages> {
                   groupValue: _groupValue,
                   label: "C",
                   onChanged: _valueChangedHandler(),
-                  icn: Icon(
-                    Icons.male,
-                    size: 50,
-                    color: Colors.white,
-                  ),
                 ),
                 SizedBox(
                   height: 30,

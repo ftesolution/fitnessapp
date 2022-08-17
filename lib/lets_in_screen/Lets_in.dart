@@ -199,7 +199,7 @@ class _Lets_InState extends State<Lets_In> {
                     height: 1,
                     width: MediaQuery.of(context).size.width / 3,
                     decoration: BoxDecoration(
-                      color: Colors.white24,
+                      color: Theme.of(context).dividerColor,
                     ),
                   ),
                   Text(
@@ -215,7 +215,7 @@ class _Lets_InState extends State<Lets_In> {
                     height: 1,
                     width: MediaQuery.of(context).size.width / 3,
                     decoration: BoxDecoration(
-                      color: Colors.white24,
+                      color: Theme.of(context).dividerColor,
                     ),
                   ),
                 ],

@@ -35,7 +35,7 @@ class Get_Ready extends StatelessWidget {
                     child: Container(
                         padding: EdgeInsets.only(left: 0,),
                         alignment: Alignment.centerLeft,
-                        child: Icon(Icons.arrow_back_rounded,color: Colors.black,size: 25,)),
+                        child: Icon(Icons.arrow_back_rounded,size: 25,)),
                   ),
                 ],
               ),

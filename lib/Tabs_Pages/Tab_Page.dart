@@ -28,8 +28,8 @@ class Tab_Page extends StatelessWidget {
           child: TabBar(
 
             labelColor: Colors.deepPurpleAccent,
-            // unselectedLabelColor: Colors.black.withOpacity(0.4),
-            indicatorColor: Colors.white,
+            unselectedLabelColor: Theme.of(context).hintColor,
+            indicatorColor: Colors.transparent,
             labelStyle:  GoogleFonts.lexendDeca(
               textStyle: TextStyle(
                 color: Colors.deepPurpleAccent,
@@ -39,7 +39,6 @@ class Tab_Page extends StatelessWidget {
             ),
             unselectedLabelStyle:  GoogleFonts.lexendDeca(
               textStyle: TextStyle(
-                color: Colors.black.withOpacity(0.7),
               ),
               fontSize: 15,
               fontWeight: FontWeight.w400,

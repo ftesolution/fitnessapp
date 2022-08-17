@@ -130,7 +130,6 @@ class _Sign_InState extends State<Sign_In> {
                           hintText: "Email",
                           hintStyle: GoogleFonts.lexendDeca(
                             textStyle: TextStyle(
-                              color: Colors.black.withOpacity(0.4),
                             ),
                             fontSize: 17,
                             fontWeight: FontWeight.w300,
@@ -140,7 +139,7 @@ class _Sign_InState extends State<Sign_In> {
                           filled: true,
                           fillColor: _focusNodes[0].hasFocus
                               ? Colors.deepPurpleAccent.withOpacity(0.1)
-                              : Theme.of(context).listTileTheme.tileColor,
+                              : Theme.of(context).cardColor,
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
@@ -235,7 +234,6 @@ class _Sign_InState extends State<Sign_In> {
                           hintText: "password",
                           hintStyle: GoogleFonts.lexendDeca(
                             textStyle: TextStyle(
-                              color: Colors.black.withOpacity(0.4),
                             ),
                             fontSize: 17,
                             fontWeight: FontWeight.w300,
@@ -245,7 +243,7 @@ class _Sign_InState extends State<Sign_In> {
                           filled: true,
                           fillColor: _focusNodes[1].hasFocus
                               ? Colors.deepPurpleAccent.withOpacity(0.1)
-                              : Theme.of(context).listTileTheme.tileColor,
+                              : Theme.of(context).cardColor,
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
@@ -393,26 +391,25 @@ class _Sign_InState extends State<Sign_In> {
                   children: [
                     Container(
                       height: 1,
-                      width: MediaQuery.of(context).size.width / 4,
+                      width: MediaQuery.of(context).size.width / 3,
                       decoration: BoxDecoration(
-                        color: Colors.white24,
+                        color: Theme.of(context).dividerColor,
                       ),
                     ),
                     Text(
-                      "or continue with",
+                      "or",
                       textAlign: TextAlign.start,
                       style: GoogleFonts.lexendDeca(
-                        textStyle: TextStyle(
-                        ),
+                        textStyle: TextStyle(),
                         fontSize: 15,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     Container(
                       height: 1,
-                      width: MediaQuery.of(context).size.width / 4,
+                      width: MediaQuery.of(context).size.width / 3,
                       decoration: BoxDecoration(
-                        color: Colors.white24,
+                        color: Theme.of(context).dividerColor,
                       ),
                     ),
                   ],
@@ -430,7 +427,7 @@ class _Sign_InState extends State<Sign_In> {
                       height: MediaQuery.of(context).size.height / 11,
                       width: MediaQuery.of(context).size.width / 4.6,
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Theme.of(context).listTileTheme.tileColor,
                           borderRadius: BorderRadius.circular(
                             20,
                           ),
@@ -458,7 +455,7 @@ class _Sign_InState extends State<Sign_In> {
                       height: MediaQuery.of(context).size.height / 11,
                       width: MediaQuery.of(context).size.width / 4.6,
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Theme.of(context).listTileTheme.tileColor,
                           borderRadius: BorderRadius.circular(
                             20,
                           ),
@@ -486,7 +483,7 @@ class _Sign_InState extends State<Sign_In> {
                       height: MediaQuery.of(context).size.height / 11,
                       width: MediaQuery.of(context).size.width / 4.6,
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Theme.of(context).listTileTheme.tileColor,
                           borderRadius: BorderRadius.circular(
                             20,
                           ),

@@ -16,13 +16,19 @@ class ThemeProvider extends ChangeNotifier {
 class MyThemes {
   static final darkTheme = ThemeData(
     scaffoldBackgroundColor: Colors.grey.shade900,
-    cursorColor: Colors.black,
-    unselectedWidgetColor: Colors.black,
+    textSelectionTheme: TextSelectionThemeData(
+      cursorColor: Colors.white,
+    ),
+    canvasColor: Colors.grey,
+    cardColor: Colors.grey.withOpacity(0.1),
+    hintColor: Colors.white.withOpacity(0.6),
+    unselectedWidgetColor: Colors.grey,
+    dividerColor: Colors.grey.withOpacity(0.3),
     primaryColor: Colors.grey.shade800,
-    backgroundColor: Colors.grey.shade800,
+    backgroundColor: Colors.grey.withOpacity(0.1),
     accentColor: Colors.white,
     listTileTheme: ListTileThemeData(
-      tileColor: Colors.grey.shade800,
+      tileColor: Colors.grey.withOpacity(0.1),
       textColor: Colors.white,
     ),
     colorScheme: ColorScheme.dark(),
@@ -34,9 +40,16 @@ class MyThemes {
   static final lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white.withOpacity(0.95),
     unselectedWidgetColor: Colors.white,
-    cursorColor: Colors.white,
+      textSelectionTheme: TextSelectionThemeData(
+        cursorColor: Colors.black,
+      ),
+      dividerColor: Colors.grey.withOpacity(0.8),
     primaryColor: Colors.deepPurpleAccent.withOpacity(0.2),
+      tabBarTheme: TabBarTheme(
+      ),
+      canvasColor: Colors.white,
       backgroundColor: Colors.white,
+      cardColor: Colors.grey.withOpacity(0.2),
       listTileTheme: ListTileThemeData(
         tileColor: Colors.white,
         textColor: Colors.black,

@@ -11,7 +11,7 @@ import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
-import '../../Change_Theme_Button_Widget.dart';
+import '../../Theme_Provider/Change_Theme_Button_Widget.dart';
 import '../../forgot _reset_password/select _contact _detail.dart';
 import 'Security.dart';
 
@@ -114,6 +114,7 @@ class _Profile_PageState extends State<Profile_Page> {
                           shape: BoxShape.circle,
                           border: Border.all(
                             width: 1,
+                            color: Theme.of(context).hintColor,
                           ),),
                       child: Icon(
                         Icons.more_horiz,
@@ -128,6 +129,7 @@ class _Profile_PageState extends State<Profile_Page> {
               ),
               PopupMenuButton(
                 position: PopupMenuPosition.under,
+                color: Theme.of(context).unselectedWidgetColor,
                 itemBuilder: (context) {
                   return [
                     PopupMenuItem(
@@ -136,7 +138,6 @@ class _Profile_PageState extends State<Profile_Page> {
                         "Gallery",
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 17,
                           fontWeight: FontWeight.w300,
@@ -150,7 +151,6 @@ class _Profile_PageState extends State<Profile_Page> {
                         "Camera",
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 17,
                           fontWeight: FontWeight.w300,
@@ -164,7 +164,6 @@ class _Profile_PageState extends State<Profile_Page> {
                         "Remove",
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 17,
                           fontWeight: FontWeight.w300,
@@ -172,7 +171,7 @@ class _Profile_PageState extends State<Profile_Page> {
                       ),
                       onTap: () {
                         setState(
-                          () {
+                              () {
                             _image = null;
                           },
                         );
@@ -187,10 +186,10 @@ class _Profile_PageState extends State<Profile_Page> {
                     Column(
                       children: [
                         Container(
-                          height: MediaQuery.of(context).size.height / 8.5,
-                          width: MediaQuery.of(context).size.height / 8.5,
+                          height: 100,
+                          width: 100,
                           decoration: BoxDecoration(
-                            color: Colors.black12,
+                            color: Theme.of(context).cardColor,
                             shape: BoxShape.circle,
                           ),
                           child: ClipOval(
@@ -198,25 +197,25 @@ class _Profile_PageState extends State<Profile_Page> {
                               size: Size.fromRadius(80),
                               child: _image != null
                                   ? Image.file(
-                                      _image!,
-                                      height: 100,
-                                      width: 100,
-                                      fit: BoxFit.cover,
-                                    )
+                                _image!,
+                                height: 100,
+                                width: 100,
+                                fit: BoxFit.cover,
+                              )
                                   : Container(
-                                      alignment: Alignment.bottomCenter,
-                                      child: Icon(
-                                        Icons.person,
-                                        size: 60,
-                                        color: Colors.grey,
-                                      )),
+                                  alignment: Alignment.bottomCenter,
+                                  child: Icon(
+                                    Icons.person,
+                                    size: 60,
+                                    color: Colors.grey,
+                                  )),
                             ),
                           ),
                         ),
                       ],
                     ),
                     Positioned(
-                      top: MediaQuery.of(context).size.height / 30,
+                      top: 35,
                       child: Container(
                         alignment: Alignment.center,
                         margin: EdgeInsets.only(top: 40),
@@ -226,7 +225,7 @@ class _Profile_PageState extends State<Profile_Page> {
                             color: Colors.deepPurpleAccent,
                             borderRadius: BorderRadius.circular(5)),
                         child: Icon(
-                          Icons.mode_edit_outline_rounded,
+                          Icons.edit,
                           size: 15,
                           color: Colors.white,
                         ),
@@ -549,7 +548,7 @@ class _Profile_PageState extends State<Profile_Page> {
 
                     height: 300,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Theme.of(context).unselectedWidgetColor,
                       borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30),),
                     ),
                       child: Center(
@@ -575,7 +574,7 @@ class _Profile_PageState extends State<Profile_Page> {
                               height: 2,
                               width: MediaQuery.of(context).size.width / 1.2,
                               decoration: BoxDecoration(
-                                color: Colors.grey.withOpacity(0.2),
+                                color: Theme.of(context).hintColor,
                               ),
                             ),
                             Container(
@@ -585,7 +584,6 @@ class _Profile_PageState extends State<Profile_Page> {
                                 textAlign: TextAlign.left,
                                 style: GoogleFonts.lexendDeca(
                                   textStyle: TextStyle(
-                                    color: Colors.black,
                                   ),
                                   fontSize: 18,
                                   fontWeight: FontWeight.w600,
@@ -639,7 +637,7 @@ class _Profile_PageState extends State<Profile_Page> {
                                   height: 55,
                                   width: MediaQuery.of(context).size.width,
                                   decoration: BoxDecoration(
-                                    color: Colors.deepPurpleAccent.withOpacity(0.2),
+                                    color: Theme.of(context).primaryColor,
                                     borderRadius: BorderRadius.circular(
                                       35,
                                     ),
@@ -649,7 +647,7 @@ class _Profile_PageState extends State<Profile_Page> {
                                     textAlign: TextAlign.start,
                                     style: GoogleFonts.lexendDeca(
                                       textStyle: TextStyle(
-                                        color: Colors.deepPurpleAccent,
+                                        color: Theme.of(context).accentColor,
                                       ),
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,

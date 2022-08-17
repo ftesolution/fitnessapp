@@ -43,7 +43,7 @@ class _SecurityState extends State<Security> {
                     child: Container(
                         padding: EdgeInsets.only(left: 0,),
                         alignment: Alignment.centerLeft,
-                        child: Icon(Icons.arrow_back_rounded,color: Colors.black,size: 25,)),
+                        child: Icon(Icons.arrow_back_rounded,size: 25,)),
                   ),
                   SizedBox(width: 20,),
                   Container(
@@ -53,7 +53,6 @@ class _SecurityState extends State<Security> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: Colors.black,
                         ),
                         fontSize: 25,
                         fontWeight: FontWeight.w500,
@@ -73,7 +72,6 @@ class _SecurityState extends State<Security> {
                     textAlign: TextAlign.left,
                     style: GoogleFonts.lexendDeca(
                       textStyle: TextStyle(
-                        color: Colors.black,
                       ),
                       fontSize: 18,
                       fontWeight: FontWeight.w400,
@@ -106,7 +104,6 @@ class _SecurityState extends State<Security> {
                     textAlign: TextAlign.left,
                     style: GoogleFonts.lexendDeca(
                       textStyle: TextStyle(
-                        color: Colors.black,
                       ),
                       fontSize: 18,
                       fontWeight: FontWeight.w400,
@@ -139,7 +136,6 @@ class _SecurityState extends State<Security> {
                     textAlign: TextAlign.left,
                     style: GoogleFonts.lexendDeca(
                       textStyle: TextStyle(
-                        color: Colors.black,
                       ),
                       fontSize: 18,
                       fontWeight: FontWeight.w400,
@@ -172,7 +168,6 @@ class _SecurityState extends State<Security> {
                     textAlign: TextAlign.left,
                     style: GoogleFonts.lexendDeca(
                       textStyle: TextStyle(
-                        color: Colors.black,
                       ),
                       fontSize: 18,
                       fontWeight: FontWeight.w400,

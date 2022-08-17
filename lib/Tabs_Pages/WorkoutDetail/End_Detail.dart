@@ -2,6 +2,8 @@ import 'package:fitnessapp/Tabs_Pages/Home/Home_Page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../Tab_Page.dart';
+
 class End_Detail extends StatelessWidget {
   const End_Detail({Key? key}) : super(key: key);
 
@@ -189,7 +191,7 @@ class End_Detail extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home_Page(),),
+                    MaterialPageRoute(builder: (context) => Tab_Page(),),
                   );
                 },
                 child: Container(
@@ -220,7 +222,7 @@ class End_Detail extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home_Page(),),
+                    MaterialPageRoute(builder: (context) => Tab_Page(),),
                   );
                 },
                 child: Container(

@@ -20,7 +20,7 @@ class Home_Notification extends StatelessWidget {
             SizedBox(height: 30,),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 GestureDetector(
                   onTap: (){
@@ -29,9 +29,9 @@ class Home_Notification extends StatelessWidget {
                   child: Container(
                       padding: EdgeInsets.only(left: 0,),
                       alignment: Alignment.centerLeft,
-                      child: Icon(Icons.arrow_back_rounded,color: Colors.black,size: 25,)),
+                      child: Icon(Icons.arrow_back_rounded,size: 25,)),
                 ),
-                SizedBox(width: MediaQuery.of(context).size.width/20,),
+
                 Container(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -39,14 +39,13 @@ class Home_Notification extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.lexendDeca(
                       textStyle: TextStyle(
-                        color: Colors.black,
                       ),
                       fontSize: 25,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
-                SizedBox(width: MediaQuery.of(context).size.width/2.5,),
+                SizedBox(width: MediaQuery.of(context).size.width/8,),
                 Container(
                   alignment: Alignment.center,
                   height: 20,
@@ -54,13 +53,12 @@ class Home_Notification extends StatelessWidget {
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
-                        color: Colors.black,
+                        color: Theme.of(context).hintColor,
                         width: 1,
                       )),
                   child: Icon(
                     Icons.more_horiz,
                     size: 18,
-                    color: Colors.black,
                   ),
                 ),
 

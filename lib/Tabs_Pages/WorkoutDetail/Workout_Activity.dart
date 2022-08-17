@@ -59,7 +59,7 @@ class Workout_Activity extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 110,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).listTileTheme.tileColor,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
@@ -86,7 +86,6 @@ class Workout_Activity extends StatelessWidget {
                             "Warrior 1",
                             style: GoogleFonts.lexendDeca(
                               textStyle: TextStyle(
-                                color: Colors.black,
                               ),
                               fontSize: 30,
                               fontWeight: FontWeight.w500,
@@ -119,7 +118,7 @@ class Workout_Activity extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 110,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).listTileTheme.tileColor,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
@@ -146,7 +145,6 @@ class Workout_Activity extends StatelessWidget {
                             "Side Plank",
                             style: GoogleFonts.lexendDeca(
                               textStyle: TextStyle(
-                                color: Colors.black,
                               ),
                               fontSize: 30,
                               fontWeight: FontWeight.w500,
@@ -179,7 +177,7 @@ class Workout_Activity extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 110,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).listTileTheme.tileColor,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
@@ -206,7 +204,6 @@ class Workout_Activity extends StatelessWidget {
                             "One Leg Down",
                             style: GoogleFonts.lexendDeca(
                               textStyle: TextStyle(
-                                color: Colors.black,
                               ),
                               fontSize: 30,
                               fontWeight: FontWeight.w500,
@@ -239,7 +236,7 @@ class Workout_Activity extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 110,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).listTileTheme.tileColor,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
@@ -266,7 +263,6 @@ class Workout_Activity extends StatelessWidget {
                             "Triangle Pose",
                             style: GoogleFonts.lexendDeca(
                               textStyle: TextStyle(
-                                color: Colors.black,
                               ),
                               fontSize: 30,
                               fontWeight: FontWeight.w500,
@@ -299,7 +295,7 @@ class Workout_Activity extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 110,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).listTileTheme.tileColor,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
@@ -326,7 +322,6 @@ class Workout_Activity extends StatelessWidget {
                             "Stork Pose",
                             style: GoogleFonts.lexendDeca(
                               textStyle: TextStyle(
-                                color: Colors.black,
                               ),
                               fontSize: 30,
                               fontWeight: FontWeight.w500,
@@ -359,7 +354,7 @@ class Workout_Activity extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 110,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).listTileTheme.tileColor,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
@@ -386,7 +381,6 @@ class Workout_Activity extends StatelessWidget {
                             "Wheel Pose",
                             style: GoogleFonts.lexendDeca(
                               textStyle: TextStyle(
-                                color: Colors.black,
                               ),
                               fontSize: 30,
                               fontWeight: FontWeight.w500,
@@ -419,7 +413,7 @@ class Workout_Activity extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 110,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).listTileTheme.tileColor,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
@@ -446,7 +440,6 @@ class Workout_Activity extends StatelessWidget {
                             "One Leg Head",
                             style: GoogleFonts.lexendDeca(
                               textStyle: TextStyle(
-                                color: Colors.black,
                               ),
                               fontSize: 30,
                               fontWeight: FontWeight.w500,
@@ -479,7 +472,7 @@ class Workout_Activity extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 110,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).listTileTheme.tileColor,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
@@ -506,9 +499,8 @@ class Workout_Activity extends StatelessWidget {
                             "Half Moon Pose",
                             style: GoogleFonts.lexendDeca(
                               textStyle: TextStyle(
-                                color: Colors.black,
                               ),
-                              fontSize: 30,
+                              fontSize: 25,
                               fontWeight: FontWeight.w500,
                             ),
                             textAlign: TextAlign.start,
@@ -539,7 +531,7 @@ class Workout_Activity extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 110,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).listTileTheme.tileColor,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
@@ -566,7 +558,6 @@ class Workout_Activity extends StatelessWidget {
                             "Camel Pose",
                             style: GoogleFonts.lexendDeca(
                               textStyle: TextStyle(
-                                color: Colors.black,
                               ),
                               fontSize: 30,
                               fontWeight: FontWeight.w500,
@@ -599,7 +590,7 @@ class Workout_Activity extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 110,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).listTileTheme.tileColor,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
@@ -626,7 +617,6 @@ class Workout_Activity extends StatelessWidget {
                             "One Leg Up",
                             style: GoogleFonts.lexendDeca(
                               textStyle: TextStyle(
-                                color: Colors.black,
                               ),
                               fontSize: 30,
                               fontWeight: FontWeight.w500,

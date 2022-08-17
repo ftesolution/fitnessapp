@@ -53,7 +53,6 @@ class _Select_ContactState extends State<Select_Contact> {
                       },
                       child: Icon(
                         Icons.arrow_back_rounded,
-                        color: Colors.black,
                         size: 30,
                       ),
                     ),
@@ -68,7 +67,6 @@ class _Select_ContactState extends State<Select_Contact> {
                       textAlign: TextAlign.start,
                       style: GoogleFonts.lexendDeca(
                         textStyle: TextStyle(
-                          color: Colors.black,
                         ),
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
@@ -77,12 +75,13 @@ class _Select_ContactState extends State<Select_Contact> {
                   ),
                 ],
               ),
+               SizedBox(height: 20,),
                Container(
                  height: 280,
                  width: MediaQuery.of(context).size.height/2.5,
-                 child: SvgPicture.asset("images/img.svg"),
+                 child: SvgPicture.asset("images/img.svg",),
                  decoration: BoxDecoration(
-                   color: Colors.white,
+                   color: Theme.of(context).scaffoldBackgroundColor,
                  ),
                ),
               SizedBox(
@@ -93,7 +92,6 @@ class _Select_ContactState extends State<Select_Contact> {
                 textAlign: TextAlign.start,
                 style: GoogleFonts.lexendDeca(
                   textStyle: TextStyle(
-                    color: Colors.black,
                   ),
                   fontSize: 15,
                   fontWeight: FontWeight.w300,

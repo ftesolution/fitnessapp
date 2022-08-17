@@ -28,6 +28,7 @@ class _creat_new_passwordState extends State<creat_new_password> {
   ValueChanged<String?> _valueChangedHandler() {
     return (value) => setState(() => _groupValue = value!);
   }
+
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   var confirmPass;
 
@@ -61,7 +62,6 @@ class _creat_new_passwordState extends State<creat_new_password> {
                       },
                       child: Icon(
                         Icons.arrow_back_rounded,
-                        color: Colors.black,
                         size: 30,
                       ),
                     ),
@@ -75,9 +75,7 @@ class _creat_new_passwordState extends State<creat_new_password> {
                       "Forgot Password",
                       textAlign: TextAlign.start,
                       style: GoogleFonts.lexendDeca(
-                        textStyle: TextStyle(
-                          color: Colors.black,
-                        ),
+                        textStyle: TextStyle(),
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
                       ),
@@ -85,12 +83,15 @@ class _creat_new_passwordState extends State<creat_new_password> {
                   ),
                 ],
               ),
+              SizedBox(
+                height: 20,
+              ),
               Container(
                 height: MediaQuery.of(context).size.height / 2.5,
                 width: MediaQuery.of(context).size.height / 2.5,
                 child: SvgPicture.asset("images/newpass.svg"),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).scaffoldBackgroundColor,
                 ),
               ),
               SizedBox(
@@ -102,9 +103,7 @@ class _creat_new_passwordState extends State<creat_new_password> {
                     "Create Your New Password",
                     textAlign: TextAlign.left,
                     style: GoogleFonts.lexendDeca(
-                      textStyle: TextStyle(
-                        color: Colors.black,
-                      ),
+                      textStyle: TextStyle(),
                       fontSize: 15,
                       fontWeight: FontWeight.w300,
                     ),
@@ -122,26 +121,23 @@ class _creat_new_passwordState extends State<creat_new_password> {
                       TextFormField(
                         controller: new_Password,
                         obscureText: obsText,
-                        cursorColor: Colors.black,
                         cursorHeight: 20,
                         validator: (String? value) {
                           confirmPass = value;
                           if (value!.isEmpty) {
                             return "Enter the Password";
                           }
-                          if(value.length<8)
-                          {
+                          if (value.length < 8) {
                             return "atleast 8 digit)";
                           }
-                          if(!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$').hasMatch(value))
-                          {
+                          if (!RegExp(
+                                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
+                              .hasMatch(value)) {
                             return "Enter valid Password\ncontain(1 upercase,1 lowercase, 1 special,1 numeric";
                           }
                         },
                         style: GoogleFonts.lexendDeca(
-                          textStyle: TextStyle(
-                            color: Colors.black,
-                          ),
+                          textStyle: TextStyle(),
                           fontSize: 17,
                           fontWeight: FontWeight.w500,
                         ),
@@ -155,7 +151,7 @@ class _creat_new_passwordState extends State<creat_new_password> {
                           prefixIcon: Icon(
                             Icons.lock_rounded,
                             size: 20,
-                            color: Colors.black,
+                            color: Theme.of(context).hintColor,
                           ),
                           suffixIcon: IconButton(
                             onPressed: () {
@@ -166,38 +162,35 @@ class _creat_new_passwordState extends State<creat_new_password> {
                             icon: obsText
                                 ? Icon(
                                     Icons.visibility_off_sharp,
-                                    color: Colors.black,
                                     size: 20,
+                                    color: Theme.of(context).hintColor,
                                   )
                                 : Icon(
                                     Icons.visibility,
-                                    color: Colors.black,
                                     size: 20,
+                                    color: Theme.of(context).hintColor,
                                   ),
                           ),
                           hintText: "New Password",
                           hintStyle: GoogleFonts.lexendDeca(
-                            textStyle: TextStyle(
-                              color: Colors.black.withOpacity(0.4),
-                            ),
+                            textStyle: TextStyle(),
                             fontSize: 17,
                             fontWeight: FontWeight.w300,
                           ),
                           isDense: true,
                           isCollapsed: true,
                           filled: true,
-                          fillColor: Colors.black.withOpacity(0.05),
+                          fillColor: Theme.of(context).cardColor,
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
-                              color: Colors.white,
-                              width: 2,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           errorBorder: OutlineInputBorder(
@@ -210,7 +203,7 @@ class _creat_new_passwordState extends State<creat_new_password> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                         ),
@@ -221,28 +214,25 @@ class _creat_new_passwordState extends State<creat_new_password> {
                       TextFormField(
                         controller: comform_New_Password,
                         obscureText: obsText1,
-                        cursorColor: Colors.black,
                         cursorHeight: 20,
                         validator: (String? value) {
                           if (value!.isEmpty) {
                             return "Enter the Password";
                           }
-                          if(value.length<8)
-                          {
+                          if (value.length < 8) {
                             return "atleast 8 digit";
                           }
-                          if(!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$').hasMatch(value))
-                          {
+                          if (!RegExp(
+                                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
+                              .hasMatch(value)) {
                             return "Enter valid Password\ncontain(1 upercase,1 lowercase, 1 special,1 numeric";
                           }
-                          if(value != confirmPass)
-                            {
-                              return "Password must be same";
-                            }
+                          if (value != confirmPass) {
+                            return "Password must be same";
+                          }
                         },
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 17,
                           fontWeight: FontWeight.w500,
@@ -257,7 +247,7 @@ class _creat_new_passwordState extends State<creat_new_password> {
                           prefixIcon: Icon(
                             Icons.lock_rounded,
                             size: 20,
-                            color: Colors.black,
+                            color: Theme.of(context).hintColor,
                           ),
                           suffixIcon: IconButton(
                             onPressed: () {
@@ -268,19 +258,18 @@ class _creat_new_passwordState extends State<creat_new_password> {
                             icon: obsText1
                                 ? Icon(
                                     Icons.visibility_off_sharp,
-                                    color: Colors.black,
+                                    color: Theme.of(context).hintColor,
                                     size: 20,
                                   )
                                 : Icon(
                                     Icons.visibility,
-                                    color: Colors.black,
+                                    color: Theme.of(context).hintColor,
                                     size: 20,
                                   ),
                           ),
                           hintText: "Conform Password",
                           hintStyle: GoogleFonts.lexendDeca(
                             textStyle: TextStyle(
-                              color: Colors.black.withOpacity(0.4),
                             ),
                             fontSize: 17,
                             fontWeight: FontWeight.w300,
@@ -288,17 +277,17 @@ class _creat_new_passwordState extends State<creat_new_password> {
                           isDense: true,
                           isCollapsed: true,
                           filled: true,
-                          fillColor: Colors.black.withOpacity(0.05),
+                          fillColor: Theme.of(context).cardColor,
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                               width: 2,
                             ),
                           ),
@@ -312,7 +301,7 @@ class _creat_new_passwordState extends State<creat_new_password> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                         ),
@@ -327,6 +316,7 @@ class _creat_new_passwordState extends State<creat_new_password> {
               Container(
                 alignment: Alignment.center,
                 child: CheckboxListTile(
+                  tileColor: Colors.transparent,
                   side: BorderSide(
                     color: Colors.deepPurpleAccent,
                     width: 2,
@@ -342,7 +332,6 @@ class _creat_new_passwordState extends State<creat_new_password> {
                     textAlign: TextAlign.start,
                     style: GoogleFonts.lexendDeca(
                       textStyle: TextStyle(
-                        color: Colors.black,
                       ),
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
@@ -375,8 +364,7 @@ class _creat_new_passwordState extends State<creat_new_password> {
         ),
         child: GestureDetector(
           onTap: () {
-            if(_formkey.currentState!.validate())
-            {
+            if (_formkey.currentState!.validate()) {
               showDialog(
                 context: context,
                 builder: (context) {
@@ -400,8 +388,8 @@ class _creat_new_passwordState extends State<creat_new_password> {
                             width: 200,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                                  image: AssetImage("images/cong.png"),
-                                )),
+                              image: AssetImage("images/cong.png"),
+                            )),
                           ),
                           SizedBox(
                             height: 10,
@@ -425,7 +413,6 @@ class _creat_new_passwordState extends State<creat_new_password> {
                             textAlign: TextAlign.start,
                             style: GoogleFonts.lexendDeca(
                               textStyle: TextStyle(
-                                color: Colors.black,
                               ),
                               fontSize: 13,
                               fontWeight: FontWeight.w300,
@@ -472,9 +459,7 @@ class _creat_new_passwordState extends State<creat_new_password> {
                   );
                 },
               );
-            }
-            else
-            {
+            } else {
               print("unsuccessful");
             }
           },

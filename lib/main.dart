@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-import 'Provider.dart';
+import 'Theme_Provider/Provider.dart';
 import 'custom.dart';
 
 
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: title,
-          themeMode:  ThemeMode.system,
+          themeMode:  themeProvider.themeMode,
           theme: MyThemes.lightTheme,
           darkTheme: MyThemes.darkTheme,
           home:  splashscreen(),

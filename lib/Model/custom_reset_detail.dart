@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CustomReset<T> extends StatelessWidget {
+class CustomReset<T> extends StatefulWidget {
 
 
   final T value;
@@ -24,16 +24,21 @@ class CustomReset<T> extends StatelessWidget {
     required this.height,
   });
 
+  @override
+  State<CustomReset<T>> createState() => _CustomResetState<T>();
+}
+
+class _CustomResetState<T> extends State<CustomReset<T>> {
   Widget _buildLabel() {
-    final bool isSelected = value == groupValue;
+    final bool isSelected = widget.value == widget.groupValue;
 
     return Container(
-      width: width,
-      height: height,
+      width: widget.width,
+      height: widget.height,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: isSelected ? Colors.deepPurpleAccent : Colors.grey.withOpacity(0.2),width: 2),
-        color: Colors.white,
+        border: Border.all(color: isSelected ? Colors.deepPurpleAccent : Theme.of(context).scaffoldBackgroundColor,width: 2),
+        color: Theme.of(context).listTileTheme.tileColor,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -48,14 +53,14 @@ class CustomReset<T> extends StatelessWidget {
               shape: BoxShape.circle,
               color: Colors.deepPurpleAccent.withOpacity(0.2)
             ),
-              child: icn),
+              child: widget.icn),
           SizedBox(width: 25,),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                value.toString(),
+                widget.value.toString(),
                 textAlign: TextAlign.left,
                 style: GoogleFonts.lexendDeca(
                   textStyle: TextStyle(
@@ -66,11 +71,10 @@ class CustomReset<T> extends StatelessWidget {
                 ),
               ),
               Text(
-                subvalue.toString(),
+                widget.subvalue.toString(),
                 textAlign: TextAlign.left,
                 style: GoogleFonts.lexendDeca(
                   textStyle: TextStyle(
-                    color: Colors.black,
                   ),
                   fontSize: 18,
                   fontWeight: FontWeight.w400,
@@ -83,11 +87,10 @@ class CustomReset<T> extends StatelessWidget {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => onChanged(value),
+      onTap: () => widget.onChanged(widget.value),
       splashColor: Colors.yellow.withOpacity(0.1),
       child: _buildLabel(),
     );

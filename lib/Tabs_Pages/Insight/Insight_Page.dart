@@ -72,8 +72,8 @@ class _Insight_PageState extends State<Insight_Page> {
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(
-                            color: Colors.black,
                             width: 1,
+                            color: Theme.of(context).hintColor,
                           )),
                       child: Icon(
                         Icons.more_horiz,

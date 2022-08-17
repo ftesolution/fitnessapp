@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CustomPremium<T> extends StatelessWidget {
+class CustomPremium<T> extends StatefulWidget {
   final T value;
   final T tailValue;
   final T subValue;
   final T? groupValue;
   final String label;
   final ValueChanged<T?> onChanged;
-  final Widget icn;
   final double height;
   final double width;
 
@@ -19,34 +18,38 @@ class CustomPremium<T> extends StatelessWidget {
     required this.groupValue,
     required this.label,
     required this.onChanged,
-    required this.icn,
     required this.width,
     required this.height,
   });
 
+  @override
+  State<CustomPremium<T>> createState() => _CustomPremiumState<T>();
+}
+
+class _CustomPremiumState<T> extends State<CustomPremium<T>> {
   Widget _buildLabel() {
-    final bool isSelected = value == groupValue;
+    final bool isSelected = widget.value == widget.groupValue;
 
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
       ),
       child: Container(
         padding: EdgeInsets.only(
           left: 20,
           right: 20,
         ),
-        width: width,
-        height: height,
+        width: widget.width,
+        height: widget.height,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-              color: isSelected ? Colors.deepPurpleAccent : Colors.white,
+              color: isSelected ? Colors.deepPurpleAccent : Colors.transparent,
               width: 3),
           color: isSelected
-              ? Colors.deepPurpleAccent.withOpacity(0.1)
-              : Colors.white,
+              ? Theme.of(context).canvasColor
+              : Theme.of(context).canvasColor,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -82,22 +85,21 @@ class CustomPremium<T> extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  value.toString(),
+                  widget.value.toString(),
                   textAlign: TextAlign.center,
                   style: GoogleFonts.lexendDeca(
                     textStyle: TextStyle(
-                      color: Colors.black,
                     ),
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  subValue.toString(),
+                  widget.subValue.toString(),
                   textAlign: TextAlign.center,
                   style: GoogleFonts.lexendDeca(
                     textStyle: TextStyle(
-                      color: Colors.black.withOpacity(0.6),
+                      color: Theme.of(context).hintColor,
                     ),
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
@@ -132,10 +134,9 @@ class CustomPremium<T> extends StatelessWidget {
                       Container(
                         alignment: Alignment.center,
                         child: Text(
-                          tailValue.toString(),
+                          widget.tailValue.toString(),
                           style: GoogleFonts.lexendDeca(
                             textStyle: TextStyle(
-                              color: Colors.black,
                             ),
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
@@ -164,7 +165,7 @@ class CustomPremium<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => onChanged(value),
+      onTap: () => widget.onChanged(widget.value),
       splashColor: Colors.yellow.withOpacity(0.1),
       child: _buildLabel(),
     );

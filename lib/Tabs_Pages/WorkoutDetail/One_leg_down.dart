@@ -48,36 +48,77 @@ class _One_Leg_DownState extends State<One_Leg_Down> {
                 ),
                 Positioned(
                   bottom: 20,
-                  child:  Container(
-                    width: MediaQuery.of(context).size.width/1.1,
-                    child: SfSliderTheme(
-                      data: SfSliderThemeData(
-                        trackCornerRadius: 10,
-                        thumbColor: Colors.orange,
-                        thumbRadius: 12,
-                        thumbStrokeWidth: 4,
-                        thumbStrokeColor: Colors.white,
-
-                      ),
-                      child: SfSlider(
-                        // thumbShape: SfThumbShape(),
-                        min: 0.0,
-                        max: 10.0,
-                        value: _value,
-                        trackShape: SfTrackShape(),
-                        activeColor: Colors.deepPurpleAccent,
-                        inactiveColor: Colors.white.withOpacity(1),
-                        interval: 2,
-                        // showLabels: true,
-                        onChanged: (dynamic newValue) {
-                          setState(
-                                () {
-                              _value = newValue;
+                  child:  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Rest_Page(),));
                             },
-                          );
-                        },
+                            child: Container(
+                                padding: EdgeInsets.only(left: 0),
+                                alignment: Alignment.centerLeft,
+                                child: Icon(Icons.arrow_back_rounded,color: Colors.white,size: 25,)),
+                          ),
+                          SizedBox(width: 230,),
+                          Container(
+                              padding: EdgeInsets.only(left: 20),
+                              alignment: Alignment.centerLeft,
+                              child: Icon(Icons.bookmark_outline_rounded,color: Colors.white,size: 25,)),
+                          SizedBox(width: 40,),
+                          Container(
+                            height: 25,
+                            width: 25,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: Colors.white,
+                                  width: 1,
+                                )),
+                            child: Icon(
+                              Icons.more_horiz,
+                              size: 20,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
+                      SizedBox(height: 160,),
+                      Container(
+                        width: MediaQuery.of(context).size.width/1.1,
+                        child: SfSliderTheme(
+                          data: SfSliderThemeData(
+                            trackCornerRadius: 10,
+                            thumbColor: Colors.orange,
+                            thumbRadius: 12,
+                            thumbStrokeWidth: 4,
+                            thumbStrokeColor: Colors.white,
+
+                          ),
+                          child: SfSlider(
+                            // thumbShape: SfThumbShape(),
+                            min: 0.0,
+                            max: 10.0,
+                            value: _value,
+                            trackShape: SfTrackShape(),
+                            activeColor: Colors.deepPurpleAccent,
+                            inactiveColor: Colors.white.withOpacity(1),
+                            interval: 2,
+                            // showLabels: true,
+                            onChanged: (dynamic newValue) {
+                              setState(
+                                    () {
+                                  _value = newValue;
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    ],
                   ),),
               ],
             ),

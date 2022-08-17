@@ -90,6 +90,7 @@ class _Profile_screenState extends State<Profile_screen> {
               ),
               PopupMenuButton(
                 position: PopupMenuPosition.under,
+                color: Theme.of(context).unselectedWidgetColor,
                 itemBuilder: (context) {
                   return [
                     PopupMenuItem(
@@ -98,7 +99,6 @@ class _Profile_screenState extends State<Profile_screen> {
                         "Gallery",
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 17,
                           fontWeight: FontWeight.w300,
@@ -112,7 +112,6 @@ class _Profile_screenState extends State<Profile_screen> {
                         "Camera",
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 17,
                           fontWeight: FontWeight.w300,
@@ -126,7 +125,6 @@ class _Profile_screenState extends State<Profile_screen> {
                         "Remove",
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
-                            color: Colors.black,
                           ),
                           fontSize: 17,
                           fontWeight: FontWeight.w300,
@@ -152,7 +150,7 @@ class _Profile_screenState extends State<Profile_screen> {
                           height: 100,
                           width: 100,
                           decoration: BoxDecoration(
-                            color: Colors.black,
+                            color: Theme.of(context).cardColor,
                             shape: BoxShape.circle,
                           ),
                           child: ClipOval(
@@ -215,7 +213,7 @@ class _Profile_screenState extends State<Profile_screen> {
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
                           ),
-                          fontSize: 17,
+                          fontSize: 18,
                           fontWeight: FontWeight.w500,
                         ),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -231,36 +229,35 @@ class _Profile_screenState extends State<Profile_screen> {
                           contentPadding: EdgeInsets.only(
                               left: 30, right: 50, top: 15, bottom: 15),
                           isDense: true,
-                          fillColor: Colors.black12,
+                          fillColor: Theme.of(context).cardColor,
                           filled: true,
                           hintText: "Full Name",
                           hintStyle: GoogleFonts.lexendDeca(
                             textStyle: TextStyle(
-                              color: Colors.black.withOpacity(0.4),
                             ),
-                            fontSize: 17,
+                            fontSize: 20,
                             fontWeight: FontWeight.w300,
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           errorBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Colors.red,
                               width: 2,
@@ -299,36 +296,35 @@ class _Profile_screenState extends State<Profile_screen> {
                           contentPadding: EdgeInsets.only(
                               left: 30, right: 50, top: 15, bottom: 15),
                           isDense: true,
-                          fillColor: Colors.black12.withOpacity(0.05),
+                          fillColor: Theme.of(context).cardColor,
                           filled: true,
                           hintText: "Nickname",
                           hintStyle: GoogleFonts.lexendDeca(
                             textStyle: TextStyle(
-                              color: Colors.black.withOpacity(0.4),
                             ),
-                            fontSize: 17,
+                            fontSize: 20,
                             fontWeight: FontWeight.w300,
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           errorBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Colors.red,
                               width: 2,
@@ -366,48 +362,48 @@ class _Profile_screenState extends State<Profile_screen> {
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
                           ),
-                          fontSize: 17,
+                          fontSize: 18,
                           fontWeight: FontWeight.w500,
                         ),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         decoration: InputDecoration(
                           suffixIcon: Icon(
-                            Icons.email,
-                            color: Colors.black.withOpacity(0.4),
+                            Icons.email_outlined,
+                            color: Theme.of(context).hintColor,
                           ),
                           contentPadding: EdgeInsets.only(
                               left: 30, right: 50, top: 15, bottom: 15),
                           isDense: true,
-                          fillColor: Colors.black12.withOpacity(0.05),
+                          fillColor: Theme.of(context).cardColor,
                           filled: true,
                           hintText: "Email",
                           hintStyle: GoogleFonts.lexendDeca(
                             textStyle: TextStyle(
                               // color: Colors.black.withOpacity(0.4),
                             ),
-                            fontSize: 17,
+                            fontSize: 20,
                             fontWeight: FontWeight.w300,
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           errorBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Colors.red,
                               width: 2,
@@ -427,8 +423,17 @@ class _Profile_screenState extends State<Profile_screen> {
                         top: 5,
                       ),
                       child: IntlPhoneField(
-
-                        initialCountryCode: 'IN',
+                        dropdownIcon: Icon(
+                            Icons.arrow_drop_down,color: Theme.of(context).textSelectionTheme.cursorColor,
+                          size: 22,
+                        ),
+                        dropdownTextStyle: GoogleFonts.lexendDeca(
+                          textStyle: TextStyle(
+                          ),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        initialCountryCode: 'PK',
                         invalidNumberMessage: "please enter phone number",
 
                         onSaved: (phone){
@@ -442,7 +447,7 @@ class _Profile_screenState extends State<Profile_screen> {
                         style: GoogleFonts.lexendDeca(
                           textStyle: TextStyle(
                           ),
-                          fontSize: 17,
+                          fontSize: 18,
                           fontWeight: FontWeight.w500,
                         ),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -451,36 +456,35 @@ class _Profile_screenState extends State<Profile_screen> {
                           contentPadding: EdgeInsets.only(
                               left: 30, right: 50, top: 15, bottom: 15),
                           isDense: true,
-                          fillColor: Colors.black12.withOpacity(0.05),
+                          fillColor: Theme.of(context).cardColor,
                           filled: true,
                           hintText: "Phone Number",
                           hintStyle: GoogleFonts.lexendDeca(
                             textStyle: TextStyle(
-                              color: Colors.black.withOpacity(0.4),
                             ),
-                            fontSize: 17,
+                            fontSize: 20,
                             fontWeight: FontWeight.w300,
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                           ),
                           errorBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             borderSide: BorderSide(
                               color: Colors.red,
                               width: 2,
